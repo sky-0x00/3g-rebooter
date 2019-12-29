@@ -16,6 +16,9 @@
     <Filter Include="pch">
       <UniqueIdentifier>{3ee28326-0512-40c1-8d7a-3756b58abc83}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Documentation">
+      <UniqueIdentifier>{cd8da3cc-d74a-4e28-860d-f5fd8d733536}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="3g-rebooter.cpp">
@@ -47,5 +50,10 @@
     <ClInclude Include="utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme-.md">
+      <Filter>Documentation</Filter>
+    </None>
   </ItemGroup>
 </Project>
