@@ -1,0 +1,1504 @@
+#	Time		Duration (s)	Process		Request                             	Port	Result	Data ( String )	
+
+1	15:28:47.047	0.00772450	Mobile Partner	IRP_MJ_CREATE                       	COM4	SUCCESS	Port Opened	
+2	15:28:47.054	0.00002040	Mobile Partner	IOCTL_SERIAL_SET_QUEUE_SIZE         	COM4	SUCCESS	InSize: 4096, OutSize: 4096	
+3	15:28:47.055	0.00001880	Mobile Partner	IOCTL_SERIAL_SET_TIMEOUTS           	COM4	SUCCESS	ReadIntervalTimeout: -1, ReadTotalTimeoutMultiplier: 0, ReadTotalTimeoutConstant: 0, WriteTotalTimeoutMultiplier: 10, WriteTotalTimeoutConstant: 1000	
+4	15:28:47.055	0.00000710	Mobile Partner	IOCTL_SERIAL_SET_WAIT_MASK          	COM4	SUCCESS	Mask: RXCHAR	
+5	15:28:47.055	0.00001010	Mobile Partner	IOCTL_SERIAL_PURGE                  	COM4	SUCCESS	Purge: TXABORT RXABORT TXCLEAR RXCLEAR	
+6	15:28:47.055	0.00000710	Mobile Partner	IOCTL_SERIAL_SET_BAUD_RATE          	COM4	SUCCESS	Baud Rate: 115200	
+7	15:28:47.055	0.00000660	Mobile Partner	IOCTL_SERIAL_CLR_RTS                	COM4	SUCCESS		
+8	15:28:47.055	0.00000980	Mobile Partner	IOCTL_SERIAL_CLR_DTR                	COM4	SUCCESS		
+9	15:28:47.055	0.00000740	Mobile Partner	IOCTL_SERIAL_SET_LINE_CONTROL       	COM4	SUCCESS	StopBits: 1, Parity: No, DataBits: 8	
+10	15:28:47.055	0.00000630	Mobile Partner	IOCTL_SERIAL_SET_CHARS              	COM4	SUCCESS	EofChar: 0x0, ErrorChar: 0x0, BreakChar: 0x0, EventChar: 0x0, XonChar: 0x0, XoffChar: 0x0	
+11	15:28:47.055	0.00000890	Mobile Partner	IOCTL_SERIAL_SET_HANDFLOW           	COM4	SUCCESS	ControlHandShake: 0x0, FlowReplace: 0x0, XonLimit: 0, XoffLimit: 0	
+12	15:28:47.069	0.00020720	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 3, Data: AT.	
+13	15:28:47.072	0.00001250	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 9, Data: AT...OK..	
+14	15:28:47.094	0.00010970	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT^REALNAME.	
+15	15:28:47.097	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 12, Data: AT^REALNAME.	
+16	15:28:47.111	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+17	15:28:48.077	0.00000860	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 12, Data: ..^RSSI:14..	
+18	15:28:48.109	0.00019740	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 8, Data: AT+CGMM.	
+19	15:28:48.112	0.00000810	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 8, Data: AT+CGMM.	
+20	15:28:48.126	0.00000820	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 14, Data: ..E173....OK..	
+21	15:28:48.134	0.00002240	Mobile Partner	IOCTL_SERIAL_PURGE                  	COM4	SUCCESS	Purge: TXABORT TXCLEAR	
+22	15:28:48.135	0.00169540	Mobile Partner	IRP_MJ_CLOSE                        	COM4	SUCCESS	Port Closed	
+23	15:28:48.259	0.00702980	Mobile Partner	IRP_MJ_CREATE                       	COM4	SUCCESS	Port Opened	
+24	15:28:48.266	0.00001340	Mobile Partner	IOCTL_SERIAL_SET_QUEUE_SIZE         	COM4	SUCCESS	InSize: 4096, OutSize: 4096	
+28	15:28:48.266	0.00000860	Mobile Partner	IOCTL_SERIAL_SET_BAUD_RATE          	COM4	SUCCESS	Baud Rate: 115200	
+29	15:28:48.266	0.00000670	Mobile Partner	IOCTL_SERIAL_CLR_RTS                	COM4	SUCCESS		
+30	15:28:48.266	0.00000550	Mobile Partner	IOCTL_SERIAL_CLR_DTR                	COM4	SUCCESS		
+31	15:28:48.266	0.00000500	Mobile Partner	IOCTL_SERIAL_SET_LINE_CONTROL       	COM4	SUCCESS	StopBits: 1, Parity: No, DataBits: 8	
+32	15:28:48.266	0.00000450	Mobile Partner	IOCTL_SERIAL_SET_CHARS              	COM4	SUCCESS	EofChar: 0x0, ErrorChar: 0x0, BreakChar: 0x0, EventChar: 0x0, XonChar: 0x0, XoffChar: 0x0	
+33	15:28:48.266	0.00000440	Mobile Partner	IOCTL_SERIAL_SET_HANDFLOW           	COM4	SUCCESS	ControlHandShake: 0x0, FlowReplace: 0x0, XonLimit: 0, XoffLimit: 0	
+34	15:28:48.281	0.00015650	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 3, Data: AT.	
+35	15:28:48.284	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 9, Data: AT...OK..	
+36	15:28:48.306	0.00015760	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 10, Data: AT+CMEE=1.	
+37	15:28:48.309	0.00000600	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 16, Data: AT+CMEE=1...OK..	
+38	15:28:48.331	0.00018360	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 5, Data: ATE0.	
+39	15:28:48.334	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 11, Data: ATE0...OK..	
+40	15:28:48.367	0.00016260	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^HWNATQRY?.	
+41	15:28:48.370	0.00000620	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+42	15:28:48.392	0.00016730	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+CFUN?.	
+43	15:28:48.395	0.00000610	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CFUN: 1....OK..	
+44	15:28:48.417	0.00015030	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^HWNATQRY?.	
+45	15:28:48.420	0.00000840	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+46	15:28:48.453	0.00017380	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^FPLOCK?.	
+47	15:28:48.456	0.00001020	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+48	15:28:48.478	0.00027450	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 10, Data: AT^HS=0,0.	
+49	15:28:48.495	0.00001590	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^HS:43077466,0,0,0,20....OK..	
+50	15:28:48.514	0.00016970	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^HWNATQRY?.	
+51	15:28:48.517	0.00000710	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+52	15:28:48.539	0.00032870	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^HWNATQRY?.	
+53	15:28:48.542	0.00000790	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+54	15:28:48.575	0.00030140	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+55	15:28:48.578	0.00000790	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+56	15:28:48.600	0.00019680	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^HWNATQRY?.	
+57	15:28:48.603	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+58	15:28:48.625	0.00019840	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+CPIN?.	
+59	15:28:48.628	0.00000920	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 22, Data: ..+CPIN: READY....OK..	
+60	15:28:48.650	0.00015850	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 8, Data: AT+CIMI.	
+61	15:28:48.653	0.00000850	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 25, Data: ..250026959926005....OK..	
+62	15:28:48.686	0.00011910	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+63	15:28:48.703	0.00000700	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+64	15:28:48.722	0.00021980	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^HWNATQRY?.	
+65	15:28:48.725	0.00000610	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+66	15:28:48.747	0.00016220	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT^REALNAME.	
+67	15:28:48.750	0.00000800	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+68	15:28:48.783	0.00017930	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^HWNATQRY?.	
+69	15:28:48.786	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+70	15:28:48.808	0.00019640	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 8, Data: AT+CGMM.	
+71	15:28:48.811	0.00004010	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 14, Data: ..E173....OK..	
+72	15:28:48.833	0.00014220	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^HWNATQRY?.	
+73	15:28:48.836	0.00000760	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+74	15:28:48.858	0.00019450	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^CARDLOCK?.	
+75	15:28:48.861	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 27, Data: ..^CARDLOCK: 2,10,0....OK..	
+76	15:28:48.894	0.00016200	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^HWNATQRY?.	
+77	15:28:48.897	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+78	15:28:48.920	0.00018250	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^HWNATQRY?.	
+79	15:28:48.923	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+80	15:28:48.951	0.00011480	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^HWNATQRY?.	
+81	15:28:48.954	0.00000910	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+82	15:28:48.976	0.00026030	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^HWNATQRY?.	
+83	15:28:48.979	0.00000750	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+84	15:28:49.050	0.00019270	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+85	15:28:49.067	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+86	15:28:49.086	0.00018920	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+87	15:28:49.103	0.00000760	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+88	15:28:49.133	0.00013130	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+89	15:28:49.150	0.00000880	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+90	15:28:49.180	0.00023390	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT^IPV6CAP?.	
+91	15:28:49.183	0.00000780	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+92	15:28:49.205	0.00013170	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+93	15:28:49.208	0.00000840	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+94	15:28:49.230	0.00017220	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+95	15:28:49.233	0.00001040	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+96	15:28:49.266	0.00018460	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+97	15:28:49.269	0.00000590	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+98	15:28:49.302	0.00011340	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT^DSFLOWRPT=0.	
+99	15:28:49.305	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+100	15:28:49.327	0.00018600	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^CPIN?.	
+101	15:28:49.330	0.00000990	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 33, Data: ..^CPIN: READY,,10,3,10,3....OK..	
+102	15:28:49.352	0.00013360	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+103	15:28:49.355	0.00000860	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+104	15:28:49.388	0.00021160	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+105	15:28:49.391	0.00000700	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+106	15:28:49.413	0.00020350	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+107	15:28:49.416	0.00000590	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+108	15:28:49.438	0.00025510	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+109	15:28:49.441	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,1,0,3,1,,3....OK..	
+110	15:28:49.463	0.00020590	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 10, Data: AT+CLIP=1.	
+111	15:28:49.466	0.00001300	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+112	15:28:49.499	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 14, Data: AT^HWNATQRY=?.	
+113	15:28:49.502	0.00000760	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+114	15:28:49.524	0.00020820	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+115	15:28:49.527	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,1,0,3,1,,3....OK..	
+116	15:28:49.549	0.00012110	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+117	15:28:49.552	0.00000710	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+118	15:28:49.574	0.00019690	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 10, Data: AT+CREG=1.	
+119	15:28:49.577	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+120	15:28:49.610	0.00013170	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+CPMS?.	
+121	15:28:49.613	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 46, Data: ..+CPMS: "SM",0,15,"SM",0,15,"SM",0,15....OK..	
+122	15:28:49.635	0.00017730	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^CPIN?.	
+123	15:28:49.638	0.00000810	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 33, Data: ..^CPIN: READY,,10,3,10,3....OK..	
+124	15:28:49.660	0.00012310	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT+CGREG=1.	
+125	15:28:49.663	0.00000810	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+126	15:28:49.696	0.00021630	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+127	15:28:49.699	0.00000620	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+128	15:28:49.721	0.00022500	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+129	15:28:49.738	0.00000710	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+130	15:28:49.757	0.00015730	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+CSSN=1,1.	
+131	15:28:49.760	0.00000600	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+132	15:28:49.782	0.00014000	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 10, Data: AT+CMGD=?.	
+133	15:28:49.785	0.00000580	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 25, Data: ..+CMGD: (),(0-4)....OK..	
+134	15:28:49.818	0.00014730	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 10, Data: AT+CCWA=1.	
+135	15:28:49.821	0.00000610	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+136	15:28:49.843	0.00020790	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+137	15:28:49.860	0.00000800	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+138	15:28:49.890	0.00015410	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 18, Data: AT+CNMI=2,1,2,2,0.	
+139	15:28:49.907	0.00002110	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+140	15:28:49.937	0.00019660	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 10, Data: AT+CMGF=0.	
+141	15:28:49.940	0.00001070	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+142	15:28:49.973	0.00011430	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+143	15:28:49.976	0.00000580	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+144	15:28:49.998	0.00015740	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+145	15:28:50.001	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+146	15:28:50.023	0.00010570	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+CPMS?.	
+147	15:28:50.040	0.00000860	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 46, Data: ..+CPMS: "SM",0,15,"SM",0,15,"SM",0,15....OK..	
+148	15:28:50.071	0.00024000	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+149	15:28:50.074	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+150	15:28:50.096	0.00010430	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+151	15:28:50.113	0.00004530	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+152	15:28:50.143	0.00013350	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+153	15:28:50.160	0.00000740	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+154	15:28:50.190	0.00012440	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+155	15:28:50.207	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+156	15:28:50.237	0.00010830	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT+CPBS="SM".	
+157	15:28:50.240	0.00000910	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+158	15:28:50.262	0.00017930	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^CPIN?.	
+159	15:28:50.265	0.00000890	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 33, Data: ..^CPIN: READY,,10,3,10,3....OK..	
+160	15:28:50.287	0.00015050	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+CPBS?.	
+161	15:28:50.290	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 28, Data: ..+CPBS: "SM",15,250....OK..	
+162	15:28:50.323	0.00014310	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+163	15:28:50.340	0.00000870	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+164	15:28:50.359	0.00015980	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 14, Data: AT^HWNATQRY=?.	
+165	15:28:50.362	0.00000860	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+166	15:28:50.384	0.00011140	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^HWNATQRY?.	
+167	15:28:50.387	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+168	15:28:50.409	0.00010660	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+CPMS?.	
+169	15:28:50.412	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 46, Data: ..+CPMS: "SM",0,15,"SM",0,15,"SM",0,15....OK..	
+170	15:28:50.445	0.00014700	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+171	15:28:50.448	0.00001090	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+172	15:28:50.470	0.00024570	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 10, Data: AT+CMGD=?.	
+173	15:28:50.473	0.00000900	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 25, Data: ..+CMGD: (),(0-4)....OK..	
+174	15:28:50.921	0.00012940	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 14, Data: AT^HWNATQRY=?.	
+175	15:28:50.924	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+176	15:28:50.946	0.00021010	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^CPIN?.	
+177	15:28:50.949	0.00001190	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 33, Data: ..^CPIN: READY,,10,3,10,3....OK..	
+178	15:28:50.971	0.00013120	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+179	15:28:50.974	0.00000620	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+180	15:28:51.007	0.00010790	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^CARDLOCK?.	
+181	15:28:51.010	0.00000750	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 27, Data: ..^CARDLOCK: 2,10,0....OK..	
+182	15:28:51.052	0.00014340	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^CARDLOCK?.	
+183	15:28:51.055	0.00000750	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 27, Data: ..^CARDLOCK: 2,10,0....OK..	
+184	15:28:51.077	0.00013980	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 14, Data: AT^HWNATQRY=?.	
+185	15:28:51.080	0.00001020	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+186	15:28:51.102	0.00017000	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT^REALNAME.	
+187	15:28:51.105	0.00001060	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+188	15:28:51.138	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 8, Data: AT+CGMM.	
+189	15:28:51.141	0.00000810	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 14, Data: ..E173....OK..	
+190	15:28:51.163	0.00013130	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^HWNATQRY?.	
+191	15:28:51.166	0.00000900	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+192	15:28:51.200	0.00019210	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^HWNATQRY?.	
+193	15:28:51.203	0.00002150	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+194	15:28:51.252	0.00016090	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^HWNATQRY?.	
+195	15:28:51.255	0.00000840	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+196	15:28:51.278	0.00011480	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^HWNATQRY?.	
+197	15:28:51.281	0.00000790	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+198	15:28:51.316	0.00012180	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^HWNATQRY?.	
+199	15:28:51.319	0.00000840	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+200	15:28:51.341	0.00013450	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^HWNATQRY?.	
+201	15:28:51.344	0.00000730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+202	15:28:51.367	0.00013810	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+203	15:28:51.370	0.00000740	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+204	15:28:51.403	0.00011930	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^CPIN?.	
+205	15:28:51.406	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 33, Data: ..^CPIN: READY,,10,3,10,3....OK..	
+206	15:28:51.428	0.00014110	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+207	15:28:51.431	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+208	15:28:51.548	0.00014640	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 8, Data: AT+CGSN.	
+209	15:28:51.551	0.00000990	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 25, Data: ..352216043077466....OK..	
+210	15:28:51.573	0.00014500	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 8, Data: AT+CGMR.	
+211	15:28:51.576	0.00000710	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..11.126.85.00.209....OK..	
+212	15:28:51.598	0.00021250	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HWVER.	
+213	15:28:51.601	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 27, Data: ..^HWVER:"CD1E153M"....OK..	
+214	15:28:51.634	0.00012960	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT^REALNAME.	
+215	15:28:51.637	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+216	15:28:51.659	0.00015460	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 8, Data: AT+CGMM.	
+217	15:28:51.662	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 14, Data: ..E173....OK..	
+218	15:28:52.251	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 15, Data: AT+CLCK="SC",2.	
+219	15:28:52.268	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+220	15:28:52.287	0.00011330	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 14, Data: AT^HWNATQRY=?.	
+221	15:28:52.290	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+222	15:28:52.312	0.00011110	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^CPIN?.	
+223	15:28:52.315	0.00000730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 33, Data: ..^CPIN: READY,,10,3,10,3....OK..	
+224	15:28:52.348	0.00014330	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+225	15:28:52.351	0.00000800	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+226	15:28:52.373	0.00014180	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 14, Data: AT^HWNATQRY=?.	
+227	15:28:52.376	0.00001920	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+228	15:28:52.398	0.00158460	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT+CPBS="SM".	
+229	15:28:52.402	0.00000870	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+230	15:28:52.435	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 15, Data: AT+CLCK="SC",2.	
+231	15:28:52.438	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+232	15:28:52.460	0.00014440	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+CPBS?.	
+233	15:28:52.463	0.00000830	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 28, Data: ..+CPBS: "SM",15,250....OK..	
+234	15:28:52.485	0.00017210	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+235	15:28:52.488	0.00004990	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+236	15:28:52.510	0.00024390	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT+CPBS="SM".	
+237	15:28:52.541	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CREG: 1....+CGREG: 1....OK..	
+238	15:28:52.569	0.00019800	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+239	15:28:52.586	0.00000950	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+240	15:28:52.605	0.00017200	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 10, Data: AT^CPBR=?.	
+241	15:28:52.622	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..^CPBR: (1-250),24,25....OK..	
+242	15:28:52.652	0.00020850	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+243	15:28:52.669	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+244	15:28:52.699	0.00013320	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT^CARDMODE.	
+245	15:28:52.702	0.00000550	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 22, Data: ..^CARDMODE: 2....OK..	
+246	15:28:52.724	0.00015700	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+247	15:28:52.727	0.00005480	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+248	15:28:52.749	0.00022170	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT+CPBS="SM".	
+249	15:28:52.752	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+250	15:28:52.774	0.00022560	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+251	15:28:52.777	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+252	15:28:52.810	0.00013040	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 10, Data: AT^CPBR=?.	
+253	15:28:52.813	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..^CPBR: (1-250),24,25....OK..	
+254	15:28:52.835	0.00012520	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+255	15:28:52.838	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+256	15:28:52.860	0.00014590	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^CPBR=1,50.	
+257	15:28:52.877	0.00004840	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 918, Data: ..^CPBR: 1,"*100#",129,"81060891B0BBB0BDC1FF",1..^CPBR: 2,"*106#	
+258	15:28:52.907	0.00017150	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+259	15:28:52.910	0.00000700	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+260	15:28:52.943	0.00014520	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT^CPBR=51,100.	
+261	15:28:52.960	0.00000790	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CME ERROR: 22..	
+262	15:28:52.979	0.00012690	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+263	15:28:52.982	0.00000540	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+264	15:28:53.004	0.00015630	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 16, Data: AT^CPBR=101,150.	
+265	15:28:53.021	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CME ERROR: 22..	
+266	15:28:53.051	0.00014170	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+267	15:28:53.054	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+268	15:28:53.087	0.00012450	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 16, Data: AT^CPBR=151,200.	
+269	15:28:53.104	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CME ERROR: 22..	
+270	15:28:53.123	0.00011180	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+271	15:28:53.140	0.00000930	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+272	15:28:53.170	0.00015140	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 16, Data: AT^CPBR=201,250.	
+273	15:28:53.187	0.00001020	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CME ERROR: 22..	
+274	15:28:53.217	0.00015250	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+275	15:28:53.220	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+276	15:28:53.253	0.00012980	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+277	15:28:53.256	0.00000750	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+278	15:28:53.278	0.00013330	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+279	15:28:53.281	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+280	15:28:53.326	0.00010580	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+281	15:28:53.329	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+282	15:28:53.365	0.00015740	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+283	15:28:53.368	0.00000730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+284	15:28:53.390	0.00022180	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+285	15:28:53.393	0.00000810	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+286	15:28:53.426	0.00013970	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^CPIN?.	
+287	15:28:53.429	0.00000700	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 33, Data: ..^CPIN: READY,,10,3,10,3....OK..	
+288	15:28:53.462	0.00014300	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+289	15:28:53.465	0.00000780	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+290	15:28:53.487	0.00014670	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT^CARDMODE.	
+291	15:28:53.490	0.00000760	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 22, Data: ..^CARDMODE: 2....OK..	
+292	15:28:53.512	0.00013980	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+CPBS?.	
+293	15:28:53.515	0.00000740	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 28, Data: ..+CPBS: "SM",15,250....OK..	
+294	15:28:53.548	0.00016110	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+CPBS?.	
+295	15:28:53.565	0.00000890	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 28, Data: ..+CPBS: "SM",15,250....OK..	
+296	15:28:53.584	0.00015120	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 10, Data: AT^CPBR=?.	
+297	15:28:53.587	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..^CPBR: (1-250),24,25....OK..	
+298	15:28:53.610	0.00014690	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 14, Data: AT^HWNATQRY=?.	
+299	15:28:53.613	0.00000610	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+300	15:28:53.679	0.00016770	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+301	15:28:53.682	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+302	15:28:53.715	0.00019630	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+303	15:28:53.718	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+304	15:28:53.746	0.00015090	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+305	15:28:53.749	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+306	15:28:53.771	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 14, Data: AT^HWNATQRY=?.	
+307	15:28:53.774	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+308	15:28:53.797	0.00010830	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 14, Data: AT^HWNATQRY=?.	
+309	15:28:53.800	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+310	15:28:53.822	0.00022730	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+311	15:28:53.825	0.00000710	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+312	15:28:53.858	0.00013730	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 14, Data: AT^HWNATQRY=?.	
+313	15:28:53.861	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+314	15:28:53.884	0.00016750	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 14, Data: AT^HWNATQRY=?.	
+315	15:28:53.887	0.00000860	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+316	15:28:53.909	0.00017680	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+317	15:28:53.912	0.00000760	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+318	15:28:53.945	0.00019180	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+319	15:28:53.948	0.00000710	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+320	15:28:53.980	0.00013480	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+321	15:28:53.983	0.00000780	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+322	15:28:54.005	0.00011950	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+323	15:28:54.008	0.00000610	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+324	15:28:54.030	0.00015400	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^CPIN?.	
+325	15:28:54.033	0.00000940	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 33, Data: ..^CPIN: READY,,10,3,10,3....OK..	
+326	15:28:54.066	0.00011610	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+327	15:28:54.083	0.00000810	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+328	15:28:54.102	0.00015070	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT^CARDMODE.	
+329	15:28:54.105	0.00000890	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 22, Data: ..^CARDMODE: 2....OK..	
+330	15:28:54.147	0.00017020	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+331	15:28:54.150	0.00001530	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+332	15:28:54.172	0.00015340	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+333	15:28:54.175	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+334	15:28:54.344	0.00011330	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT^REALNAME.	
+335	15:28:54.347	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+336	15:28:54.369	0.00011550	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 8, Data: AT+CGMM.	
+337	15:28:54.373	0.00000930	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 14, Data: ..E173....OK..	
+338	15:28:54.431	0.00013330	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT^REALNAME.	
+339	15:28:54.434	0.00000590	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+340	15:28:54.456	0.00012330	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 8, Data: AT+CGMM.	
+341	15:28:54.459	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 14, Data: ..E173....OK..	
+342	15:28:54.519	0.00014120	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT^REALNAME.	
+343	15:28:54.522	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+344	15:28:54.544	0.00012770	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 8, Data: AT+CGMM.	
+345	15:28:54.547	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 14, Data: ..E173....OK..	
+346	15:28:54.576	0.00011570	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+347	15:28:54.579	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+348	15:28:54.601	0.00012940	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+349	15:28:54.604	0.00000600	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+350	15:28:54.637	0.00011770	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^OPL=1.	
+351	15:28:54.640	0.00000860	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+352	15:28:54.662	0.00021210	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 14, Data: AT^HWNATQRY=?.	
+353	15:28:54.665	0.00005570	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+354	15:28:54.687	0.00011980	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^PNN=1.	
+355	15:28:54.690	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+356	15:28:54.713	0.00012240	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+357	15:28:54.716	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+358	15:28:54.749	0.00013960	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+359	15:28:54.752	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+360	15:28:54.774	0.00016930	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+361	15:28:54.777	0.00000780	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+362	15:28:54.799	0.00015380	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+363	15:28:54.802	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+364	15:28:54.890	0.00014070	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^CPIN?.	
+365	15:28:54.893	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 33, Data: ..^CPIN: READY,,10,3,10,3....OK..	
+366	15:28:54.915	0.00024420	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+367	15:28:54.918	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+368	15:28:54.941	0.00014030	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+369	15:28:54.944	0.00000850	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+370	15:28:54.966	0.00022770	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^CPIN?.	
+371	15:28:54.969	0.00001420	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 33, Data: ..^CPIN: READY,,10,3,10,3....OK..	
+372	15:28:55.002	0.00013150	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+373	15:28:55.005	0.00000620	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+374	15:28:55.099	0.00010110	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT^REALNAME.	
+375	15:28:55.102	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+376	15:28:55.124	0.00020050	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 8, Data: AT+CGMM.	
+377	15:28:55.127	0.00000760	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 14, Data: ..E173....OK..	
+378	15:28:55.165	0.00013660	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^CARDLOCK?.	
+379	15:28:55.168	0.00000830	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 27, Data: ..^CARDLOCK: 2,10,0....OK..	
+380	15:28:55.210	0.00014000	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^CARDLOCK?.	
+381	15:28:55.227	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 27, Data: ..^CARDLOCK: 2,10,0....OK..	
+382	15:28:55.246	0.00013990	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+383	15:28:55.249	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+384	15:28:55.271	0.00014390	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^CPIN?.	
+385	15:28:55.274	0.00000860	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 33, Data: ..^CPIN: READY,,10,3,10,3....OK..	
+386	15:28:55.307	0.00018760	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+387	15:28:55.310	0.00000710	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+388	15:28:55.381	0.00015230	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+389	15:28:55.384	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+390	15:28:55.406	0.00013670	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+391	15:28:55.409	0.00000620	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+392	15:28:55.442	0.00014710	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT^REALNAME.	
+393	15:28:55.445	0.00000850	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+394	15:28:55.467	0.00015240	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+395	15:28:55.470	0.00000710	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+396	15:28:55.492	0.00013140	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 8, Data: AT+CGMM.	
+397	15:28:55.495	0.00000780	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 14, Data: ..E173....OK..	
+398	15:28:55.528	0.00016980	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+399	15:28:55.531	0.00000610	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+400	15:28:55.553	0.00010650	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 14, Data: AT^HWNATQRY=?.	
+401	15:28:55.556	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+402	15:28:55.578	0.00015330	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+403	15:28:55.581	0.00000900	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+404	15:28:55.603	0.00021160	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+405	15:28:55.606	0.00000750	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+406	15:28:55.639	0.00011820	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+407	15:28:55.642	0.00000830	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+408	15:28:55.664	0.00025390	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 15, Data: AT+CLCK="SC",2.	
+409	15:28:55.667	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 18, Data: ..+CLCK: 0....OK..	
+410	15:28:55.689	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 12, Data: AT+COPS=3,2.	
+411	15:28:55.692	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+412	15:28:55.725	0.00013360	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+413	15:28:55.728	0.00000740	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+414	15:28:55.761	0.00013440	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^OPL=1.	
+415	15:28:55.764	0.00001510	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+416	15:28:55.786	0.00011570	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^PNN=1.	
+417	15:28:55.789	0.00000700	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+418	15:28:55.812	0.00013240	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+419	15:28:55.829	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+420	15:28:59.699	0.00000970	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 190, Data: ..+CBM: 88..47001002F2110400003E960901025E0B35B145000105409108AE	
+421	15:28:59.775	0.00014000	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+422	15:28:59.778	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+423	15:29:00.859	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 13, Data: AT^SYSINFOEX.	
+424	15:29:00.862	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+425	15:29:00.884	0.00012220	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+426	15:29:00.887	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+427	15:29:00.909	0.00026300	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+428	15:29:00.912	0.00000790	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+429	15:29:00.945	0.00017410	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+430	15:29:00.948	0.00000890	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+431	15:29:00.981	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 12, Data: AT+COPS=3,1.	
+432	15:29:00.984	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+433	15:29:01.006	0.00011040	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+434	15:29:01.009	0.00000900	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+435	15:29:01.031	0.00013610	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+436	15:29:01.034	0.00000890	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+437	15:29:01.067	0.00010820	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+438	15:29:01.070	0.00001410	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+439	15:29:01.092	0.00010930	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+440	15:29:01.095	0.00000610	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+441	15:29:01.117	0.00010090	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+442	15:29:01.120	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+443	15:29:01.142	0.00013640	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+444	15:29:01.145	0.00001220	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+445	15:29:01.179	0.00011980	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+446	15:29:01.182	0.00000990	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+447	15:29:05.354	0.00000750	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 190, Data: ..+CBM: 88..47101002F2110400003E960902025E0B35B1353413018305154F	
+448	15:29:06.180	0.00010530	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+449	15:29:06.183	0.00000800	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+450	15:29:06.216	0.00010250	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+451	15:29:06.219	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+452	15:29:06.241	0.00011420	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+453	15:29:06.244	0.00000620	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+454	15:29:06.266	0.00011100	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+455	15:29:06.269	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+456	15:29:06.291	0.00011150	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+457	15:29:06.308	0.00000740	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+458	15:29:06.338	0.00014200	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+459	15:29:06.341	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+460	15:29:06.363	0.00010380	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+461	15:29:06.366	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+462	15:29:06.388	0.00010430	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+463	15:29:06.391	0.00000620	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+464	15:29:06.424	0.00011080	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+465	15:29:06.427	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+466	15:29:06.449	0.00011690	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+467	15:29:06.452	0.00000960	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+468	15:29:06.475	0.00009710	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+469	15:29:06.478	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+470	15:29:06.500	0.00010890	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+471	15:29:06.503	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+472	15:29:09.850	0.00014400	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+473	15:29:09.853	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+474	15:29:11.501	0.00021750	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+475	15:29:11.504	0.00000730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+476	15:29:11.526	0.00032890	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+477	15:29:11.529	0.00000800	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+478	15:29:11.562	0.00038940	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+479	15:29:11.565	0.00000990	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+480	15:29:11.587	0.00009970	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+481	15:29:11.590	0.00000740	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+482	15:29:11.612	0.00021090	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+483	15:29:11.615	0.00000900	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+484	15:29:11.637	0.00021240	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+485	15:29:11.640	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+486	15:29:11.673	0.00010150	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+487	15:29:11.676	0.00000700	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+488	15:29:11.698	0.00012110	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+489	15:29:11.701	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+490	15:29:11.723	0.00015360	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+491	15:29:11.726	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+492	15:29:11.759	0.00010590	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+493	15:29:11.762	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+494	15:29:11.785	0.00010220	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+495	15:29:11.788	0.00000590	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+496	15:29:11.810	0.00011910	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+497	15:29:11.813	0.00001030	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+498	15:29:16.811	0.00019550	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+499	15:29:16.814	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+500	15:29:16.836	0.00009130	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+501	15:29:16.839	0.00000700	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+502	15:29:16.861	0.00010910	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+503	15:29:16.864	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+504	15:29:16.897	0.00015670	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+505	15:29:16.900	0.00001110	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+506	15:29:16.923	0.00016690	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+507	15:29:16.926	0.00001100	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+508	15:29:16.948	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 9, Data: AT+COPS?.	
+509	15:29:16.951	0.00000890	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+510	15:29:16.984	0.00017450	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+511	15:29:16.987	0.00000730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+512	15:29:17.009	0.00016010	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+513	15:29:17.012	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+514	15:29:17.034	0.00017430	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+515	15:29:17.037	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+516	15:29:17.059	0.00033770	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+517	15:29:17.062	0.00001370	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+518	15:29:17.095	0.00008760	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+519	15:29:17.098	0.00000830	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+520	15:29:17.120	0.00010310	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+521	15:29:17.123	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+522	15:29:19.925	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 23, Data: AT+CPMS="SM","SM","SM".	
+523	15:29:19.928	0.00000610	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+524	15:29:22.121	0.00011370	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+525	15:29:22.124	0.00000820	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+526	15:29:22.146	0.00011750	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+527	15:29:22.149	0.00000810	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+528	15:29:22.172	0.00009640	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+529	15:29:22.175	0.00000740	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+530	15:29:22.208	0.00010560	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+531	15:29:22.211	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+532	15:29:22.244	0.00012240	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+533	15:29:22.247	0.00000910	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+534	15:29:22.269	0.00009110	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+535	15:29:22.272	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+536	15:29:22.294	0.00011880	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+537	15:29:22.297	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+538	15:29:22.330	0.00010190	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+539	15:29:22.333	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+540	15:29:22.355	0.00011350	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+541	15:29:22.358	0.00000930	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+542	15:29:22.380	0.00026570	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+543	15:29:22.383	0.00000800	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+544	15:29:22.405	0.00022860	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+545	15:29:22.422	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+546	15:29:22.452	0.00035650	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+547	15:29:22.455	0.00000800	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+548	15:29:27.453	0.00011220	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+549	15:29:27.456	0.00000890	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+550	15:29:27.489	0.00010900	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+551	15:29:27.492	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+552	15:29:27.514	0.00011070	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+553	15:29:27.517	0.00000700	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+554	15:29:27.539	0.00010170	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+555	15:29:27.542	0.00000710	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+556	15:29:27.564	0.00010130	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+557	15:29:27.567	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+558	15:29:27.600	0.00010150	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+559	15:29:27.603	0.00002160	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+560	15:29:27.625	0.00017500	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+561	15:29:27.628	0.00000850	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+562	15:29:27.650	0.00010620	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+563	15:29:27.653	0.00000730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+564	15:29:27.686	0.00029610	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+565	15:29:27.689	0.00001520	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+566	15:29:27.722	0.00017710	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+567	15:29:27.725	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+568	15:29:27.747	0.00011580	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+569	15:29:27.750	0.00000920	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+570	15:29:27.773	0.00010570	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+571	15:29:27.776	0.00000590	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+572	15:29:30.002	0.00015990	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+573	15:29:30.005	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+574	15:29:32.773	0.00011960	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+575	15:29:32.776	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+576	15:29:32.798	0.00012950	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+577	15:29:32.801	0.00000800	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+578	15:29:32.834	0.00011550	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+579	15:29:32.837	0.00000710	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+580	15:29:32.870	0.00010600	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+581	15:29:32.873	0.00000790	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+582	15:29:32.895	0.00012260	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+583	15:29:32.898	0.00000860	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+584	15:29:32.920	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 9, Data: AT+COPS?.	
+585	15:29:32.923	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+586	15:29:32.956	0.00012440	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+587	15:29:32.959	0.00000940	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+588	15:29:32.981	0.00017490	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+589	15:29:32.984	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+590	15:29:33.006	0.00011540	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+591	15:29:33.009	0.00000810	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+592	15:29:33.031	0.00016190	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+593	15:29:33.034	0.00000840	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+594	15:29:33.067	0.00013810	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+595	15:29:33.070	0.00000860	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+596	15:29:33.093	0.00022240	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+597	15:29:33.096	0.00000780	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+598	15:29:38.094	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 13, Data: AT^SYSINFOEX.	
+599	15:29:38.097	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+600	15:29:38.130	0.00010130	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+601	15:29:38.133	0.00000560	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+602	15:29:38.155	0.00019520	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+603	15:29:38.158	0.00000600	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+604	15:29:38.180	0.00009960	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+605	15:29:38.183	0.00000740	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+606	15:29:38.205	0.00011250	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+607	15:29:38.208	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+608	15:29:38.241	0.00036130	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+609	15:29:38.244	0.00000820	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+610	15:29:38.266	0.00011110	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+611	15:29:38.269	0.00000700	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+612	15:29:38.291	0.00012490	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+613	15:29:38.308	0.00000700	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+614	15:29:38.338	0.00008660	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+615	15:29:38.341	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+616	15:29:38.374	0.00010650	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+617	15:29:38.377	0.00000700	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+618	15:29:38.399	0.00009260	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+619	15:29:38.402	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+620	15:29:38.424	0.00010430	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+621	15:29:38.427	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+622	15:29:40.079	0.00010870	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+623	15:29:40.082	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+624	15:29:43.428	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 13, Data: AT^SYSINFOEX.	
+625	15:29:43.431	0.00000840	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+626	15:29:43.464	0.00013140	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+627	15:29:43.467	0.00000820	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+628	15:29:43.500	0.00022440	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+629	15:29:43.503	0.00000620	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+630	15:29:43.525	0.00015500	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+631	15:29:43.528	0.00000870	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+632	15:29:43.550	0.00015560	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+633	15:29:43.553	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+634	15:29:43.586	0.00012580	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+635	15:29:43.589	0.00000820	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+636	15:29:43.611	0.00017880	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+637	15:29:43.614	0.00000710	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+638	15:29:43.636	0.00018360	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+639	15:29:43.639	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+640	15:29:43.661	0.00011750	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+641	15:29:43.664	0.00000750	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+642	15:29:43.697	0.00013960	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+643	15:29:43.700	0.00002590	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+644	15:29:43.722	0.00013040	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+645	15:29:43.725	0.00000790	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+646	15:29:43.747	0.00015200	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+647	15:29:43.750	0.00000940	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+648	15:29:48.748	0.00010290	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+649	15:29:48.751	0.00000840	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+650	15:29:48.773	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 11, Data: AT^SYSINFO.	
+651	15:29:48.776	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+652	15:29:48.798	0.00010950	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+653	15:29:48.801	0.00000820	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+654	15:29:48.834	0.00011280	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+655	15:29:48.837	0.00000730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+656	15:29:48.860	0.00019350	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+657	15:29:48.863	0.00001480	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+658	15:29:48.885	0.00017370	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+659	15:29:48.888	0.00000620	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+660	15:29:48.910	0.00010460	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+661	15:29:48.913	0.00000710	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+662	15:29:48.946	0.00009010	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+663	15:29:48.949	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+664	15:29:48.971	0.00010690	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+665	15:29:48.974	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+666	15:29:48.996	0.00011520	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+667	15:29:48.999	0.00001070	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+668	15:29:49.032	0.00009600	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+669	15:29:49.035	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+670	15:29:49.057	0.00010030	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+671	15:29:49.060	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+672	15:29:50.154	0.00020790	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+673	15:29:50.157	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+674	15:29:54.057	0.00009590	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+675	15:29:54.060	0.00000780	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+676	15:29:54.093	0.00013570	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+677	15:29:54.096	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+678	15:29:54.118	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 9, Data: AT^HCSQ?.	
+679	15:29:54.121	0.00000710	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+680	15:29:54.143	0.00010990	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+681	15:29:54.146	0.00000980	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+682	15:29:54.168	0.00012150	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+683	15:29:54.171	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+684	15:29:54.204	0.00014070	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+685	15:29:54.207	0.00000780	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+686	15:29:54.229	0.00009890	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+687	15:29:54.232	0.00000870	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+688	15:29:54.254	0.00009900	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+689	15:29:54.257	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+690	15:29:54.290	0.00010330	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+691	15:29:54.293	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+692	15:29:54.315	0.00011330	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+693	15:29:54.318	0.00000920	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+694	15:29:54.340	0.00009280	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+695	15:29:54.343	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+696	15:29:54.365	0.00012070	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+697	15:29:54.368	0.00000920	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+698	15:29:59.366	0.00013280	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+699	15:29:59.369	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+700	15:29:59.391	0.00015360	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+701	15:29:59.394	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+702	15:29:59.427	0.00009450	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+703	15:29:59.430	0.00000740	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+704	15:29:59.452	0.00011880	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+705	15:29:59.455	0.00000930	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+706	15:29:59.477	0.00024270	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+707	15:29:59.480	0.00006410	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+708	15:29:59.502	0.00012040	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+709	15:29:59.505	0.00000800	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+710	15:29:59.538	0.00010640	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+711	15:29:59.541	0.00000870	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+712	15:29:59.563	0.00011320	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+713	15:29:59.566	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+714	15:29:59.588	0.00011610	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+715	15:29:59.591	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+716	15:29:59.613	0.00014380	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+717	15:29:59.616	0.00000920	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+718	15:29:59.649	0.00011190	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+719	15:29:59.652	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+720	15:29:59.674	0.00016720	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+721	15:29:59.677	0.00000590	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+722	15:30:00.229	0.00017420	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+723	15:30:00.232	0.00000960	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+724	15:30:04.675	0.00012300	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+725	15:30:04.678	0.00000800	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+726	15:30:04.700	0.00011790	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+727	15:30:04.703	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+728	15:30:04.725	0.00009610	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+729	15:30:04.728	0.00000730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+730	15:30:04.750	0.00010030	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+731	15:30:04.753	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+732	15:30:04.786	0.00012300	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+733	15:30:04.789	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+734	15:30:04.811	0.00010570	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+735	15:30:04.814	0.00000780	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+736	15:30:04.836	0.00009540	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+737	15:30:04.839	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+738	15:30:04.861	0.00011290	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+739	15:30:04.864	0.00000880	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+740	15:30:04.897	0.00011400	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+741	15:30:04.900	0.00000750	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+742	15:30:04.922	0.00009790	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+743	15:30:04.925	0.00000700	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+744	15:30:04.948	0.00011920	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+745	15:30:04.951	0.00006660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+746	15:30:04.984	0.00013050	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+747	15:30:04.987	0.00000850	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+748	15:30:09.369	0.00001120	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 190, Data: ..+CBM: 88..44211002F211040000352B0101035E0B29104500010555910892	
+749	15:30:09.985	0.00013790	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+750	15:30:09.988	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+751	15:30:10.021	0.00011340	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+752	15:30:10.024	0.00000730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+753	15:30:10.046	0.00013280	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+754	15:30:10.049	0.00000920	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+755	15:30:10.071	0.00022280	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+756	15:30:10.074	0.00000860	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+757	15:30:10.096	0.00013090	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+758	15:30:10.099	0.00000810	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+759	15:30:10.132	0.00012210	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+760	15:30:10.135	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+761	15:30:10.157	0.00009800	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+762	15:30:10.160	0.00000790	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+763	15:30:10.182	0.00011320	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+764	15:30:10.185	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+765	15:30:10.207	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 12, Data: AT+COPS=3,2.	
+766	15:30:10.210	0.00000730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+767	15:30:10.243	0.00023410	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+768	15:30:10.246	0.00000780	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+769	15:30:10.268	0.00015170	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+770	15:30:10.271	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+771	15:30:10.293	0.00013310	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+772	15:30:10.296	0.00005490	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+773	15:30:10.329	0.00014420	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+774	15:30:10.332	0.00000730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+775	15:30:11.256	0.00006020	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 190, Data: ..+CBM: 88..45311002F211040000352B0102035E0B291045B820B8B3C0C320	
+776	15:30:13.146	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 190, Data: ..+CBM: 88..45411002F211040000352B0103035E0B2910063839303433340D	
+777	15:30:15.294	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 13, Data: AT^SYSINFOEX.	
+778	15:30:15.297	0.00000890	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+779	15:30:15.319	0.00015400	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+780	15:30:15.322	0.00000920	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+781	15:30:15.344	0.00009520	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+782	15:30:15.347	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+783	15:30:15.380	0.00009460	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+784	15:30:15.383	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+785	15:30:15.405	0.00011650	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+786	15:30:15.408	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+787	15:30:15.430	0.00021000	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+788	15:30:15.433	0.00000790	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+789	15:30:15.466	0.00011890	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+790	15:30:15.469	0.00001000	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+791	15:30:15.491	0.00011370	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+792	15:30:15.494	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+793	15:30:15.516	0.00010460	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+794	15:30:15.519	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+795	15:30:15.541	0.00011390	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+796	15:30:15.544	0.00000830	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+797	15:30:15.577	0.00016300	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+798	15:30:15.580	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+799	15:30:15.602	0.00010430	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+800	15:30:15.605	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+801	15:30:20.407	0.00012940	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+802	15:30:20.410	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+803	15:30:20.606	0.00015320	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+804	15:30:20.609	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+805	15:30:20.631	0.00009280	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+806	15:30:20.634	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+807	15:30:20.656	0.00010420	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+808	15:30:20.659	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+809	15:30:20.692	0.00010110	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+810	15:30:20.695	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+811	15:30:20.717	0.00011520	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+812	15:30:20.720	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+813	15:30:20.742	0.00008760	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+814	15:30:20.745	0.00000620	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+815	15:30:20.767	0.00011620	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+816	15:30:20.770	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+817	15:30:20.803	0.00015940	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+818	15:30:20.806	0.00001080	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+819	15:30:20.828	0.00015840	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+820	15:30:20.831	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+821	15:30:20.853	0.00012090	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+822	15:30:20.856	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+823	15:30:20.878	0.00010690	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+824	15:30:20.881	0.00000910	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+825	15:30:20.914	0.00012700	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+826	15:30:20.917	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+827	15:30:25.915	0.00026280	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+828	15:30:25.918	0.00000740	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+829	15:30:25.951	0.00012280	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+830	15:30:25.954	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+831	15:30:25.977	0.00024640	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+832	15:30:25.980	0.00005030	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+833	15:30:26.002	0.00011210	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+834	15:30:26.005	0.00000800	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+835	15:30:26.039	0.00011670	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+836	15:30:26.042	0.00000880	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+837	15:30:26.064	0.00011090	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+838	15:30:26.067	0.00000740	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+839	15:30:26.089	0.00010120	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+840	15:30:26.092	0.00000880	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+841	15:30:26.114	0.00011370	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+842	15:30:26.117	0.00000710	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+843	15:30:26.150	0.00011250	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+844	15:30:26.153	0.00001270	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+845	15:30:26.175	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 9, Data: AT+COPS?.	
+846	15:30:26.178	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+847	15:30:26.200	0.00009310	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+848	15:30:26.203	0.00001730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+849	15:30:26.236	0.00011950	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+850	15:30:26.239	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+851	15:30:30.482	0.00011400	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+852	15:30:30.485	0.00000600	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+853	15:30:31.236	0.00012240	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+854	15:30:31.239	0.00000610	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+855	15:30:31.261	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 11, Data: AT^SYSINFO.	
+856	15:30:31.264	0.00000620	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+857	15:30:31.297	0.00017610	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+858	15:30:31.300	0.00000790	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+859	15:30:31.322	0.00017040	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+860	15:30:31.325	0.00000890	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+861	15:30:31.347	0.00014510	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+862	15:30:31.350	0.00000850	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+863	15:30:31.383	0.00011210	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+864	15:30:31.386	0.00000950	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+865	15:30:31.419	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 12, Data: AT+COPS=3,0.	
+866	15:30:31.422	0.00006330	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+867	15:30:31.444	0.00013210	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+868	15:30:31.447	0.00001230	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+869	15:30:31.469	0.00014210	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+870	15:30:31.472	0.00000950	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+871	15:30:31.505	0.00011970	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+872	15:30:31.508	0.00001010	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+873	15:30:31.530	0.00010530	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+874	15:30:31.533	0.00000710	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+875	15:30:31.556	0.00012060	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+876	15:30:31.559	0.00000930	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+877	15:30:35.735	0.00000700	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 190, Data: ..+CBM: 88..47201002F211040000320F0101035E0B38414500010564910894	
+878	15:30:36.556	0.00010690	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+879	15:30:36.559	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+880	15:30:36.592	0.00011330	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+881	15:30:36.595	0.00000740	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+882	15:30:36.617	0.00034560	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+883	15:30:36.620	0.00004110	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+884	15:30:36.642	0.00012370	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+885	15:30:36.645	0.00000990	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+886	15:30:36.678	0.00009290	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+887	15:30:36.681	0.00000700	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+888	15:30:36.703	0.00010020	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+889	15:30:36.706	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+890	15:30:36.728	0.00011210	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+891	15:30:36.731	0.00000620	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+892	15:30:36.753	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 9, Data: AT+COPS?.	
+893	15:30:36.756	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+894	15:30:36.789	0.00010210	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+895	15:30:36.792	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+896	15:30:36.814	0.00012600	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+897	15:30:36.817	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+898	15:30:36.840	0.00019520	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+899	15:30:36.843	0.00000900	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+900	15:30:36.876	0.00009910	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+901	15:30:36.879	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+902	15:30:37.621	0.00000760	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 190, Data: ..+CBM: 88..47301002F211040000320F0102035E0B384145B0B6BCB8209E9A	
+903	15:30:39.511	0.00000710	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 190, Data: ..+CBM: 88..47401002F211040000320F0103035E0B38411405830000A70E37	
+904	15:30:40.557	0.00011790	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+905	15:30:40.560	0.00000700	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+906	15:30:41.877	0.00016780	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+907	15:30:41.880	0.00000730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+908	15:30:41.902	0.00011970	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+909	15:30:41.905	0.00005190	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+910	15:30:41.938	0.00010490	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+911	15:30:41.941	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+912	15:30:41.963	0.00020650	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+913	15:30:41.966	0.00000850	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+914	15:30:41.988	0.00019990	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+915	15:30:41.991	0.00000950	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+916	15:30:42.024	0.00010300	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+917	15:30:42.027	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+918	15:30:42.060	0.00011480	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+919	15:30:42.063	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+920	15:30:42.085	0.00011130	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+921	15:30:42.088	0.00000790	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+922	15:30:42.110	0.00011000	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+923	15:30:42.113	0.00000860	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+924	15:30:42.146	0.00010990	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+925	15:30:42.149	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+926	15:30:42.172	0.00010640	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+927	15:30:42.175	0.00000700	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+928	15:30:42.197	0.00024420	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+929	15:30:42.200	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+930	15:30:47.198	0.00015000	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+931	15:30:47.201	0.00000610	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+932	15:30:47.223	0.00010000	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+933	15:30:47.226	0.00000590	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+934	15:30:47.248	0.00012020	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+935	15:30:47.251	0.00000610	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+936	15:30:47.284	0.00008260	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+937	15:30:47.287	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+938	15:30:47.309	0.00011780	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+939	15:30:47.312	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+940	15:30:47.334	0.00016940	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+941	15:30:47.337	0.00000890	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+942	15:30:47.359	0.00013730	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+943	15:30:47.362	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+944	15:30:47.395	0.00010690	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+945	15:30:47.398	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+946	15:30:47.420	0.00011520	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+947	15:30:47.423	0.00000960	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+948	15:30:47.445	0.00011880	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+949	15:30:47.448	0.00001090	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+950	15:30:47.481	0.00010660	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+951	15:30:47.484	0.00001730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+952	15:30:47.507	0.00012670	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+953	15:30:47.510	0.00000730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+954	15:30:50.632	0.00010500	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+955	15:30:50.635	0.00000610	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+956	15:30:52.507	0.00009170	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+957	15:30:52.510	0.00000620	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+958	15:30:52.543	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 11, Data: AT^SYSINFO.	
+959	15:30:52.546	0.00000940	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+960	15:30:52.569	0.00012070	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+961	15:30:52.572	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+962	15:30:52.594	0.00010080	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+963	15:30:52.597	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+964	15:30:52.630	0.00011020	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+965	15:30:52.633	0.00000800	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+966	15:30:52.655	0.00011690	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+967	15:30:52.658	0.00001040	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+968	15:30:52.680	0.00013270	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+969	15:30:52.683	0.00000750	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+970	15:30:52.705	0.00010210	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+971	15:30:52.708	0.00000590	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+972	15:30:52.741	0.00022710	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+973	15:30:52.744	0.00000710	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+974	15:30:52.766	0.00010540	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+975	15:30:52.769	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+976	15:30:52.791	0.00027860	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+977	15:30:52.794	0.00000920	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+978	15:30:52.828	0.00011600	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+979	15:30:52.831	0.00001170	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+980	15:30:57.829	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 13, Data: AT^SYSINFOEX.	
+981	15:30:57.832	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+982	15:30:57.865	0.00011770	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+983	15:30:57.868	0.00000600	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+984	15:30:57.890	0.00010660	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+985	15:30:57.893	0.00000710	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+986	15:30:57.915	0.00013160	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+987	15:30:57.918	0.00000780	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+988	15:30:57.940	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 12, Data: AT+COPS=3,1.	
+989	15:30:57.943	0.00000910	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+990	15:30:57.976	0.00010940	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+991	15:30:57.979	0.00000740	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+992	15:30:58.001	0.00011490	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+993	15:30:58.004	0.00000760	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+994	15:30:58.026	0.00014530	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+995	15:30:58.029	0.00000940	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+996	15:30:58.051	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 12, Data: AT+COPS=3,2.	
+997	15:30:58.054	0.00000930	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+998	15:30:58.087	0.00010590	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+999	15:30:58.090	0.00000890	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+1000	15:30:58.113	0.00010850	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+1001	15:30:58.116	0.00000930	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+1002	15:30:58.139	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 13, Data: AT^RFSWITCH?.	
+1003	15:30:58.142	0.00001030	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1004	15:31:00.707	0.00011440	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+1005	15:31:00.710	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+1006	15:31:03.139	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 13, Data: AT^SYSINFOEX.	
+1007	15:31:03.142	0.00000870	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1008	15:31:03.164	0.00015120	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+1009	15:31:03.167	0.00000760	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+1010	15:31:03.200	0.00010660	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+1011	15:31:03.203	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1012	15:31:03.225	0.00009910	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+1013	15:31:03.228	0.00000880	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+1014	15:31:03.251	0.00014770	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+1015	15:31:03.254	0.00000800	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1016	15:31:03.276	0.00018760	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1017	15:31:03.279	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+1018	15:31:03.312	0.00012810	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+1019	15:31:03.315	0.00001130	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1020	15:31:03.337	0.00009970	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1021	15:31:03.340	0.00000730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+1022	15:31:03.362	0.00012470	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+1023	15:31:03.365	0.00000800	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1024	15:31:03.398	0.00010480	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1025	15:31:03.401	0.00000760	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+1026	15:31:03.423	0.00011060	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+1027	15:31:03.426	0.00000870	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+1028	15:31:03.448	0.00013180	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+1029	15:31:03.451	0.00000910	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1030	15:31:08.450	0.00012750	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+1031	15:31:08.454	0.00000920	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1032	15:31:08.476	0.00013630	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+1033	15:31:08.479	0.00000600	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+1034	15:31:08.501	0.00012620	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+1035	15:31:08.504	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1036	15:31:08.537	0.00013490	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+1037	15:31:08.540	0.00000870	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+1038	15:31:08.563	0.00021260	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+1039	15:31:08.566	0.00001010	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1040	15:31:08.588	0.00014780	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1041	15:31:08.591	0.00000710	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+1042	15:31:08.624	0.00011410	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+1043	15:31:08.627	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1044	15:31:08.649	0.00011850	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1045	15:31:08.652	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+1046	15:31:08.674	0.00013140	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+1047	15:31:08.677	0.00000750	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1048	15:31:08.699	0.00018710	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1049	15:31:08.702	0.00003590	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+1050	15:31:08.735	0.00019030	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+1051	15:31:08.738	0.00004800	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+1052	15:31:08.760	0.00014370	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+1053	15:31:08.763	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1054	15:31:10.782	0.00010250	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+1055	15:31:10.785	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+1056	15:31:13.761	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 13, Data: AT^SYSINFOEX.	
+1057	15:31:13.764	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1058	15:31:13.797	0.00013440	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+1059	15:31:13.800	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+1060	15:31:13.822	0.00010070	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+1061	15:31:13.825	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1062	15:31:13.847	0.00010470	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+1063	15:31:13.850	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+1064	15:31:13.883	0.00019550	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+1065	15:31:13.886	0.00000750	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1066	15:31:13.908	0.00011750	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1067	15:31:13.911	0.00000870	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+1068	15:31:13.933	0.00011920	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+1069	15:31:13.936	0.00000740	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1070	15:31:13.958	0.00023440	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1071	15:31:13.961	0.00000890	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+1072	15:31:13.994	0.00014360	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+1073	15:31:13.997	0.00001010	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1074	15:31:14.019	0.00015650	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1075	15:31:14.022	0.00000730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+1076	15:31:14.045	0.00021640	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+1077	15:31:14.048	0.00000830	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+1078	15:31:14.081	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 13, Data: AT^RFSWITCH?.	
+1079	15:31:14.084	0.00000610	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1080	15:31:19.082	0.00011170	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+1081	15:31:19.085	0.00000620	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1082	15:31:19.107	0.00008980	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+1083	15:31:19.110	0.00001090	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+1084	15:31:19.143	0.00011790	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+1085	15:31:19.146	0.00004950	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1086	15:31:19.179	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 7, Data: AT+CSQ.	
+1087	15:31:19.182	0.00000780	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+1088	15:31:19.205	0.00012950	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+1089	15:31:19.208	0.00000790	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1090	15:31:19.232	0.00010340	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1091	15:31:19.235	0.00000620	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+1092	15:31:19.257	0.00009670	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+1093	15:31:19.260	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1094	15:31:19.282	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 9, Data: AT+COPS?.	
+1095	15:31:19.285	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+1096	15:31:19.307	0.00018370	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+1097	15:31:19.310	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1098	15:31:19.343	0.00023360	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1099	15:31:19.346	0.00000870	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+1100	15:31:19.369	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 9, Data: AT^SPN=1.	
+1101	15:31:19.372	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+1102	15:31:19.394	0.00027790	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+1103	15:31:19.397	0.00000800	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1104	15:31:20.857	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 23, Data: AT+CPMS="SM","SM","SM".	
+1105	15:31:20.860	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+1106	15:31:24.395	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 13, Data: AT^SYSINFOEX.	
+1107	15:31:24.398	0.00000970	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1108	15:31:24.420	0.00010320	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+1109	15:31:24.423	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+1110	15:31:24.445	0.00012010	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+1111	15:31:24.448	0.00001570	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1112	15:31:24.482	0.00024500	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+1113	15:31:24.485	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+1114	15:31:24.507	0.00012780	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+1115	15:31:24.510	0.00001440	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1116	15:31:24.532	0.00011060	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1117	15:31:24.535	0.00000890	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+1118	15:31:24.557	0.00010550	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+1119	15:31:24.560	0.00000740	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1120	15:31:24.593	0.00009520	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1121	15:31:24.596	0.00000760	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+1122	15:31:24.618	0.00016210	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+1123	15:31:24.621	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1124	15:31:24.643	0.00015870	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1125	15:31:24.646	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+1126	15:31:24.679	0.00011500	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+1127	15:31:24.682	0.00001270	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+1128	15:31:24.704	0.00017720	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+1129	15:31:24.707	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1130	15:31:29.705	0.00012950	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+1131	15:31:29.708	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1132	15:31:29.741	0.00011530	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+1133	15:31:29.744	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+1134	15:31:29.766	0.00009980	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+1135	15:31:29.769	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1136	15:31:29.791	0.00011640	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+1137	15:31:29.794	0.00001770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+1138	15:31:29.827	0.00009720	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+1139	15:31:29.830	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1140	15:31:29.852	0.00011200	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1141	15:31:29.855	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+1142	15:31:29.877	0.00017910	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+1143	15:31:29.880	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1144	15:31:29.902	0.00011090	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1145	15:31:29.905	0.00000610	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+1146	15:31:29.938	0.00009980	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+1147	15:31:29.941	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1148	15:31:29.963	0.00010540	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1149	15:31:29.966	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+1150	15:31:29.988	0.00017010	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+1151	15:31:29.991	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+1152	15:31:30.013	0.00009840	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+1153	15:31:30.016	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1154	15:31:30.932	0.00013800	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+1155	15:31:30.935	0.00000810	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+1156	15:31:35.014	0.00012870	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+1157	15:31:35.017	0.00001000	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1158	15:31:35.039	0.00019250	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+1159	15:31:35.042	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+1160	15:31:35.075	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 9, Data: AT^HCSQ?.	
+1161	15:31:35.078	0.00000810	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1162	15:31:35.100	0.00010200	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+1163	15:31:35.103	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+1164	15:31:35.125	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 12, Data: AT+COPS=3,1.	
+1165	15:31:35.128	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1166	15:31:35.150	0.00016280	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1167	15:31:35.153	0.00000760	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+1168	15:31:35.186	0.00013130	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+1169	15:31:35.189	0.00001120	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1170	15:31:35.211	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 9, Data: AT+COPS?.	
+1171	15:31:35.214	0.00000700	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+1172	15:31:35.236	0.00010900	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+1173	15:31:35.239	0.00000970	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1174	15:31:35.272	0.00018420	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1175	15:31:35.275	0.00001590	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+1176	15:31:35.297	0.00011130	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+1177	15:31:35.300	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+1178	15:31:35.322	0.00011140	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+1179	15:31:35.325	0.00000750	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1180	15:31:40.323	0.00011190	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+1181	15:31:40.326	0.00001040	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1182	15:31:40.348	0.00021910	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+1183	15:31:40.351	0.00001610	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+1184	15:31:40.374	0.00010440	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+1185	15:31:40.377	0.00000870	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1186	15:31:40.410	0.00011240	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+1187	15:31:40.413	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+1188	15:31:40.435	0.00010790	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+1189	15:31:40.438	0.00000870	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1190	15:31:40.461	0.00010310	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1191	15:31:40.464	0.00000920	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+1192	15:31:40.497	0.00011570	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+1193	15:31:40.500	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1194	15:31:40.522	0.00011180	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1195	15:31:40.525	0.00000860	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+1196	15:31:40.547	0.00013280	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+1197	15:31:40.550	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1198	15:31:40.572	0.00011100	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1199	15:31:40.575	0.00003400	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+1200	15:31:40.608	0.00010510	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+1201	15:31:40.611	0.00000980	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+1202	15:31:40.633	0.00010670	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+1203	15:31:40.636	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1204	15:31:41.007	0.00011620	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+1205	15:31:41.010	0.00000910	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+1206	15:31:45.634	0.00010190	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+1207	15:31:45.637	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1208	15:31:45.659	0.00010750	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+1209	15:31:45.662	0.00000590	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+1210	15:31:45.684	0.00011800	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+1211	15:31:45.687	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1212	15:31:45.709	0.00010310	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+1213	15:31:45.712	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+1214	15:31:45.745	0.00012650	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+1215	15:31:45.748	0.00000780	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1216	15:31:45.770	0.00009340	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1217	15:31:45.773	0.00000600	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+1218	15:31:45.795	0.00012320	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+1219	15:31:45.798	0.00000810	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1220	15:31:45.820	0.00010090	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1221	15:31:45.823	0.00000830	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+1222	15:31:45.856	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 12, Data: AT+COPS=3,2.	
+1223	15:31:45.859	0.00000830	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1224	15:31:45.881	0.00010740	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1225	15:31:45.884	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+1226	15:31:45.906	0.00008940	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+1227	15:31:45.909	0.00000620	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+1228	15:31:45.942	0.00010210	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+1229	15:31:45.945	0.00000590	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1230	15:31:50.943	0.00010900	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+1231	15:31:50.946	0.00000800	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1232	15:31:50.979	0.00011330	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+1233	15:31:50.982	0.00002200	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+1234	15:31:51.015	0.00011110	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+1235	15:31:51.018	0.00001000	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1236	15:31:51.040	0.00013390	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+1237	15:31:51.043	0.00000700	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+1238	15:31:51.066	0.00017080	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+1239	15:31:51.069	0.00000900	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1240	15:31:51.102	0.00012570	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+1241	15:31:51.105	0.00000910	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+1242	15:31:51.127	0.00039190	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1243	15:31:51.130	0.00006180	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+1244	15:31:51.152	0.00010550	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+1245	15:31:51.155	0.00004510	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1246	15:31:51.177	0.00025540	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1247	15:31:51.180	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+1248	15:31:51.213	0.00031690	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+1249	15:31:51.216	0.00000780	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1250	15:31:51.238	0.00012160	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1251	15:31:51.241	0.00001030	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+1252	15:31:51.264	0.00010720	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+1253	15:31:51.267	0.00001000	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+1254	15:31:51.300	0.00019760	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+1255	15:31:51.303	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1256	15:31:56.302	0.00019110	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+1257	15:31:56.305	0.00000800	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1258	15:31:56.338	0.00010220	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+1259	15:31:56.341	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+1260	15:31:56.363	0.00012780	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+1261	15:31:56.366	0.00000750	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1262	15:31:56.388	0.00010830	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+1263	15:31:56.391	0.00000870	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+1264	15:31:56.413	0.00010000	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+1265	15:31:56.416	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1266	15:31:56.449	0.00011590	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1267	15:31:56.452	0.00000840	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+1268	15:31:56.474	0.00010620	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+1269	15:31:56.477	0.00000730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1270	15:31:56.499	0.00009840	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1271	15:31:56.502	0.00000600	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+1272	15:31:56.535	0.00009860	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+1273	15:31:56.538	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1274	15:31:56.560	0.00009840	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1275	15:31:56.563	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+1276	15:31:56.585	0.00010470	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+1277	15:31:56.588	0.00000780	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+1278	15:31:56.610	0.00011640	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+1279	15:31:56.613	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1280	15:32:01.177	0.00026690	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+1281	15:32:01.180	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+1282	15:32:01.614	0.00010490	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+1283	15:32:01.617	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1284	15:32:01.650	0.00013020	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+1285	15:32:01.653	0.00000900	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+1286	15:32:01.676	0.00008850	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+1287	15:32:01.679	0.00000700	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1288	15:32:01.701	0.00013950	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+1289	15:32:01.704	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+1290	15:32:01.726	0.00021230	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+1291	15:32:01.729	0.00000830	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1292	15:32:01.762	0.00011250	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1293	15:32:01.765	0.00000750	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+1294	15:32:01.787	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 12, Data: AT+COPS=3,0.	
+1295	15:32:01.790	0.00000740	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1296	15:32:01.812	0.00015930	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1297	15:32:01.815	0.00000780	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+1298	15:32:01.848	0.00013020	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+1299	15:32:01.851	0.00000740	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1300	15:32:01.873	0.00010940	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1301	15:32:01.876	0.00000730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+1302	15:32:01.898	0.00015330	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+1303	15:32:01.901	0.00000860	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+1304	15:32:01.924	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 13, Data: AT^RFSWITCH?.	
+1305	15:32:01.927	0.00000800	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1306	15:32:06.925	0.00013030	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+1307	15:32:06.928	0.00000810	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1308	15:32:06.950	0.00010840	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+1309	15:32:06.953	0.00000790	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+1310	15:32:06.987	0.00015490	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+1311	15:32:06.990	0.00000900	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1312	15:32:07.012	0.00011620	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+1313	15:32:07.015	0.00000910	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+1314	15:32:07.038	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 12, Data: AT+COPS=3,1.	
+1315	15:32:07.041	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1316	15:32:07.074	0.00014240	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1317	15:32:07.077	0.00000940	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+1318	15:32:07.099	0.00019160	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+1319	15:32:07.102	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1320	15:32:07.124	0.00012410	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1321	15:32:07.127	0.00000780	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+1322	15:32:07.160	0.00011410	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+1323	15:32:07.163	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1324	15:32:07.196	0.00016080	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1325	15:32:07.199	0.00000570	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+1326	15:32:07.221	0.00011280	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+1327	15:32:07.224	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+1328	15:32:07.247	0.00010800	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+1329	15:32:07.250	0.00000580	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1330	15:32:11.254	0.00023870	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+1331	15:32:11.257	0.00000730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+1332	15:32:12.247	0.00012180	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+1333	15:32:12.250	0.00000820	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1334	15:32:12.272	0.00014720	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+1335	15:32:12.275	0.00000840	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+1336	15:32:12.297	0.00012090	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+1337	15:32:12.300	0.00000730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1338	15:32:12.333	0.00010470	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+1339	15:32:12.336	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+1340	15:32:12.358	0.00009760	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+1341	15:32:12.361	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1342	15:32:12.383	0.00009010	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1343	15:32:12.386	0.00000710	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+1344	15:32:12.419	0.00009340	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+1345	15:32:12.422	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1346	15:32:12.455	0.00011050	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1347	15:32:12.458	0.00001690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+1348	15:32:12.480	0.00013130	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+1349	15:32:12.483	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1350	15:32:12.505	0.00011870	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1351	15:32:12.508	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+1352	15:32:12.541	0.00010790	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+1353	15:32:12.544	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+1354	15:32:12.567	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 13, Data: AT^RFSWITCH?.	
+1355	15:32:12.570	0.00001050	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1356	15:32:17.568	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 13, Data: AT^SYSINFOEX.	
+1357	15:32:17.571	0.00000900	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1358	15:32:17.593	0.00011300	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+1359	15:32:17.596	0.00000870	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+1360	15:32:17.618	0.00011340	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+1361	15:32:17.621	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1362	15:32:17.643	0.00015580	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+1363	15:32:17.646	0.00000830	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+1364	15:32:17.679	0.00010120	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+1365	15:32:17.682	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1366	15:32:17.704	0.00013090	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1367	15:32:17.707	0.00001120	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+1368	15:32:17.729	0.00013760	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+1369	15:32:17.732	0.00000850	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1370	15:32:17.765	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 9, Data: AT+COPS?.	
+1371	15:32:17.768	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+1372	15:32:17.801	0.00013510	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+1373	15:32:17.804	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1374	15:32:17.826	0.00009730	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1375	15:32:17.829	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+1376	15:32:17.851	0.00013320	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+1377	15:32:17.854	0.00000890	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+1378	15:32:17.887	0.00010720	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+1379	15:32:17.890	0.00000770	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1380	15:32:21.329	0.00011750	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+1381	15:32:21.332	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+1382	15:32:22.888	0.00011740	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+1383	15:32:22.891	0.00000610	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1384	15:32:22.913	0.00012670	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+1385	15:32:22.916	0.00000920	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+1386	15:32:22.949	0.00011370	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+1387	15:32:22.952	0.00001180	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1388	15:32:22.974	0.00009690	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+1389	15:32:22.977	0.00000730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+1390	15:32:23.000	0.00011070	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+1391	15:32:23.003	0.00000760	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1392	15:32:23.036	0.00009540	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1393	15:32:23.039	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+1394	15:32:23.061	0.00009500	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+1395	15:32:23.064	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1396	15:32:23.086	0.00008960	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1397	15:32:23.089	0.00000610	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+1398	15:32:23.111	0.00009800	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+1399	15:32:23.114	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1400	15:32:23.147	0.00012050	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1401	15:32:23.150	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+1402	15:32:23.172	0.00011680	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+1403	15:32:23.175	0.00000810	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+1404	15:32:23.198	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 13, Data: AT^RFSWITCH?.	
+1405	15:32:23.201	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1406	15:32:28.199	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 13, Data: AT^SYSINFOEX.	
+1407	15:32:28.202	0.00001200	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1408	15:32:28.224	0.00013160	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+1409	15:32:28.227	0.00000880	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+1410	15:32:28.260	0.00014920	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+1411	15:32:28.263	0.00000730	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1412	15:32:28.285	0.00019300	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+1413	15:32:28.288	0.00000860	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+1414	15:32:28.310	0.00021230	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+1415	15:32:28.313	0.00000720	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1416	15:32:28.335	0.00021260	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1417	15:32:28.338	0.00000660	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+1418	15:32:28.371	0.00013450	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+1419	15:32:28.374	0.00000690	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1420	15:32:28.396	0.00017750	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1421	15:32:28.399	0.00000800	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+1422	15:32:28.421	0.00016940	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+1423	15:32:28.424	0.00000850	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1424	15:32:28.446	0.00016090	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1425	15:32:28.449	0.00000870	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+1426	15:32:28.482	0.00016820	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+1427	15:32:28.485	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+1428	15:32:28.507	0.00014320	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+1429	15:32:28.510	0.00000640	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1430	15:32:31.415	0.00013150	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+1431	15:32:31.418	0.00000820	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+1432	15:32:33.508	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 13, Data: AT^SYSINFOEX.	
+1433	15:32:33.511	0.00001970	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1434	15:32:33.533	0.00009610	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+1435	15:32:33.536	0.00000700	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+1436	15:32:33.558	0.00017290	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+1437	15:32:33.561	0.00001010	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1438	15:32:33.594	0.00013220	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+1439	15:32:33.597	0.00000890	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+1440	15:32:33.630	0.00011740	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+1441	15:32:33.633	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1442	15:32:33.655	0.00015220	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1443	15:32:33.658	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+1444	15:32:33.680	0.00009600	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+1445	15:32:33.683	0.00000600	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1446	15:32:33.716	0.00018510	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1447	15:32:33.719	0.00000740	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+1448	15:32:33.741	0.00012290	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+1449	15:32:33.744	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1450	15:32:33.766	0.00011210	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1451	15:32:33.769	0.00000830	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+1452	15:32:33.791	0.00010140	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+1453	15:32:33.794	0.00000650	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+1454	15:32:33.827	0.00016070	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+1455	15:32:33.830	0.00000760	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1456	15:32:38.828	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 13, Data: AT^SYSINFOEX.	
+1457	15:32:38.831	0.00000790	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1458	15:32:38.864	0.00010190	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+1459	15:32:38.867	0.00000750	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+1460	15:32:38.889	0.00010620	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+1461	15:32:38.892	0.00000700	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1462	15:32:38.914	0.00009320	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+1463	15:32:38.917	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+1464	15:32:38.939	0.00015060	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+1465	15:32:38.942	0.00000790	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1466	15:32:38.975	0.00012880	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1467	15:32:38.978	0.00000670	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+1468	15:32:39.000	0.00039150	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+1469	15:32:39.003	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1470	15:32:39.025	0.00011570	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1471	15:32:39.028	0.00000900	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+1472	15:32:39.061	0.00000000	Mobile Partner	IRP_MJ_WRITE                        	COM4		Length: 12, Data: AT+COPS=3,2.	
+1473	15:32:39.064	0.00004630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1474	15:32:39.097	0.00010380	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1475	15:32:39.100	0.00001000	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+1476	15:32:39.123	0.00013430	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+1477	15:32:39.126	0.00001190	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+1478	15:32:39.148	0.00011480	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+1479	15:32:39.151	0.00000620	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1480	15:32:41.503	0.00012370	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 23, Data: AT+CPMS="SM","SM","SM".	
+1481	15:32:41.506	0.00001080	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..+CPMS: 0,15,0,15,0,15....OK..	
+1482	15:32:44.152	0.00011790	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^SYSINFOEX.	
+1483	15:32:44.155	0.00000910	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1484	15:32:44.188	0.00671610	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 11, Data: AT^SYSINFO.	
+1485	15:32:44.197	0.00000630	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 31, Data: ..^SYSINFO:2,3,0,3,1,,3....OK..	
+1486	15:32:44.219	0.00011490	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^HCSQ?.	
+1487	15:32:44.222	0.00000830	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	
+1488	15:32:44.244	0.00010150	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 7, Data: AT+CSQ.	
+1489	15:32:44.247	0.00000790	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 21, Data: ..+CSQ: 15,99....OK..	
+1490	15:32:44.280	0.00010980	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,1.	
+1491	15:32:44.283	0.00000790	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1492	15:32:44.305	0.00012160	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1493	15:32:44.308	0.00000810	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,1,"MegaFon",0....OK..	
+1494	15:32:44.330	0.00009060	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,0.	
+1495	15:32:44.333	0.00000610	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1496	15:32:44.366	0.00013090	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1497	15:32:44.369	0.00000910	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 32, Data: ..+COPS: 0,0,"MegaFon",0....OK..	
+1498	15:32:44.391	0.00010630	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 12, Data: AT+COPS=3,2.	
+1499	15:32:44.394	0.00001000	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 6, Data: ..OK..	
+1500	15:32:44.416	0.00010370	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT+COPS?.	
+1501	15:32:44.419	0.00000680	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 30, Data: ..+COPS: 0,2,"25002",0....OK..	
+1502	15:32:44.442	0.00009740	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 9, Data: AT^SPN=1.	
+1503	15:32:44.445	0.00001010	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 26, Data: ..^SPN:0,0,MegaFon....OK..	
+1504	15:32:44.478	0.00012070	Mobile Partner	IRP_MJ_WRITE                        	COM4	SUCCESS	Length: 13, Data: AT^RFSWITCH?.	
+1505	15:32:44.481	0.00000820	Mobile Partner	IRP_MJ_READ                         	COM4	SUCCESS	Length: 23, Data: ..COMMAND NOT SUPPORT..	

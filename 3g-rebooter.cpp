@@ -1,11 +1,14 @@
 // 3g-rebooter.cpp : This file contains the 'main' function. Program execution begins and ends there.
 
-#include "utils.h"
-//#include <iostream>
+#include "pch.h"
+#include "application.h"
+#include "device.h"
 
-int main(
+int wmain(
+	_in argc_t argc, _in const argv_t &argv
 ) {
-    const auto &ports = com::port::static__enum();
+	application application {application::config {argc, argv}};
+	const auto cpn = application.device.find();
 	
 	//std::cout << "Hello World!\n";
 	return 0;
