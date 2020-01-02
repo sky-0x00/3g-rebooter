@@ -4,6 +4,8 @@
 #include <windows.h>
 #include <cassert>
 #include <regex>
+#include <cctype>
+#include <algorithm>
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 cstr_at string::psize_a(
@@ -32,6 +34,46 @@ unsigned string::copy_a(
 	_out str_at dst, _in unsigned dst_size, _in cstr_at src
 ) {
 	return pcopy_a(dst, dst_size, src) - dst;
+}
+
+static void to_case(
+	_in int(__cdecl *f)(int), _in string_at::const_iterator cbegin, _in string_at::const_iterator cend, _out string_at::iterator begin
+) {
+	std::transform(cbegin, cend, begin, [f](_in uchar_at ch) -> char_at {
+		return f(ch);
+	});
+}
+
+const string_at& string::to_upper(
+	_in _out string_at &string
+) {
+	::to_case(std::toupper, string.cbegin(), string.cend(), string.begin());
+	return string;
+}
+const string_at& string::to_lower(
+	_in _out string_at &string
+) {
+	::to_case(std::tolower, string.cbegin(), string.cend(), string.begin());
+	return string;
+}
+
+const string::view_a<string_at::const_iterator>& string::to_upper(
+	_in _out string::view_a<string_at::const_iterator> &string_view
+) {
+	// нужно как-то создать обычный итератор из константного итератора; это нехорошо, но если очень нужно, то...
+	string_at::iterator it(const_cast<str_at>(&*string_view.first), string_view.first._Getcont());
+
+	::to_case(std::toupper, string_view.first, string_view.second, it);
+	return string_view;
+}
+const string::view_a<string_at::const_iterator>& string::to_lower(
+	_in _out string::view_a<string_at::const_iterator> &string_view
+) {
+	// нужно как-то создать обычный итератор из константного итератора; это нехорошо, но если очень нужно, то...
+	string_at::iterator it(const_cast<str_at>(&*string_view.first), string_view.first._Getcont());
+
+	::to_case(std::tolower, string_view.first, string_view.second, it);
+	return string_view;
 }
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -337,4 +379,10 @@ set_lasterror(string_at) com::port::recieve(
 	string_at result;
 	recieve(result);
 	return result;
+}
+
+void com::at::result::clear(
+) {
+	data.clear();
+	match.clear();
 }

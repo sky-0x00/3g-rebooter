@@ -3,14 +3,26 @@
 #include "pch.h"
 #include "application.h"
 #include "device.h"
+#include <iostream>
 
 int wmain(
 	_in argc_t argc, _in const argv_t &argv
 ) {
+	std::cout << "application initialization...";
 	application application {application::config {argc, argv}};
-	const auto cpn = application.device.find();
+	std::cout << " ok" << std::endl;
 	
-	//std::cout << "Hello World!\n";
+	const device::find_info device_fi {
+		{"HUAWEI", "E173"}
+	};
+	std::cout << "finding device \"" << device_fi.names.vendor << " " << device_fi.names.model << "\"...";
+	const auto cpn = application.device.find(device_fi);
+	if (0 == cpn) {
+		std::cout << " error, not-found" << std::endl;
+		return -1;
+	}
+	
+	std::cout << " ok, com(" << cpn << ")" << std::endl;
 	return 0;
 }
 

@@ -11,8 +11,10 @@ typedef unsigned char byte_t;
 typedef wchar_t char_t;
 
 typedef char char_at;
+typedef unsigned char uchar_at;
 typedef char_at *str_at;
 typedef const char_at *cstr_at;
+
 typedef wchar_t char_t;
 typedef char_t *str_t;
 typedef const char_t *cstr_t;

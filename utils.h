@@ -2,6 +2,7 @@
 
 #include "pch.h"
 #include <vector>
+#include <utility>
 
 namespace string {
 	//enum class case_sensitivity {
@@ -24,6 +25,29 @@ namespace string {
 		return copy_a(dst, dst_size, src);
 	}
 
+	template <typename type> struct view_a;
+	template <> struct view_a<string_at::const_iterator> : std::pair<string_at::const_iterator, string_at::const_iterator> {
+		string_at string() const {
+			return {first, second};
+		}
+		operator string_at() const {
+			return string();
+		}
+	};
+	template <> struct view_a<str_at> : std::pair<cstr_at, cstr_at> {
+		string_at string() const {
+			return { first, static_cast<string_at::size_type>(std::distance(first, second)) };
+		}
+		operator string_at() const {
+			return string();
+		}
+	};
+
+	const string_at& to_upper(_in _out string_at &string);
+	const string_at& to_lower(_in _out string_at &string);
+	const string::view_a<string_at::const_iterator>& to_upper(_in _out string::view_a<string_at::const_iterator> &string_view);
+	const string::view_a<string_at::const_iterator>& to_lower(_in _out string::view_a<string_at::const_iterator> &string_view);
+
 	//template <case_sensitivity case_sensitivity> struct compare {
 	//	static char function(_in cstr_at lhs, _in cstr_t rhs);
 	//	static char function(_in const string_at &lhs, _in const string_at &rhs);
@@ -39,7 +63,7 @@ namespace com {
 	class port {
 
 	public:
-		typedef byte_t number;
+		typedef /*byte_t*/ unsigned number;
 		typedef void *handle;
 
 		struct config {
@@ -149,8 +173,15 @@ namespace com {
 	};
 
 	struct at {
-		template <typename type> struct result {
-			type data, status;
+		struct result {
+
+			constexpr static inline cstr_at ok() noexcept {
+				return "OK";
+			}
+			void clear();
+
+			string_at data;
+			std::vector<string::view_a<string_at::const_iterator>> match;
 		};
 	};
 }
