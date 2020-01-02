@@ -8,10 +8,10 @@ public:
 protected:
 	com::port::number static static__find(_in const std::vector<com::port::number> &numbers, _out com::port &cp);		// 0 on not-found
 	
-	cstr_at static static__at(_in const com::port &cp, _in cstr_at in, _out string_at &out);
-	string_at static static__at(_in const com::port &cp, _in cstr_at in);
-	cstr_at at(_in cstr_at in, _out string_at &out) const;
-	string_at at(_in cstr_at in) const;
+	com::at::result<cstr_at> static static__at(_in const com::port &cp, _in cstr_at in, _out com::at::result<string_at> &out);
+	com::at::result<string_at> static static__at(_in const com::port &cp, _in cstr_at in);
+	com::at::result<cstr_at> at(_in cstr_at in, _out com::at::result<string_at> &out) const;
+	com::at::result<string_at> at(_in cstr_at in) const;
 
 private:
 	com::port _cp;

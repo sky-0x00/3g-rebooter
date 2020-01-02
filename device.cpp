@@ -28,7 +28,7 @@ com::port::number /*static*/ device::static__find(
 			continue;
 
 		// находим at-устройство...
-		if ("OK" != static__at(_cp, "AT"))
+		if ("OK" != static__at(_cp, "AT").status)
 			continue;
 
 		// находим at-устройство с именем 'e173'...
@@ -39,35 +39,36 @@ com::port::number /*static*/ device::static__find(
 	return 0;
 }
 
-cstr_at /*static*/ device::static__at(
-	_in const com::port &cp, _in cstr_at in, _out string_at &out
+com::at::result<cstr_at> /*static*/ device::static__at(
+	_in const com::port &cp, _in cstr_at in, _out com::at::result<string_at> &out
 ) {
 	cp.send(in);
-	const auto result = cp.recieve(out);
+	com::at::result<cstr_at> result {cp.recieve(out.data), nullptr};
 
 	std::smatch sm;
-	if (!std::regex_match(out, sm, std::regex(R"((.*)\n(.+)\n)")))
+	if (!std::regex_match(out.data, sm, std::regex(R"((.*)\n(.+)\n)")))
 		return result;
 
 	const auto n = sm.size();
-	out = sm[2];
-	return out.c_str();
+	out = {sm[1], sm[2]};
+	result = {out.data.c_str(), out.status.c_str()};
+	return result;
 
 }
-string_at /*static*/ device::static__at(
+com::at::result<string_at> /*static*/ device::static__at(
 	_in const com::port &cp, _in cstr_at in
 ) {
-	string_at out;
+	com::at::result <string_at> out;
 	static__at(cp, in, out);
 	return out;
 }
 
-cstr_at device::at(
-	_in cstr_at in, _out string_at &out
+com::at::result<cstr_at> device::at(
+	_in cstr_at in, _out com::at::result<string_at> &out
 ) const {
 	return static__at(_cp, in, out);
 }
-string_at device::at(
+com::at::result<string_at> device::at(
 	_in cstr_at in
 ) const {
 	return static__at(_cp, in);

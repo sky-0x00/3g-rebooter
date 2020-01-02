@@ -4,6 +4,10 @@
 #include <vector>
 
 namespace string {
+	//enum class case_sensitivity {
+	//	no = 0,	yes
+	//};
+
 	cstr_at psize_a(_in cstr_at src);
 	unsigned size_a(_in cstr_at src);
 
@@ -19,6 +23,16 @@ namespace string {
 	) {
 		return copy_a(dst, dst_size, src);
 	}
+
+	//template <case_sensitivity case_sensitivity> struct compare {
+	//	static char function(_in cstr_at lhs, _in cstr_t rhs);
+	//	static char function(_in const string_at &lhs, _in const string_at &rhs);
+
+	//	struct equal {
+	//	};
+	//	struct less {
+	//	};
+	//};
 }
 
 namespace com {
@@ -132,5 +146,11 @@ namespace com {
 	private:
 		handle _handle;
 		mutable buffer _buffer;
+	};
+
+	struct at {
+		template <typename type> struct result {
+			type data, status;
+		};
 	};
 }
