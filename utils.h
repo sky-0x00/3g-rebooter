@@ -185,3 +185,7 @@ namespace com {
 		};
 	};
 }
+
+constexpr unsigned WaitObject(_in unsigned Id) noexcept {
+	return /*WAIT_OBJECT_0*/0 + Id;
+}

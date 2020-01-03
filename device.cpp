@@ -39,6 +39,9 @@ com::port::number /*static*/ device::static__find(
 
 		com::at::result result;
 
+		// считаем весь имеющийся буфер (могут скопиться мусорные данные)
+		_cp.recieve(result.data);
+
 		// находим at-устройство		
 		static__at(_cp, "AT", result);
 		if ((2 != result.match.size()) || (com::at::result::ok() != result.match.at(1).string()))

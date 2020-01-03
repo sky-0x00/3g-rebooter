@@ -4,6 +4,18 @@
 #include "application.h"
 #include "device.h"
 #include <iostream>
+#include <cassert>
+#include <windows.h>
+
+/*static*/ bool application::ccf(
+	_in console_control::event /*cce*/
+) {
+	assert(event_exit);
+	const auto IsOk = Winapi::SetEvent(event_exit);
+	assert(IsOk);
+
+	return true;
+}
 
 int wmain(
 	_in argc_t argc, _in const argv_t &argv
@@ -20,9 +32,46 @@ int wmain(
 	if (0 == cpn) {
 		std::cout << " error, not-found" << std::endl;
 		return -1;
-	}
-	
+	}	
 	std::cout << " ok, com(" << cpn << ")" << std::endl;
+
+	auto IsOk = application.set_ccf(application::ccf);
+	assert(IsOk);
+
+	IsOk = application.wt.set(application._config.poling.timeout);
+	assert(IsOk);
+
+	std::cout << "polling, start... timeout (" << application._config.poling.timeout << ")s" << std::endl << "polling, wait... #";
+	COORD CursorPosition;
+	{
+		CONSOLE_SCREEN_BUFFER_INFO csbi;
+		IsOk = FALSE != Winapi::GetConsoleScreenBufferInfo(Winapi::GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+		assert(IsOk);
+		CursorPosition = csbi.dwCursorPosition;
+	}
+	const handle_t handles[] {application.wt.handle, application::event_exit};
+	for (unsigned i = 0; ;) {
+		std::cout << ++i;
+		const auto WaitObject = Winapi::WaitForMultipleObjects(_countof(handles), handles, FALSE, INFINITE);
+		switch (WaitObject) {
+		case Winapi::WaitObject(0):
+			break;
+		case Winapi::WaitObject(1):
+			std::cout << ", exit..." << std::endl;
+			//trace(L"WaitForSingleObject(): EventExit");
+			return ERROR_CANCELLED;
+		default:
+			trace(L"WaitForSingleObject(): 0x%X", Winapi::GetLastError());
+			return Winapi::GetLastError();
+		}
+		// ...
+		// std::cout << " ok" << std::endl;
+		{
+			IsOk = FALSE != Winapi::SetConsoleCursorPosition(Winapi::GetStdHandle(STD_OUTPUT_HANDLE), CursorPosition);
+			assert(IsOk);
+		}
+	}
+
 	return 0;
 }
 

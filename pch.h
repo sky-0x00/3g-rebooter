@@ -25,3 +25,6 @@ typedef cstr_t argv_t[];
 #include <string>
 typedef std::wstring string_t;
 typedef std::string string_at;
+
+#define Winapi
+typedef void *handle_t;
