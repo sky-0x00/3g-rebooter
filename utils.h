@@ -2,7 +2,15 @@
 
 #include "pch.h"
 #include <vector>
+#include <cassert>
 #include <utility>
+#include <initializer_list>
+
+namespace stdex {
+	template <typename type> bool is_any(_in type value, _in std::initializer_list<type> range) {
+		return range.end() != std::find(range.begin(), range.end(), value);
+	}
+}
 
 namespace string {
 	//enum class case_sensitivity {
@@ -25,28 +33,54 @@ namespace string {
 		return copy_a(dst, dst_size, src);
 	}
 
-	template <typename type> struct view_a;
-	template <> struct view_a<string_at::const_iterator> : std::pair<string_at::const_iterator, string_at::const_iterator> {
-		string_at string() const {
+	template <typename type> struct view_at;
+	template <> struct view_at<string_at::const_iterator> : std::pair<string_at::const_iterator, string_at::const_iterator> {
+		view_at(
+			_in string_at::const_iterator first, _in string_at::const_iterator second
+		) : 
+			std::pair<string_at::const_iterator, string_at::const_iterator>(first, second)
+		{}
+		unsigned size(
+		) const {
+			const auto &distance = std::distance(first, second);
+			assert(0 <= distance);
+			return static_cast<unsigned>(distance);
+		}
+		string_at string(
+		) const {
 			return {first, second};
 		}
-		operator string_at() const {
+		operator string_at(
+		) const {
 			return string();
 		}
 	};
-	template <> struct view_a<str_at> : std::pair<cstr_at, cstr_at> {
-		string_at string() const {
+	template <> struct view_at<str_at> : std::pair<cstr_at, cstr_at> {
+		view_at(
+			_in cstr_at first, _in cstr_at second
+		) :
+			std::pair<cstr_at, cstr_at>(first, second)
+		{}
+		unsigned size(
+		) const {
+			const auto &distance = std::distance(first, second);
+			assert(0 <= distance);
+			return static_cast<unsigned>(distance);
+		}
+		string_at string(
+		) const {
 			return { first, static_cast<string_at::size_type>(std::distance(first, second)) };
 		}
-		operator string_at() const {
+		operator string_at(
+		) const {
 			return string();
 		}
 	};
 
 	const string_at& to_upper(_in _out string_at &string);
 	const string_at& to_lower(_in _out string_at &string);
-	const string::view_a<string_at::const_iterator>& to_upper(_in _out string::view_a<string_at::const_iterator> &string_view);
-	const string::view_a<string_at::const_iterator>& to_lower(_in _out string::view_a<string_at::const_iterator> &string_view);
+	const string::view_at<string_at::const_iterator>& to_upper(_in _out string::view_at<string_at::const_iterator> &string_view);
+	const string::view_at<string_at::const_iterator>& to_lower(_in _out string::view_at<string_at::const_iterator> &string_view);
 
 	//template <case_sensitivity case_sensitivity> struct compare {
 	//	static char function(_in cstr_at lhs, _in cstr_t rhs);
@@ -173,16 +207,56 @@ namespace com {
 	};
 
 	struct at {
+		typedef std::vector<string::view_at<string_at::const_iterator>> match;
 		struct result {
 
 			constexpr static inline cstr_at ok() noexcept {
 				return "OK";
 			}
+			
+			result() = default;
+			//result(_in const result &) = delete;
+			//result(_in _out result &&result);
+			
+			//result& operator =(_in const result &) = delete;
+			//result& operator =(_in _out result &&result);
+			
 			void clear();
 
 			string_at data;
-			std::vector<string::view_a<string_at::const_iterator>> match;
+			match match;
 		};
+
+		class check {
+		public:
+			check(_in const string_at &string);
+			
+			bool new_sms(_out match &match) const;
+			match new_sms() const;			
+
+		protected:
+			static bool static__new_sms(_in const string_at &string, _out match &match);
+			static match static__new_sms(_in const string_at &string);
+
+		private:
+			const string_at &string;
+		};
+	};
+}
+
+namespace console {
+	class cursor_position {
+	public:
+		struct value {
+			short x, y;
+		};
+		
+		static value get();
+		static void set(_in const value &value);
+
+	protected:
+		static bool safe__get(_out value &value) noexcept;
+		static bool safe__set(_in const value &value) noexcept;
 	};
 }
 

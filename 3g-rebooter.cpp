@@ -35,25 +35,28 @@ int wmain(
 	}	
 	std::cout << " ok, com(" << cpn << ")" << std::endl;
 
+	// ...........
+	if (device::sms_info::format::pdu != application.device.sms_info().format) {
+		trace(L"sms_info::format not pdu-type");
+		return -1;
+	}
+
 	auto IsOk = application.set_ccf(application::ccf);
 	assert(IsOk);
 
-	IsOk = application.wt.set(application._config.poling.timeout);
+	IsOk = application.wt.set(application._config.poling.timeout_s);
 	assert(IsOk);
 
-	std::cout << "polling, start... timeout (" << application._config.poling.timeout << ")s" << std::endl << "polling, wait... #";
-	COORD CursorPosition;
-	{
-		CONSOLE_SCREEN_BUFFER_INFO csbi;
-		IsOk = FALSE != Winapi::GetConsoleScreenBufferInfo(Winapi::GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-		assert(IsOk);
-		CursorPosition = csbi.dwCursorPosition;
-	}
+	std::cout << "polling, start... timeout (" << application._config.poling.timeout_s << ")s" << std::endl << "polling, wait... #";
+	
+	auto ccp = console::cursor_position::get();
 	const handle_t handles[] {application.wt.handle, application::event_exit};
+
 	for (unsigned i = 0; ;) {
+
 		std::cout << ++i;
-		const auto WaitObject = Winapi::WaitForMultipleObjects(_countof(handles), handles, FALSE, INFINITE);
-		switch (WaitObject) {
+
+		switch (Winapi::WaitForMultipleObjects(_countof(handles), handles, FALSE, INFINITE)) {
 		case Winapi::WaitObject(0):
 			break;
 		case Winapi::WaitObject(1):
@@ -64,12 +67,28 @@ int wmain(
 			trace(L"WaitForSingleObject(): 0x%X", Winapi::GetLastError());
 			return Winapi::GetLastError();
 		}
-		// ...
-		// std::cout << " ok" << std::endl;
-		{
-			IsOk = FALSE != Winapi::SetConsoleCursorPosition(Winapi::GetStdHandle(STD_OUTPUT_HANDLE), CursorPosition);
-			assert(IsOk);
+		
+		/*const */string_at /*&*/data = application.device.check_for_data();
+		if (data.empty()) {
+			console::cursor_position::set(ccp);
+			continue;
 		}
+
+		data = "\n+CMTI: \"SM\",2\n";
+		// some data from com-port arrived, parse 'data' for list of non-empty strings 
+		std::cout << "; new data, " << data.size() << " char(s):" << std::endl << data << std::endl << "checking, new-sms...";
+
+		const auto &new_sms = com::at::check(data).new_sms();
+		if (new_sms.empty())
+			std::cout << " no";
+		else {
+			assert(2 == new_sms.size());
+			std::cout << " yes (" << new_sms.at(0).string() << "," << new_sms.at(1).string() << ")" << std::endl << "reading sms...";
+			// additional checks...
+		}
+
+		std::cout << std::endl << "polling, wait... #";
+		ccp = console::cursor_position::get();
 	}
 
 	return 0;

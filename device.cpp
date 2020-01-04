@@ -37,10 +37,9 @@ com::port::number /*static*/ device::static__find(
 		if (!_cp.open(port, config))
 			continue;
 
-		com::at::result result;
-
 		// считаем весь имеющийся буфер (могут скопиться мусорные данные)
-		_cp.recieve(result.data);
+		com::at::result result;
+		static__check_for_data(_cp, result.data);
 
 		// находим at-устройство		
 		static__at(_cp, "AT", result);
@@ -82,23 +81,66 @@ void /*static*/ device::static__at(
 	out.match.reserve(sm.size() - 1);
 	for (auto it = sm.cbegin(); ++it != sm.cend(); )
 		if (it->matched)
-			out.match.push_back({ { it->first, it->second } });
+			out.match.emplace_back(it->first, it->second);
 }
-com::at::result /*static*/ device::static__at(
-	_in const com::port &cp, _in cstr_at in
-) {
-	com::at::result out;
-	static__at(cp, in, out);
-	return out;
-}
+//com::at::result /*static*/ device::static__at(
+//	_in const com::port &cp, _in cstr_at in
+//) {
+//	com::at::result out;
+//	static__at(cp, in, out);
+//	return out;
+//}
 
 void device::at(
 	_in cstr_at in, _out com::at::result &out
 ) const {
 	static__at(_cp, in, out);
 }
-com::at::result device::at(
-	_in cstr_at in
+//com::at::result device::at(
+//	_in cstr_at in
+//) const {
+//	return static__at(_cp, in);
+//}
+
+const struct device::sms_info& device::sms_info(
+) {
+	if (!_sms_info.has_value()) {
+
+		_sms_info.emplace();
+		assert(_sms_info.has_value());
+
+		com::at::result result;
+		at("AT+CMGF?", result);
+		assert((3 == result.match.size()) && (com::at::result::ok() == result.match.at(2).string()));
+		
+		const auto &format = result.match.at(1);
+		std::smatch sm;
+		const auto is_match = std::regex_match(format.first, format.second, sm, std::regex(R"(\+CMGF: (0|1))"));
+		assert(is_match && (2 == sm.size()));
+		_sms_info->format = static_cast<decltype(_sms_info->format)>(*sm[1].first - '0');
+	}
+	return _sms_info.value();
+}
+
+/*static*/ cstr_at device::static__check_for_data(
+	_in const com::port &cp, _out string_at &data
+) {
+	return cp.recieve(data);
+}
+/*static*/ string_at device::static__check_for_data(
+	_in const com::port &cp
+) {
+	string_at data;
+	static__check_for_data(cp, data);
+	return data;
+}
+
+cstr_at device::check_for_data(
+	_out string_at &data
 ) const {
-	return static__at(_cp, in);
+	return static__check_for_data(_cp, data);
+}
+string_at device::check_for_data(
+) const {
+	return static__check_for_data(_cp);
 }

@@ -57,8 +57,8 @@ const string_at& string::to_lower(
 	return string;
 }
 
-const string::view_a<string_at::const_iterator>& string::to_upper(
-	_in _out string::view_a<string_at::const_iterator> &string_view
+const string::view_at<string_at::const_iterator>& string::to_upper(
+	_in _out string::view_at<string_at::const_iterator> &string_view
 ) {
 	// нужно как-то создать обычный итератор из константного итератора; это нехорошо, но если очень нужно, то...
 	string_at::iterator it(const_cast<str_at>(&*string_view.first), string_view.first._Getcont());
@@ -66,8 +66,8 @@ const string::view_a<string_at::const_iterator>& string::to_upper(
 	::to_case(std::toupper, string_view.first, string_view.second, it);
 	return string_view;
 }
-const string::view_a<string_at::const_iterator>& string::to_lower(
-	_in _out string::view_a<string_at::const_iterator> &string_view
+const string::view_at<string_at::const_iterator>& string::to_lower(
+	_in _out string::view_at<string_at::const_iterator> &string_view
 ) {
 	// нужно как-то создать обычный итератор из константного итератора; это нехорошо, но если очень нужно, то...
 	string_at::iterator it(const_cast<str_at>(&*string_view.first), string_view.first._Getcont());
@@ -378,6 +378,21 @@ set_lasterror(string_at) com::port::recieve(
 	return result;
 }
 
+//------------------------------------------------------------------------------------------------------------------------------------------------------
+//com::at::result::result(
+//	_in _out result &&result
+//) {
+//	data.swap(result.data);
+//	match.swap(result.match);
+//}
+//com::at::result& com::at::result::operator =(
+//	_in _out result &&result
+//) {
+//	data.swap(result.data);
+//	match.swap(result.match);
+//	return *this;
+//}
+
 void com::at::result::clear(
 ) {
 	data.clear();
@@ -385,10 +400,76 @@ void com::at::result::clear(
 }
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
-//constexpr unsigned WaitObject(
-//	_in unsigned Id
-//) noexcept {
-//	return WAIT_OBJECT_0 + Id;
-//}
+com::at::check::check(
+	_in const string_at &string
+) :
+	string(string)
+{}
+
+/*static*/ bool com::at::check::static__new_sms(
+	_in const string_at &string, _out match &match
+) {
+	std::smatch sm;
+	if (!std::regex_search(string, sm, std::regex(R"*(\n\+CMTI: "([A-Z]{2})",(\d+)\n)*")))
+		return false;
+
+	assert(3 == sm.size());
+	for (auto it = sm.cbegin(); ++it != sm.cend(); )
+		if (it->matched)
+			match.emplace_back(it->first, it->second);
+
+	return true;
+}
+/*static*/ com::at::match com::at::check::static__new_sms(
+	_in const string_at &string
+) {
+	match match;
+	const auto is_matched = static__new_sms(string, match);
+	assert(is_matched ? (2 == match.size()) : match.empty());
+	return match;
+}
+
+bool com::at::check::new_sms(
+	_out match &match
+) const {
+	match = static__new_sms(string);
+	return !match.empty();
+}
+com::at::match com::at::check::new_sms(
+) const {
+	return static__new_sms(string);
+}
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------
+/*static*/ bool console::cursor_position::safe__get(
+	_out value &value
+) noexcept {
+	CONSOLE_SCREEN_BUFFER_INFO csbi;
+	if (FALSE == Winapi::GetConsoleScreenBufferInfo(Winapi::GetStdHandle(STD_OUTPUT_HANDLE), &csbi))
+		return false;
+	value = { csbi.dwCursorPosition.X, csbi.dwCursorPosition.Y };
+	return true;
+}
+/*static*/ console::cursor_position::value console::cursor_position::get(
+) {
+	value value;
+	if (safe__get(value))
+		return value;
+	throw Winapi::GetLastError();
+}
+
+/*static*/ bool console::cursor_position::safe__set(
+	_in const value &value
+) noexcept {
+	const COORD coord {value.x, value.y};
+	return FALSE != Winapi::SetConsoleCursorPosition(Winapi::GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
+/*static*/ void console::cursor_position::set(
+	_in const value &value
+) {
+	if (safe__set(value))
+		return;
+	throw Winapi::GetLastError();
+}
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------

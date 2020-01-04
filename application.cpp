@@ -59,14 +59,14 @@ static BOOL WINAPI ConsoleControlFunction(
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 application::config::config(
-	_in bool is_service, _in const poling_t &poling /*= {10}*/
+	_in bool is__start_as_service, _in const struct poling &poling, _in const struct sms &sms, _in const struct reboot &reboot
 ) :
-	is_service(is_service), poling(poling)
+	is__start_as_service(is__start_as_service), poling(poling), sms(sms), reboot(reboot)
 {}
 application::config::config(
 	_in const config &config
 ) :
-	is_service(config.is_service), poling(config.poling)
+	config(config.is__start_as_service, config.poling, config.sms, config.reboot)
 {}
 
 /*explicit*/ application::config::config(
@@ -78,17 +78,23 @@ application::config::config(
 bool /*static*/ application::config::static__get(
 	_in argc_t /*argc*/, _in const argv_t &/*argv*/, _out config &config
 ) noexcept {
-	config = { false, {1} };		// temporary, need parser's implementation
+	// temporary, need parser's implementation
+	config = { 
+		/*is__start_as_service*/	false, 
+		/*poling*/					{1}, 
+		/*sms*/						{false}, 
+		/*reboot*/					{0}
+	};
 	return true;
 }
 application::config /*static*/ application::config::static__get(
 	_in argc_t argc, _in const argv_t &argv
 ) {
-	config config {false};
+	config config;
 	if (static__get(argc, argv, config))
 		return config;
 	trace(L"static__get(): false");
-	throw -1;
+	throw ERROR_BAD_ARGUMENTS;
 }
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------

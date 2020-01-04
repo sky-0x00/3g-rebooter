@@ -26,18 +26,30 @@ public:
 
 	class config {
 	public:
-		bool is_service;
+		bool is__start_as_service;
 
-		struct poling_t {
-			unsigned timeout /*sec*/;
+		struct poling {
+			unsigned timeout_s /*sec*/;
 		};
-		poling_t poling;
+		struct poling poling;
 
-		config(_in bool is_service, _in const poling_t &poling = {1});
+		struct sms {
+			bool is__remove_after_processed;
+		};
+		struct sms sms;
+
+		struct reboot {
+			unsigned pause_s /*sec*/;
+		};
+		struct reboot reboot;
+
+		config(_in bool is__start_as_service, _in const struct poling &poling, _in const struct sms &sms, _in const struct reboot &reboot);
 		config(_in const config &config);
 		explicit config(_in argc_t argc, _in const argv_t &argv);
 
 	protected:
+		config() = default;
+
 		bool static static__get(_in argc_t argc, _in const argv_t &argv, _out config &config) noexcept;
 		config static static__get(_in argc_t argc, _in const argv_t &argv);
 	};
