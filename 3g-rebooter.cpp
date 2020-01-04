@@ -36,10 +36,11 @@ int wmain(
 	std::cout << " ok, com(" << cpn << ")" << std::endl;
 
 	// ...........
-	if (device::sms_info::format::pdu != application.device.sms_info().format) {
+	if (device::sms::info::format::pdu != device::sms::info(application.device).get_format()) {
 		trace(L"sms_info::format not pdu-type");
 		return -1;
 	}
+	// ...........
 
 	auto IsOk = application.set_ccf(application::ccf);
 	assert(IsOk);
@@ -68,23 +69,28 @@ int wmain(
 			return Winapi::GetLastError();
 		}
 		
-		/*const */string_at /*&*/data = application.device.check_for_data();
-		if (data.empty()) {
+		com::at::result result;
+		result.data = application.device.check_for_data();
+		if (result.data.empty()) {
 			console::cursor_position::set(ccp);
 			continue;
 		}
 
-		data = "\n+CMTI: \"SM\",2\n";
+		result.data = "\n+CMTI: \"SM\",2\n";
 		// some data from com-port arrived, parse 'data' for list of non-empty strings 
-		std::cout << "; new data, " << data.size() << " char(s):" << std::endl << data << std::endl << "checking, new-sms...";
+		std::cout << "; new data, " << result.data.size() << " char(s):" << std::endl << result.data << std::endl << "checking, new-sms...";
 
-		const auto &new_sms = com::at::check(data).new_sms();
-		if (new_sms.empty())
+		
+		if (!com::at::check(result.data).new_sms(result.match))
 			std::cout << " no";
 		else {
-			assert(2 == new_sms.size());
-			std::cout << " yes (" << new_sms.at(0).string() << "," << new_sms.at(1).string() << ")" << std::endl << "reading sms...";
+			const auto &index = result.match.at(1).string();
+			std::cout << " yes (\"" << result.match.at(0).string() << "\"," << index << ")" << std::endl << "reading sms...";
 			// additional checks...
+			device::sms::message sms_msg;
+			IsOk = device::sms(application.device).read_message( std::strtoul(index.c_str(), nullptr, 10), sms_msg );
+			assert(IsOk);
+			std::cout << " ok, checking...";
 		}
 
 		std::cout << std::endl << "polling, wait... #";

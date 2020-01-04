@@ -403,41 +403,65 @@ void com::at::result::clear(
 com::at::check::check(
 	_in const string_at &string
 ) :
-	string(string)
+	_string(string)
 {}
 
-/*static*/ bool com::at::check::static__new_sms(
-	_in const string_at &string, _out match &match
-) {
+bool com::at::check::process(
+	_in cstr_at regex_pattern, _out match &match
+) const noexcept {
+	match.clear();
+
 	std::smatch sm;
-	if (!std::regex_search(string, sm, std::regex(R"*(\n\+CMTI: "([A-Z]{2})",(\d+)\n)*")))
+	if (!std::regex_search(_string, sm, std::regex(regex_pattern)))
 		return false;
 
-	assert(3 == sm.size());
+	match.reserve(sm.size() - 1);
 	for (auto it = sm.cbegin(); ++it != sm.cend(); )
 		if (it->matched)
 			match.emplace_back(it->first, it->second);
 
 	return true;
 }
-/*static*/ com::at::match com::at::check::static__new_sms(
-	_in const string_at &string
-) {
-	match match;
-	const auto is_matched = static__new_sms(string, match);
-	assert(is_matched ? (2 == match.size()) : match.empty());
-	return match;
+//com::at::match com::at::check::process(
+//	_in cstr_at regex_pattern
+//) const {
+//	match match;
+//	const auto is_matched = process(regex_pattern, match);
+//	if (!is_matched)
+//		assert(match.empty());			// match может быть пустым в случае успеха
+//	return match;
+//}
+
+bool com::at::check::find(
+	_out match &match
+) const {
+	const auto is_matched = process(R"((.*)\n(?:(.+)\n\n)?OK\n)", match);
+	assert(is_matched ? (stdex::is_any<unsigned>(match.size(), {1, 2})) : match.empty());
+	return is_matched;
 }
 
 bool com::at::check::new_sms(
 	_out match &match
 ) const {
-	match = static__new_sms(string);
-	return !match.empty();
+	const auto is_matched = process(R"*(\n\+CMTI: "([A-Z]{2})",(\d+)\n)*", match);
+	assert(is_matched ? (2 == match.size()) : match.empty());
+	return is_matched;
 }
-com::at::match com::at::check::new_sms(
+
+bool com::at::check::sms_read(
+	_out match &match
 ) const {
-	return static__new_sms(string);
+	const auto is_matched = process(R"((?:\n\+CMGR: ([0-3]{1}),,(\d+)\n([\dA-F]*)\n\nOK\n)|(?:\n\+CMS ERROR: (\d+)\n))", match);
+	assert(is_matched ? (stdex::is_any<unsigned>(match.size(), {1, 3})) : match.empty());
+	return is_matched;
+}
+
+bool com::at::check::sms_format(
+	_out match &match
+) const {
+	const auto is_matched = process(R"(\n\+CMGF: ([01])\n\nOK\n)", match);
+	assert(is_matched ? (1 == match.size()) : match.empty());
+	return is_matched;
 }
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------

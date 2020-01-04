@@ -27,7 +27,7 @@ com::port::number /*static*/ device::static__find(
 			com::port::config::dcb_t::parity::no,
 			com::port::config::dcb_t::stop_bits::one
 		}, {
-			0 /*1000.0 / (static_cast<unsigned(com::port::config::dcb_t::baud_rate::cbr_115200)> >> 3)*/, 1, 2, 0, 0
+			0 /*1000.0 / (static_cast<unsigned(com::port::config::dcb_t::baud_rate::cbr_115200)> >> 3)*/, 1, 32, 0, 0
 		} /*, 4096*/
 	};
 
@@ -42,21 +42,24 @@ com::port::number /*static*/ device::static__find(
 		static__check_for_data(_cp, result.data);
 
 		// находим at-устройство		
-		static__at(_cp, "AT", result);
-		if ((2 != result.match.size()) || (com::at::result::ok() != result.match.at(1).string()))
+		static__at(_cp, "AT", result.data);
+		if (!com::at::check(result.data).find(result.match))
 			continue;
+		assert(1 == result.match.size());
 
 		// находим at-устройство производителя 'HUAWEI'...
-		static__at(_cp, "AT+CGMI", result);
-		if ((3 != result.match.size()) || (com::at::result::ok() != result.match.at(2).string()))
+		static__at(_cp, "AT+CGMI", result.data);
+		if (!com::at::check(result.data).find(result.match))
 			continue;
+		assert(2 == result.match.size());
 		if (find_info.names.vendor != string::to_upper(result.match.at(1)).string())
 			continue;
 
 		// ...и с именем 'E173'
-		static__at(_cp, "AT+CGMM", result);
-		if ((3 != result.match.size()) || (com::at::result::ok() != result.match.at(2).string()))
+		static__at(_cp, "AT+CGMM", result.data);
+		if (!com::at::check(result.data).find(result.match))
 			continue;
+		assert(2 == result.match.size());
 		if (find_info.names.model != string::to_upper(result.match.at(1)).string())
 			continue;
 
@@ -66,61 +69,31 @@ com::port::number /*static*/ device::static__find(
 	return 0;
 }
 
-void /*static*/ device::static__at(
-	_in const com::port &cp, _in cstr_at in, _out com::at::result &out
-) {
-	out.clear();		// call only 'out.match.clear()' will be enough
 
+/*static*/ cstr_at device::static__at(
+	_in const com::port &cp, _in cstr_at in, _out string_at &out
+) {
 	cp.send(in);
-	cp.recieve(out.data);
-
-	std::smatch sm;
-	if (!std::regex_match(out.data, sm, std::regex(R"((.*)\n(?:(.+)\n\n)?(.+)\n)")))
-		return;
-
-	out.match.reserve(sm.size() - 1);
-	for (auto it = sm.cbegin(); ++it != sm.cend(); )
-		if (it->matched)
-			out.match.emplace_back(it->first, it->second);
+	return cp.recieve(out);
 }
-//com::at::result /*static*/ device::static__at(
-//	_in const com::port &cp, _in cstr_at in
-//) {
-//	com::at::result out;
-//	static__at(cp, in, out);
-//	return out;
-//}
-
-void device::at(
-	_in cstr_at in, _out com::at::result &out
-) const {
-	static__at(_cp, in, out);
-}
-//com::at::result device::at(
-//	_in cstr_at in
-//) const {
-//	return static__at(_cp, in);
-//}
-
-const struct device::sms_info& device::sms_info(
+/*static*/ string_at device::static__at(
+	_in const com::port &cp, _in cstr_at in
 ) {
-	if (!_sms_info.has_value()) {
-
-		_sms_info.emplace();
-		assert(_sms_info.has_value());
-
-		com::at::result result;
-		at("AT+CMGF?", result);
-		assert((3 == result.match.size()) && (com::at::result::ok() == result.match.at(2).string()));
-		
-		const auto &format = result.match.at(1);
-		std::smatch sm;
-		const auto is_match = std::regex_match(format.first, format.second, sm, std::regex(R"(\+CMGF: (0|1))"));
-		assert(is_match && (2 == sm.size()));
-		_sms_info->format = static_cast<decltype(_sms_info->format)>(*sm[1].first - '0');
-	}
-	return _sms_info.value();
+	cp.send(in);
+	return cp.recieve();
 }
+
+cstr_at device::at(
+	_in cstr_at in, _out string_at &out
+) const {
+	return static__at(_cp, in, out);
+}
+string_at device::at(
+	_in cstr_at in
+) const {
+	return static__at(_cp, in);
+}
+
 
 /*static*/ cstr_at device::static__check_for_data(
 	_in const com::port &cp, _out string_at &data
@@ -130,9 +103,7 @@ const struct device::sms_info& device::sms_info(
 /*static*/ string_at device::static__check_for_data(
 	_in const com::port &cp
 ) {
-	string_at data;
-	static__check_for_data(cp, data);
-	return data;
+	return cp.recieve();
 }
 
 cstr_at device::check_for_data(
@@ -144,3 +115,82 @@ string_at device::check_for_data(
 ) const {
 	return static__check_for_data(_cp);
 }
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------
+device::sms::sms(
+	_in const device &device
+) :
+	_device(device)
+{}
+
+bool device::sms::read_message(
+	_in unsigned index, _out message &message
+) const {
+	com::at::result result;
+	
+	_device.at(("AT+CMGR=" + std::to_string(index)).c_str(), result.data);
+	const auto is_matched = com::at::check(result.data).sms_read(result.match);
+	assert(is_matched);
+	
+	// возможны 2 варианта: успешное чтение - 3 match'а и ошибка чтения (неверно указали индекс) - 1 match
+	if (1 == result.match.size())
+		return false;
+
+	// match[0] - message::state
+	// match[1] - message::content::size(), bytes
+	// match[2] - message::content, hex string in upper-case
+	
+	message.state = static_cast<decltype(message.state)>(*result.match.at(0).first - '0');
+	
+	const auto &content = result.match.at(2);
+	assert(0 == content.size() % 2);
+	message.size = content.size() >> 1;	
+	message.content.reserve(message.size);
+	for (auto it = content.first; it < content.second; it += 2) {
+		auto get_hbyte = [](_in char_at ch) -> unsigned {
+			if (stdex::is__in_range__inclusive(ch, {'0', '9'}))
+				return ch - '0';
+			if (stdex::is__in_range__inclusive(ch, {'A', 'F'}))
+				return ch + 10 - 'A';
+			throw -1;
+		};
+		const unsigned value = (get_hbyte(it[0]) << 4) | get_hbyte(it[1]);
+		assert(value < 0x100);
+		message.content.push_back(value);
+	}
+	assert(message.content.size() == message.size);
+
+	message.size = std::strtoul(result.match.at(1).string().c_str(), nullptr, 10);
+	return true;
+}
+device::sms::message::state_t device::sms::read_message(
+	_in unsigned index, _out message::content_t &content
+) const {
+	message message;
+	if (read_message(index, message)) {
+		content.swap(message.content);
+		return message.state;
+	}
+	trace(L"read_message(%i)", index);
+	throw -1;
+}
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------
+device::sms::info::info(
+	_in const device &device
+) :
+	_device(device)
+{}
+
+device::sms::info::format device::sms::info::get_format(
+) const {
+	com::at::result result;
+
+	_device.at("AT+CMGF?", result.data);
+	const auto is_matched = com::at::check(result.data).sms_format(result.match);
+	assert(is_matched);
+
+	return static_cast<format>(*result.match.at(0).first - '0');
+}
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------

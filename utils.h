@@ -10,6 +10,15 @@ namespace stdex {
 	template <typename type> bool is_any(_in type value, _in std::initializer_list<type> range) {
 		return range.end() != std::find(range.begin(), range.end(), value);
 	}
+
+	template <typename type> bool is__in_range(_in type value, _in const std::pair<type, type> range) {
+		assert(range.second >= range.first);
+		return (value >= range.first) && (value < range.second);
+	}
+	template <typename type> bool is__in_range__inclusive(_in type value, _in const std::pair<type, type> range) {
+		assert(range.second >= range.first);
+		return (value >= range.first) && (value <= range.second);
+	}
 }
 
 namespace string {
@@ -231,15 +240,17 @@ namespace com {
 		public:
 			check(_in const string_at &string);
 			
+			bool find(_out match &match) const;		// or common
 			bool new_sms(_out match &match) const;
-			match new_sms() const;			
+			bool sms_read(_out match &match) const;
+			bool sms_format(_out match &match) const;
 
 		protected:
-			static bool static__new_sms(_in const string_at &string, _out match &match);
-			static match static__new_sms(_in const string_at &string);
+			bool process(_in cstr_at regex_pattern, _out match &match) const noexcept;
+			//match process(_in cstr_at regex_pattern) const;
 
 		private:
-			const string_at &string;
+			const string_at &_string;
 		};
 	};
 }

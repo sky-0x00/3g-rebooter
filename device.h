@@ -19,30 +19,61 @@ public:
 	};
 	com::port::number find(_in const find_info &find_info);											// 0 on not-found
 
-	struct sms_info {
-		// type						// AT+CSMS=<V>, AT+CSMS?, AT+CSMS=?
-		enum class format {			// AT+CMGF=<V>, AT+CMGF?, AT+CMGF=?
-			pdu = 0, text = 1
-		};
-		format format;
-	};
-	const sms_info& sms_info();
+	class sms {
+	public:
+		class info {
+		public:
+			// sms-type						// AT+CSMS=<V>, AT+CSMS?, AT+CSMS=?
+			// sms-format					// AT+CMGF=<V>, AT+CMGF?, AT+CMGF=?
+			enum class format {
+				pdu = 0, text = 1
+			};
+			//bool get_format(_out format &format);
+			format get_format() const;
+		public:
+			info(_in const device &device);
+		private:
+			const device &_device;
+		};		
 
+		struct message {
+			typedef std::vector<byte_t> pdu_t;
+			typedef pdu_t content_t;
+
+			enum class state_t: unsigned {
+				state_0 = 0,				// Unread message that has been received
+				state_1,					// Read message that has been received
+				state_2,					// Unsent message that has been stored
+				state_3						// Sent message that has been stored
+			};			
+
+			state_t state;
+			unsigned size;					// ?
+			content_t content;				// pdu octets
+		};
+
+		bool read_message(_in unsigned index, _out message &message) const;
+		message::state_t read_message(_in unsigned index, _out message::content_t &content) const;
+
+	public:
+		sms(_in const device &device);
+	private:
+		const device &_device;
+	};
+
+	cstr_at at(_in cstr_at in, _out string_at &out) const;
+	string_at at(_in cstr_at in) const;
 	cstr_at check_for_data(_out string_at &data) const;
 	string_at check_for_data() const;
 
 protected:
 	static com::port::number static__find(_in const find_info &find_info, _out com::port &cp);		// 0 on not-found
 	
-	static void static__at(_in const com::port &cp, _in cstr_at in, _out com::at::result &out);
-	//com::at::result static static__at(_in const com::port &cp, _in cstr_at in);
-	void at(_in cstr_at in, _out com::at::result &out) const;
-	//com::at::result at(_in cstr_at in) const;
-
+	static cstr_at static__at(_in const com::port &cp, _in cstr_at in, _out string_at &out);
+	static string_at static__at(_in const com::port &cp, _in cstr_at in);
 	static cstr_at static__check_for_data(_in const com::port &cp, _out string_at &data);
 	static string_at static__check_for_data(_in const com::port &cp);
 
 private:
-	std::optional<struct sms_info> _sms_info;
 	com::port _cp;
 };
