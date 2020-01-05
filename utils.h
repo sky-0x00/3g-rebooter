@@ -5,6 +5,7 @@
 #include <cassert>
 #include <utility>
 #include <initializer_list>
+#include <ctime>
 
 namespace stdex {
 	template <typename type> bool is_any(_in type value, _in std::initializer_list<type> range) {
@@ -262,12 +263,15 @@ namespace pdu {
 	typedef string_at number;
 	struct decoded {
 		number smsc;
-		struct /*message*/ {
-			byte_t id;
-			struct /*content*/ {
-				number sender;
-				string_at text;
-			} content;
+		struct message {
+			struct time {
+				cstr_t to_string(_out std::vector<char_t> &buffer) const;
+				string_t to_string() const;
+				time_t value() const;
+				mutable struct tm tm {};
+			} time;
+			number sender;
+			string_t text;
 		} message;
 	};
 	bool decode(_in const encoded &encoded, _in unsigned size_tpdu, _out decoded &decoded);

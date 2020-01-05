@@ -5,7 +5,6 @@
 #include <cassert>
 #include <regex>
 #include <cctype>
-#include <algorithm>
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 cstr_at string::psize_a(
@@ -497,77 +496,181 @@ bool com::at::check::sms_format(
 }
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
+cstr_t pdu::decoded::message::time::to_string(
+	_out std::vector<char_t> &buffer
+) const {
+	constexpr auto buffer_size = _countof(L"2020-01-06 02:05:46");
+	buffer.resize(buffer_size);
+	if (0 == std::swprintf(buffer.data(), buffer_size, L"%04u-%02u-%02u %u:%02u:%02u", 1900 + tm.tm_year, 1+tm.tm_mon, tm.tm_mday, tm.tm_hour, tm.tm_min, tm.tm_sec))
+		buffer.clear();
+	return buffer.data();
+}
+string_t pdu::decoded::message::time::to_string(
+) const {
+	std::vector<char_t> buffer;
+	return to_string(buffer);
+}
+
+time_t pdu::decoded::message::time::value(
+) const {
+	return std::mktime(&tm);
+}
+
+
 bool pdu::decode(
 	_in const encoded &encoded, _in unsigned size_tpdu, _out decoded &decoded
 ) {
-	auto get_number = [](		
-		_in const byte_t *data, _in unsigned octet_count
-	) -> string_at {
-		
-		auto get_char = [](
-			_in byte_t hbyte
-		) -> char_at {
+	class process {
+	private:
+		static pdu::number get_number(
+			_in const byte_t *data, _in unsigned octet_count
+		) {
+			auto get_char = [](
+				_in byte_t hbyte
+				) -> char_at {
 
-			assert(hbyte < 0xF);		// 0xF - специальный символ
-			switch (hbyte) {
-			case 10:
-				return '*';
-			case 11:
-				return '#';
-			case 12: case 13: case 14:
-				return hbyte - 12 + 'a';
-			default: /*0..9*/
-				return hbyte + '0';
+				assert(hbyte < 0xF);		// 0xF - специальный символ
+				switch (hbyte) {
+				case 10:
+					return '*';
+				case 11:
+					return '#';
+				case 12: case 13: case 14:
+					return hbyte - 12 + 'a';
+				default: /*0..9*/
+					return hbyte + '0';
+				}
+			};
+
+			pdu::number number;
+			unsigned i = 0;
+
+			for (; (i + 1) < octet_count; ++i) {
+				const auto &octet = data[i];
+				number.push_back(get_char(octet & 0xF));
+				number.push_back(get_char(octet >> 4));
 			}
+			i = data[i];
+			number.push_back(get_char(i & 0xF));
+			i >>= 4;
+			if (0xF != i)
+				number.push_back(get_char(i));
+
+			return number;
 		};
 
-		string_at number;
-		unsigned i = 0;
+	public:
+		static unsigned sca(_in const byte_t *data, _out number &number) {
 
-		for (; (i + 1) < octet_count; ++i) {
-			const auto &octet = data[i];
-			number.push_back(get_char(octet & 0xF));
-			number.push_back(get_char(octet >> 4));
+#pragma pack(push)
+#pragma pack(1)
+			struct sca {
+				byte_t size__in_bytes;
+				struct /*typeof_address*/ {
+					byte_t reserved : 1;
+					byte_t typeof_number : 3;
+					byte_t numbering_plan : 4;
+				} typeof_address;
+				byte_t numbers[ANYSIZE_ARRAY];
+			};
+#pragma pack(pop)
+			const auto pc_sca = reinterpret_cast<const sca*>(data);
+			assert((0 < pc_sca->size__in_bytes) && (1 == pc_sca->typeof_address.reserved));
+
+			// в настоящее время поддерживаем разбор только с 
+			// typeof_number = 0 (This value is written when the user does not know the authentication information of the target address number.In this case, the address number is organized at the network side)
+			// и 
+			// numbering_plan = 9 (Private numbering plan)
+			assert((0 == pc_sca->typeof_address.typeof_number) && (9 == pc_sca->typeof_address.numbering_plan));
+
+			number = get_number(pc_sca->numbers, pc_sca->size__in_bytes - 1);
+			return 1 + pc_sca->size__in_bytes;
+		};
+		static unsigned oa(_in const byte_t *data, _out number &number) {
+
+#pragma pack(push)
+#pragma pack(1)
+			struct oa {
+				byte_t size__in_chars;
+				struct /*typeof_address*/ {
+					byte_t reserved : 1;
+					byte_t typeof_number : 3;
+					byte_t numbering_plan : 4;
+				} typeof_address;
+				byte_t numbers[ANYSIZE_ARRAY];
+			};
+#pragma pack(pop)
+			const auto pc_oa = reinterpret_cast<const oa*>(data);
+			assert((0 < pc_oa->size__in_chars) && (1 == pc_oa->typeof_address.reserved));
+
+			// в настоящее время поддерживаем разбор только с 
+			// typeof_number = 0 (This value is written when the user does not know the authentication information of the target address number.In this case, the address number is organized at the network side)
+			// и 
+			// numbering_plan = 9 (Private numbering plan)
+			assert((0 == pc_oa->typeof_address.typeof_number) && (9 == pc_oa->typeof_address.numbering_plan));
+
+			// переведем "размер в символах" в "размер в байтах"
+			const unsigned size__in_bytes = (pc_oa->size__in_chars >> 1) + (pc_oa->size__in_chars % 2);
+			assert(size__in_bytes <= 10);		// не более 20 символоа
+
+			number = get_number(pc_oa->numbers, size__in_bytes);
+			return 2 + size__in_bytes;
+		};
+		static bool dcs__is_ucs2(_in byte_t dcs) {
+#pragma pack(push)
+#pragma pack(1)
+			struct data_coding_scheme {
+				byte_t class_n : 2;
+				byte_t coding : 2;
+				byte_t flash_type : 1;		// normal or flash
+				byte_t compression : 1;
+				byte_t reserved : 2;
+			};
+#pragma pack(pop)
+			const auto &cr_dcs = reinterpret_cast<const data_coding_scheme&>(dcs);
+			assert((0 == cr_dcs.reserved) && (0 == cr_dcs.compression) && (0 == cr_dcs.class_n));
+			return 2 == cr_dcs.coding;
 		}
-		i = data[i];
-		number.push_back(get_char(i & 0xF));
-		i >>= 4;
-		if (0xF != i)
-			number.push_back(get_char(i));
+		static unsigned scts(_in const byte_t *data, _out struct decoded::message::time &time) {
 
-		return number;
+			auto get_chars = [](_in byte_t octet, _out char_at (&chars)[3]) {
+				auto get_char = [](_in byte_t hbyte) -> char_at {
+					assert(hbyte < 0x10);
+					return hbyte + '0';
+				};
+				chars[0] = get_char(octet & 0xF);
+				chars[1] = get_char(octet >> 4);
+			};			
+			char_at chars[] = "XX";
+			
+			get_chars(data[0], chars);		time.tm.tm_year = std::strtoul(chars, nullptr, 10) + 100;
+			get_chars(data[1], chars);		time.tm.tm_mon  = std::strtoul(chars, nullptr, 10) - 1;
+			get_chars(data[2], chars);		time.tm.tm_mday = std::strtoul(chars, nullptr, 10);
+			get_chars(data[3], chars);		time.tm.tm_hour = std::strtoul(chars, nullptr, 10);
+			get_chars(data[4], chars);		time.tm.tm_min  = std::strtoul(chars, nullptr, 10);
+			get_chars(data[5], chars);		time.tm.tm_sec  = std::strtoul(chars, nullptr, 10 );
+
+			return 7;
+		}
 	};
 
 	auto pc_raw = encoded.data();
-
-	{
-#pragma pack(push)
-#pragma pack(1)
-		struct sca {
-			byte_t size;
-			struct /*typeof_address*/ {
-				byte_t reserved : 1;
-				byte_t typeof_number : 3;
-				byte_t numbering_plan : 4;
-			} typeof_address;
-			byte_t numbers[ANYSIZE_ARRAY];
-		};
-#pragma pack(pop)
-		const auto pc_sca = reinterpret_cast<const sca*>(pc_raw);
-		assert((encoded.size() == 1 + pc_sca->size + size_tpdu) && (1 == pc_sca->typeof_address.reserved) && (0 < pc_sca->size));
-		
-		// в настоящее время поддерживаем разбор только с 
-		// typeof_number = 0 (This value is written when the user does not know the authentication information of the target address number.In this case, the address number is organized at the network side)
-		// и 
-		// numbering_plan = 9 (Private numbering plan)
-		if ((0 != pc_sca->typeof_address.typeof_number) || (9 != pc_sca->typeof_address.numbering_plan))
-			return false;
-
-		decoded.smsc = get_number(pc_sca->numbers, pc_sca->size - 1);
-		pc_raw += 1 + pc_sca->size;
-	} {
-		const auto tpdu = pc_raw;
+	
+	pc_raw += 1 + process::sca(pc_raw, decoded.smsc);
+	pc_raw += 1 + process::oa(pc_raw, decoded.message.sender);
+	if (!process::dcs__is_ucs2(*pc_raw)) {
+		trace(L"dcs__is_ucs2(): false")
+		return false;
 	}
+	pc_raw += process::scts(++pc_raw, decoded.message.time);			// Service-Centre-Time-Stamp
+	const auto &pair = std::make_pair(decoded.message.time.value(), decoded.message.time.to_string());
+
+	auto ud_size = *pc_raw++;
+	assert( (0 == ud_size % 2) && (ud_size == std::distance(pdu::encoded::const_iterator(const_cast<byte_t*>(pc_raw), encoded.cbegin()._Getcont()), encoded.cend())) );
+
+	decoded.message.text.reserve(ud_size >>= 1);
+	for (auto &str = reinterpret_cast<cstr_t&>(pc_raw); ud_size--; ++str)
+		decoded.message.text.push_back(pc_raw[1] | (pc_raw[0] << 8));
 
 	return true;
 }
