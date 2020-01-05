@@ -38,7 +38,6 @@ public:
 
 		struct message {
 			typedef std::vector<byte_t> pdu_t;
-			typedef pdu_t content_t;
 
 			enum class state_t: unsigned {
 				state_0 = 0,				// Unread message that has been received
@@ -48,12 +47,12 @@ public:
 			};			
 
 			state_t state;
-			unsigned size;					// ?
-			content_t content;				// pdu octets
+			unsigned size_tpdu;				// ?
+			pdu_t pdu;					// pdu octets
 		};
 
 		bool read_message(_in unsigned index, _out message &message) const;
-		message::state_t read_message(_in unsigned index, _out message::content_t &content) const;
+		message::state_t read_message(_in unsigned index, _out message::pdu_t &pdu) const;
 
 	public:
 		sms(_in const device &device);

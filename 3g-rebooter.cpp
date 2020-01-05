@@ -48,7 +48,7 @@ int wmain(
 	IsOk = application.wt.set(application._config.poling.timeout_s);
 	assert(IsOk);
 
-	std::cout << "polling, start... timeout (" << application._config.poling.timeout_s << ")s" << std::endl << "polling, wait... #";
+	std::cout << "polling, start... timeout " << application._config.poling.timeout_s << " sec(s)" << std::endl << "polling, wait... #";
 	
 	auto ccp = console::cursor_position::get();
 	const handle_t handles[] {application.wt.handle, application::event_exit};
@@ -70,16 +70,17 @@ int wmain(
 		}
 		
 		com::at::result result;
+#ifdef _DEBUG
+		result.data = "\n+CMTI: \"SM\",2\n";
+#else
 		result.data = application.device.check_for_data();
 		if (result.data.empty()) {
 			console::cursor_position::set(ccp);
 			continue;
 		}
-
-		result.data = "\n+CMTI: \"SM\",2\n";
+#endif
 		// some data from com-port arrived, parse 'data' for list of non-empty strings 
 		std::cout << "; new data, " << result.data.size() << " char(s):" << std::endl << result.data << std::endl << "checking, new-sms...";
-
 		
 		if (!com::at::check(result.data).new_sms(result.match))
 			std::cout << " no";
@@ -91,6 +92,10 @@ int wmain(
 			IsOk = device::sms(application.device).read_message( std::strtoul(index.c_str(), nullptr, 10), sms_msg );
 			assert(IsOk);
 			std::cout << " ok, checking...";
+
+			pdu::decoded pdu_d;
+			const pdu::encoded &pdu_e = sms_msg.pdu;
+			IsOk = pdu::decode(pdu_e, sms_msg.size_tpdu, pdu_d);
 		}
 
 		std::cout << std::endl << "polling, wait... #";

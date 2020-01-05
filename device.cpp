@@ -144,8 +144,8 @@ bool device::sms::read_message(
 	
 	const auto &content = result.match.at(2);
 	assert(0 == content.size() % 2);
-	message.size = content.size() >> 1;	
-	message.content.reserve(message.size);
+	message.size_tpdu = content.size() >> 1;	
+	message.pdu.reserve(message.size_tpdu);
 	for (auto it = content.first; it < content.second; it += 2) {
 		auto get_hbyte = [](_in char_at ch) -> unsigned {
 			if (stdex::is__in_range__inclusive(ch, {'0', '9'}))
@@ -154,21 +154,21 @@ bool device::sms::read_message(
 				return ch + 10 - 'A';
 			throw -1;
 		};
-		const unsigned value = (get_hbyte(it[0]) << 4) | get_hbyte(it[1]);
-		assert(value < 0x100);
-		message.content.push_back(value);
+		const unsigned pdu_octet = (get_hbyte(it[0]) << 4) | get_hbyte(it[1]);
+		assert(pdu_octet < 0x100);
+		message.pdu.push_back(pdu_octet);
 	}
-	assert(message.content.size() == message.size);
+	assert(message.pdu.size() == message.size_tpdu);
 
-	message.size = std::strtoul(result.match.at(1).string().c_str(), nullptr, 10);
+	message.size_tpdu = std::strtoul(result.match.at(1).string().c_str(), nullptr, 10);
 	return true;
 }
 device::sms::message::state_t device::sms::read_message(
-	_in unsigned index, _out message::content_t &content
+	_in unsigned index, _out message::pdu_t &content
 ) const {
 	message message;
 	if (read_message(index, message)) {
-		content.swap(message.content);
+		content.swap(message.pdu);
 		return message.state;
 	}
 	trace(L"read_message(%i)", index);

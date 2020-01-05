@@ -103,6 +103,7 @@ namespace string {
 }
 
 namespace com {
+
 	class port {
 
 	public:
@@ -253,7 +254,26 @@ namespace com {
 			const string_at &_string;
 		};
 	};
-}
+
+}	// namespace com
+
+namespace pdu {
+	typedef std::vector<byte_t> encoded;			// same as "::device::sms::message::pdu_t"
+	typedef string_at number;
+	struct decoded {
+		number smsc;
+		struct /*message*/ {
+			byte_t id;
+			struct /*content*/ {
+				number sender;
+				string_at text;
+			} content;
+		} message;
+	};
+	bool decode(_in const encoded &encoded, _in unsigned size_tpdu, _out decoded &decoded);
+
+	// todo: class decoder;
+};
 
 namespace console {
 	class cursor_position {

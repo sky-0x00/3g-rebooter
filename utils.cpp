@@ -497,3 +497,79 @@ bool com::at::check::sms_format(
 }
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
+bool pdu::decode(
+	_in const encoded &encoded, _in unsigned size_tpdu, _out decoded &decoded
+) {
+	auto get_number = [](		
+		_in const byte_t *data, _in unsigned octet_count
+	) -> string_at {
+		
+		auto get_char = [](
+			_in byte_t hbyte
+		) -> char_at {
+
+			assert(hbyte < 0xF);		// 0xF - специальный символ
+			switch (hbyte) {
+			case 10:
+				return '*';
+			case 11:
+				return '#';
+			case 12: case 13: case 14:
+				return hbyte - 12 + 'a';
+			default: /*0..9*/
+				return hbyte + '0';
+			}
+		};
+
+		string_at number;
+		unsigned i = 0;
+
+		for (; (i + 1) < octet_count; ++i) {
+			const auto &octet = data[i];
+			number.push_back(get_char(octet & 0xF));
+			number.push_back(get_char(octet >> 4));
+		}
+		i = data[i];
+		number.push_back(get_char(i & 0xF));
+		i >>= 4;
+		if (0xF != i)
+			number.push_back(get_char(i));
+
+		return number;
+	};
+
+	auto pc_raw = encoded.data();
+
+	{
+#pragma pack(push)
+#pragma pack(1)
+		struct sca {
+			byte_t size;
+			struct /*typeof_address*/ {
+				byte_t reserved : 1;
+				byte_t typeof_number : 3;
+				byte_t numbering_plan : 4;
+			} typeof_address;
+			byte_t numbers[ANYSIZE_ARRAY];
+		};
+#pragma pack(pop)
+		const auto pc_sca = reinterpret_cast<const sca*>(pc_raw);
+		assert((encoded.size() == 1 + pc_sca->size + size_tpdu) && (1 == pc_sca->typeof_address.reserved) && (0 < pc_sca->size));
+		
+		// в настоящее время поддерживаем разбор только с 
+		// typeof_number = 0 (This value is written when the user does not know the authentication information of the target address number.In this case, the address number is organized at the network side)
+		// и 
+		// numbering_plan = 9 (Private numbering plan)
+		if ((0 != pc_sca->typeof_address.typeof_number) || (9 != pc_sca->typeof_address.numbering_plan))
+			return false;
+
+		decoded.smsc = get_number(pc_sca->numbers, pc_sca->size - 1);
+		pc_raw += 1 + pc_sca->size;
+	} {
+		const auto tpdu = pc_raw;
+	}
+
+	return true;
+}
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------
