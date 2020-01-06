@@ -1,7 +1,7 @@
 # 3g-rebooter
 
 Description(En-Us):
-huawei-e173 3g-modem: reboot(shutdown) system by sms signal
+huawei-e173 3g-modem: reboot(shutdown) system by sms-message
 Описание(Ru-Ru):
 huawei-e173 3g-модем: reboot(shutdown) системы посредством sms-сообшения
 
