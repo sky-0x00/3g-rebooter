@@ -1,3 +1,18 @@
 # 3g-rebooter
-e173-modem: reboot system by sms signal
-free sms-service (megafon): https://moscow.megafon.ru/help/info/message/
+
+Description(En-Us):
+huawei-e173 3g-modem: reboot(shutdown) system by sms signal
+Описание(Ru-Ru):
+huawei-e173 3g-модем: reboot(shutdown) системы посредством sms-сообшения
+
+Публичный SMS-шлюз для бесплатной отправки (ОПСПС Мегафон, Россия):
+https://moscow.megafon.ru/help/info/message/
+
+Формат SMS для перезагрузки ПК:
+sys-r|s [timeout] [...]
+где:
+    r|s     - выполняемая команда reboot|shutdown,
+    timeout - таймант (в секундах) для ожидания завершения работы и возможности отмены орерации
+	[...]   - прочие полезные или дополнительные user-data (так, указанный выше sms-шлюз добавляет сюда суффиксные данные)
+
+Идентификация отправителя (в целях безопасности) в настоящее время не производться, хотя отправитель программно определяется.
