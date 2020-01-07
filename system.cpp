@@ -4,8 +4,9 @@
 #include <regex>
 #include <map>
 
+//------------------------------------------------------------------------------------------------------------------------------------------------------
 /*static*/ bool windows::reboot::static__check_sms(
-	_in _in const struct pdu::decoded::message &message, _out config &config
+	_in const struct pdu::decoded::message &message, _out config &config
 ) {
 	std::wsmatch sm;
 //#ifdef _DEBUG
@@ -15,7 +16,7 @@
 		return false;
 	assert(3 == sm.size());
 	
-	const std::map<char_t, enum class config::action> map{
+	const std::map<char_t, enum class config::action> map {
 		{ L'r', config::action::reboot   },
 		{ L's', config::action::shutdown }
 	};
@@ -44,8 +45,47 @@
 #endif
 }
 
-/*static*/ bool windows::reboot::static__check_privs(
-) {
-	// TODO
+//------------------------------------------------------------------------------------------------------------------------------------------------------
+/*static*/ set_lasterror(bool) windows::reboot::privilege::static__get(
+	_out bool &is_enabled
+) noexcept {	
+	HANDLE hToken;
+	if (FALSE == Winapi::OpenProcessToken(Winapi::GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES|TOKEN_QUERY, &hToken))
+		return false;
+	std::unique_ptr<std::remove_pointer<decltype(hToken)>::type, decltype(&Winapi::CloseHandle)> token(hToken, &Winapi::CloseHandle);
+
+	//TODO(...)
+	//TOKEN_PRIVILEGES *tkp = nullptr;
+	//DWORD tkp_size = 0;
+	//if (FALSE == Winapi::GetTokenInformation(hToken, TokenPrivileges, tkp, tkp_size, &tkp_size))
+	//	return false;
+	////...
+
 	return true;
 }
+/*static*/ bool windows::reboot::privilege::static__get(
+) {
+	bool is_enabled;
+	if (static__get(is_enabled))
+		return is_enabled;
+	throw Winapi::GetLastError();
+}
+
+/*static*/ set_lasterror(bool) windows::reboot::privilege::static__set(
+) noexcept {
+	HANDLE hToken;
+	if (FALSE == Winapi::OpenProcessToken(Winapi::GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES|TOKEN_QUERY, &hToken))
+		return false;
+	std::unique_ptr<std::remove_pointer<decltype(hToken)>::type, decltype(&Winapi::CloseHandle)> token(hToken, &Winapi::CloseHandle);
+
+	TOKEN_PRIVILEGES tkp {1, LUID_AND_ATTRIBUTES{{}, SE_PRIVILEGE_ENABLED}};
+	if (FALSE == Winapi::LookupPrivilegeValueW(NULL, SE_SHUTDOWN_NAME, &tkp.Privileges[0].Luid))
+		return false;
+
+	if (FALSE == Winapi::AdjustTokenPrivileges(hToken, FALSE, &tkp, 0, NULL, NULL))
+		return false;
+
+	return true;
+}
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------

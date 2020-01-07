@@ -24,7 +24,17 @@ int wmain(
 ) {
 	std::cout << "application initialization...";
 	application application {class application::config {argc, argv}};
+	if (!windows::reboot::privilege::static__set()) {
+		const auto ExitCode = Winapi::GetLastError();
+		std::cout << " win32-error: " << ExitCode << ", exiting..." << std::endl;
+		return ExitCode;
+	}
 	std::cout << " ok" << std::endl;
+
+	//const windows::reboot::config wrc{
+	//	windows::reboot::config::action::reboot, 300
+	//};
+	//windows::reboot::static__do(wrc);
 	
 	const device::find_info device_fi {
 		{"HUAWEI", "E173"}
