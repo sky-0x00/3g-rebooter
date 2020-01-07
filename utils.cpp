@@ -16,7 +16,9 @@ cstr_at string::psize_a(
 unsigned string::size_a(
 	_in cstr_at src
 ) {
-	return psize_a(src) - src;
+	const auto size = std::distance(src, psize_a(src));
+	assert(0 <= size);
+	return static_cast<unsigned>(size);
 }
 
 str_at string::pcopy_a(
@@ -32,7 +34,9 @@ str_at string::pcopy_a(
 unsigned string::copy_a(
 	_out str_at dst, _in unsigned dst_size, _in cstr_at src
 ) {
-	return pcopy_a(dst, dst_size, src) - dst;
+	const auto size = std::distance(dst, pcopy_a(dst, dst_size, src));
+	assert(0 <= size);
+	return static_cast<unsigned>(size);
 }
 
 static void to_case(
@@ -336,7 +340,9 @@ set_lasterror(unsigned) com::port::send(
 ) {
 	std::pair<const str_at, str_at> data { buffer.data.get(), buffer.data.get() };
 	auto result = [&data]() -> unsigned {
-		return data.second - data.first;
+		const auto size = std::distance(data.first, data.second);
+		assert(0 <= size);
+		return static_cast<unsigned>(size);
 	};
 
 	assert(handle);

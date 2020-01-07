@@ -28,20 +28,20 @@
 /*static*/ set_lasterror(bool) windows::reboot::static__do(
 	_in const config &config
 ) {
-//#ifdef _DEBUG
-//	// ok
-//	//return true;
-//
-//	// fail, not have privilage
-//	Winapi::SetLastError(ERROR_ACCESS_DENIED);
-//	return false;
-//#else
+#ifdef _DEBUG
+	// ok
+	return true;
+
+	// fail, not have privilage
+	Winapi::SetLastError(ERROR_ACCESS_DENIED);
+	return false;
+#else
 	const std::map<enum class config::action, BOOL> reboot_after_shutdown {
 		{ config::action::reboot,   TRUE  },
 		{ config::action::shutdown, FALSE },
 	};
 	return FALSE != Winapi::InitiateSystemShutdownW(NULL, NULL, config.timeout, TRUE, reboot_after_shutdown.at(config.action));
-//#endif
+#endif
 }
 
 /*static*/ bool windows::reboot::static__check_privs(

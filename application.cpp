@@ -7,7 +7,7 @@
 /*static*/ handle_t application::event_exit = nullptr;
 
 application::application(
-	_in const struct config &config /*= {}*/
+	_in const class config &config /*= {}*/
 ) :
 	config(config), _ccf(nullptr)
 {}
@@ -75,7 +75,7 @@ application::config::config(
 	config(static__get(argc, argv))
 {}
 
-bool /*static*/ application::config::static__get(
+/*static*/ bool application::config::static__get(
 	_in argc_t /*argc*/, _in const argv_t &/*argv*/, _out config &config
 ) noexcept {
 	// temporary, need parser's implementation
@@ -87,7 +87,7 @@ bool /*static*/ application::config::static__get(
 	};
 	return true;
 }
-struct application::config /*static*/ application::config::static__get(
+/*static*/ class application::config application::config::static__get(
 	_in argc_t argc, _in const argv_t &argv
 ) {
 	config config;
