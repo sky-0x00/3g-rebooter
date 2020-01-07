@@ -7,9 +7,9 @@
 /*static*/ handle_t application::event_exit = nullptr;
 
 application::application(
-	_in const config &config /*= {}*/
+	_in const struct config &config /*= {}*/
 ) :
-	_config(config), _ccf(nullptr)
+	config(config), _ccf(nullptr)
 {}
 
 application::~application(
@@ -87,7 +87,7 @@ bool /*static*/ application::config::static__get(
 	};
 	return true;
 }
-application::config /*static*/ application::config::static__get(
+struct application::config /*static*/ application::config::static__get(
 	_in argc_t argc, _in const argv_t &argv
 ) {
 	config config;

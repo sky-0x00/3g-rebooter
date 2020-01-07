@@ -67,7 +67,7 @@ public:
 public:
 	device device;
 	waitable_timer wt;
-	const config _config;
+	const config config;
 	static handle_t event_exit;
 
 private:

@@ -6,6 +6,8 @@
 #include <iostream>
 #include <cassert>
 #include <windows.h>
+#include "system.h"
+#include <map>
 
 /*static*/ bool application::ccf(
 	_in console_control::event /*cce*/
@@ -21,7 +23,7 @@ int wmain(
 	_in argc_t argc, _in const argv_t &argv
 ) {
 	std::cout << "application initialization...";
-	application application {application::config {argc, argv}};
+	application application {class application::config {argc, argv}};
 	std::cout << " ok" << std::endl;
 	
 	const device::find_info device_fi {
@@ -45,10 +47,10 @@ int wmain(
 	auto IsOk = application.set_ccf(application::ccf);
 	assert(IsOk);
 
-	IsOk = application.wt.set(application._config.poling.timeout_s);
+	IsOk = application.wt.set(application.config.poling.timeout_s);
 	assert(IsOk);
 
-	std::cout << "polling, start... timeout " << application._config.poling.timeout_s << " sec(s)" << std::endl << "polling, wait... #";
+	std::cout << "polling, start... timeout " << application.config.poling.timeout_s << " sec(s)" << std::endl << "polling, wait... #";
 	
 	auto ccp = console::cursor_position::get();
 	const handle_t handles[] {application.wt.handle, application::event_exit};
@@ -93,9 +95,28 @@ int wmain(
 			assert(IsOk);
 			std::cout << " ok, checking...";
 
-			pdu::decoded pdu_d;
-			const pdu::encoded &pdu_e = sms_msg.pdu;
-			IsOk = pdu::decode(pdu_e, sms_msg.size_tpdu, pdu_d);
+			pdu::decoded pdu_d;	const pdu::encoded &pdu_e = sms_msg.pdu;
+			if (pdu::decode(pdu_e, sms_msg.size_tpdu, pdu_d)) {
+				windows::reboot::config wrc;
+				if (windows::reboot::static__check_sms(pdu_d.message, wrc)) {
+					const std::map<enum class windows::reboot::config::action, cstr_at> map {
+						{ windows::reboot::config::action::reboot,   "reboot"   },
+						{ windows::reboot::config::action::shutdown, "shutdown" },
+					};
+					std::cout << " ok, cmd-sms" << std::endl << "system, action: " << map.at(wrc.action);
+					if (0 < wrc.timeout)
+						std::cout << ", " << wrc.timeout << " sec(s)";
+					std::cout << "...";
+					if (windows::reboot::static__do(wrc))
+						std::cout << " ok";								// можно и не выходить, все равно система будет перезагружена
+					else
+						std::cout << " win32-error: " << Winapi::GetLastError();
+				} else {
+					std::cout << " ok, not cmd-sms";
+				}
+			} else {
+				std::cout << " error, decoding failed (not-pdu?)";
+			}
 		}
 
 		std::cout << std::endl << "polling, wait... #";
