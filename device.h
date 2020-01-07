@@ -1,7 +1,6 @@
 #pragma once
 
 #include "utils.h"
-#include <optional>
 
 class device {
 public:
@@ -15,7 +14,7 @@ public:
 		typedef std::vector<com::port::number> ports_t;
 		ports_t ports;
 
-		find_info(_in const names_t &names, _in const ports_t &ports = { com::port::static__enum() });
+		find_info(_in const names_t &names, _in const ports_t &ports = {});
 	};
 	com::port::number find(_in const find_info &find_info);											// 0 on not-found
 

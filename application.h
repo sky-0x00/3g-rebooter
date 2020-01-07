@@ -29,7 +29,8 @@ public:
 		bool is__start_as_service;
 
 		struct poling {
-			unsigned timeout_s /*sec*/;
+			com::port::number comport_n;				// если 0, то будем енумерить, иначе будем пытаться жестко сесть на указанный порт
+			unsigned timeout_s /*sec*/;					// мин - 1 сек
 		};
 		struct poling poling;
 

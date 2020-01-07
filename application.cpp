@@ -81,7 +81,7 @@ application::config::config(
 	// temporary, need parser's implementation
 	config = { 
 		/*is__start_as_service*/	false, 
-		/*poling*/					{1}, 
+		/*poling*/					{0, 1}, 
 		/*sms*/						{false}, 
 		/*reboot*/					{0}
 	};

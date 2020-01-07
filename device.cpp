@@ -4,7 +4,7 @@
 #include <cassert>
 
 device::find_info::find_info(
-	_in const names_t &names, _in const ports_t &ports /*= { com::port::static__enum() }*/
+	_in const names_t &names, _in const ports_t &ports /*= {}*/
 ) :
 	names(names), ports(ports)
 {

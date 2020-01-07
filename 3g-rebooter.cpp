@@ -36,9 +36,14 @@ int wmain(
 	//};
 	//windows::reboot::static__do(wrc);
 	
-	const device::find_info device_fi {
+	device::find_info device_fi {
 		{"HUAWEI", "E173"}
 	};
+	if (0 == application.config.poling.comport_n)
+		device_fi.ports = com::port::static__enum();
+	else
+		device_fi.ports.push_back(application.config.poling.comport_n);
+
 	std::cout << "finding device \"" << device_fi.names.vendor << " " << device_fi.names.model << "\"...";
 	const auto cpn = application.device.find(device_fi);
 	if (0 == cpn) {
