@@ -37,14 +37,14 @@ int wmain(
 	//windows::reboot::static__do(wrc);
 	
 	device::find_info device_fi {
-		{"HUAWEI", "E173"}
+		{"HUAWEI", "E173"}, {L"HUAWEI Mobile Connect - 3G PC UI Interface"}
 	};
 	if (0 == application.config.poling.comport_n)
 		device_fi.ports = com::port::static__enum();
 	else
 		device_fi.ports.push_back(application.config.poling.comport_n);
 
-	std::cout << "finding device \"" << device_fi.names.vendor << " " << device_fi.names.model << "\"...";
+	std::cout << "finding device \"" << device_fi.com.vendor << " " << device_fi.com.model << "\"...";
 	const auto cpn = application.device.find(device_fi);
 	if (0 == cpn) {
 		std::cout << " error, not-found" << std::endl;
@@ -87,15 +87,15 @@ int wmain(
 		}
 		
 		com::at::result result;
-#ifdef _DEBUG
-		result.data = "\n+CMTI: \"SM\",2\n";
-#else
+//#ifdef _DEBUG
+//		result.data = "\n+CMTI: \"SM\",6\n";
+//#else
 		result.data = application.device.check_for_data();
 		if (result.data.empty()) {
 			console::cursor_position::set(ccp);
 			continue;
 		}
-#endif
+//#endif
 		// some data from com-port arrived, parse 'data' for list of non-empty strings 
 		std::cout << "; new data, " << result.data.size() << " char(s):" << std::endl << result.data << std::endl << "checking, new-sms...";
 		

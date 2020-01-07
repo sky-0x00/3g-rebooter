@@ -6,15 +6,18 @@ class device {
 public:
 	struct find_info {
 
-		struct names_t {
+		struct com_t {
 			string_at vendor, model;
 		};
-		names_t names;
+		com_t com;
+		struct usb_t {
+			string_t driver_desc;
+		} usb;
 
-		typedef std::vector<com::port::number> ports_t;
+		typedef std::vector<::com::port::number> ports_t;
 		ports_t ports;
 
-		find_info(_in const names_t &names, _in const ports_t &ports = {});
+		find_info(_in const com_t &com, _in const usb_t &usb, _in const ports_t &ports = {});
 	};
 	com::port::number find(_in const find_info &find_info);											// 0 on not-found
 
@@ -65,13 +68,18 @@ public:
 	string_at check_for_data() const;
 
 protected:
+	static bool static__check_com(_in const find_info::com_t &com, _in const com::port &cp);
+	static bool static__check_usb(_in const find_info::usb_t &usb, _in com::port::number cpn);
 	static com::port::number static__find(_in const find_info &find_info, _out com::port &cp);		// 0 on not-found
 	
 	static cstr_at static__at(_in const com::port &cp, _in cstr_at in, _out string_at &out);
 	static string_at static__at(_in const com::port &cp, _in cstr_at in);
-	static cstr_at static__check_for_data(_in const com::port &cp, _out string_at &data);
-	static string_at static__check_for_data(_in const com::port &cp);
 
+	static cstr_at static__com__check_for_data(_in const com::port &cp, _out string_at &data);
+	static string_at static__com__check_for_data(_in const com::port &cp);
+
+private:
+	static void static__buffer_clear(_in const com::port &cp);
 private:
 	com::port _cp;
 };

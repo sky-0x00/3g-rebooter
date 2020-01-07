@@ -174,7 +174,7 @@ com::port::config::config(
 /*static*/ set_lasterror(com::port::handle) com::port::static__open(
 	_in number number, _in const config::dcb_t &config_dcb, _in const config::timeouts_t &timeouts
 ) {
-	const auto handle = Winapi::CreateFileW((LR"(\.\COM)" + std::to_wstring(number)).c_str(), GENERIC_READ|GENERIC_WRITE, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+	const auto handle = Winapi::CreateFileW((LR"(\\.\COM)" + std::to_wstring(number)).c_str(), GENERIC_READ|GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, NULL);
 	if (INVALID_HANDLE_VALUE == handle) {
 		trace(L"CreateFileW(): E(0x%X)", Winapi::GetLastError());
 		return nullptr;

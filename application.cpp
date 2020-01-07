@@ -59,14 +59,14 @@ static BOOL WINAPI ConsoleControlFunction(
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 application::config::config(
-	_in bool is__start_as_service, _in const struct poling &poling, _in const struct sms &sms, _in const struct reboot &reboot
+	_in bool is__start_as_service, _in const struct poling &poling, _in const struct sms &sms
 ) :
-	is__start_as_service(is__start_as_service), poling(poling), sms(sms), reboot(reboot)
+	is__start_as_service(is__start_as_service), poling(poling), sms(sms)
 {}
 application::config::config(
 	_in const config &config
 ) :
-	config(config.is__start_as_service, config.poling, config.sms, config.reboot)
+	config(config.is__start_as_service, config.poling, config.sms)
 {}
 
 /*explicit*/ application::config::config(
@@ -82,8 +82,7 @@ application::config::config(
 	config = { 
 		/*is__start_as_service*/	false, 
 		/*poling*/					{0, 1}, 
-		/*sms*/						{false}, 
-		/*reboot*/					{0}
+		/*sms*/						{false}
 	};
 	return true;
 }

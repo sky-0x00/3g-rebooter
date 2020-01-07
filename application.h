@@ -35,16 +35,11 @@ public:
 		struct poling poling;
 
 		struct sms {
-			bool is__remove_after_processed;
+			bool is__remove_after_processed;			// TODO
 		};
 		struct sms sms;
 
-		struct reboot {
-			unsigned pause_s /*sec*/;
-		};
-		struct reboot reboot;
-
-		config(_in bool is__start_as_service, _in const struct poling &poling, _in const struct sms &sms, _in const struct reboot &reboot);
+		config(_in bool is__start_as_service, _in const struct poling &poling, _in const struct sms &sms);
 		config(_in const config &config);
 		explicit config(_in argc_t argc, _in const argv_t &argv);
 
