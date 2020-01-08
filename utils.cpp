@@ -526,6 +526,10 @@ time_t pdu::decoded::message::time::value(
 bool pdu::decode(
 	_in const encoded &encoded, _in unsigned size_tpdu, _out decoded &decoded
 ) {
+	enum class dcs {
+		bit_7, bit_8, ucs2
+	};
+
 	class process {
 	private:
 		static pdu::number get_number(
@@ -622,7 +626,8 @@ bool pdu::decode(
 			number = get_number(pc_oa->numbers, size__in_bytes);
 			return 2 + size__in_bytes;
 		};
-		static bool dcs__is_ucs2(_in byte_t dcs) {
+		
+		static dcs get_dcs(_in byte_t octet) {
 #pragma pack(push)
 #pragma pack(1)
 			struct data_coding_scheme {
@@ -633,9 +638,9 @@ bool pdu::decode(
 				byte_t reserved : 2;
 			};
 #pragma pack(pop)
-			const auto &cr_dcs = reinterpret_cast<const data_coding_scheme&>(dcs);
+			const auto &cr_dcs = reinterpret_cast<const data_coding_scheme&>(octet);
 			assert((0 == cr_dcs.reserved) && (0 == cr_dcs.compression) && (0 == cr_dcs.class_n));
-			return 2 == cr_dcs.coding;
+			return static_cast<dcs>(cr_dcs.coding);
 		}
 		static unsigned scts(_in const byte_t *data, _out struct decoded::message::time &time) {
 
@@ -664,21 +669,80 @@ bool pdu::decode(
 	
 	pc_raw += 1 + process::sca(pc_raw, decoded.smsc);
 	pc_raw += 1 + process::oa(pc_raw, decoded.message.sender);
-	if (!process::dcs__is_ucs2(*pc_raw)) {
-		trace(L"dcs__is_ucs2(): false")
+	
+	const auto dcs = process::get_dcs(*pc_raw);
+	
+	// SCTS
+	pc_raw += process::scts(++pc_raw, decoded.message.time);			// Service-Centre-Time-Stamp
+	//const auto &pair = std::make_pair(decoded.message.time.value(), decoded.message.time.to_string());
+
+	// UDL
+	auto ud_size = *pc_raw++;
+
+	// UD
+	switch (dcs) {
+	case dcs::bit_7:
+		decoded.message.text.reserve(ud_size);
+		for (unsigned i = 0; ud_size--; ++i) {
+			char_t ch;
+			switch (i % 8) {
+			case 0:
+				ch = *pc_raw & 0x7F;
+				break;
+			case 1:
+				ch = (*pc_raw >> 7) & 0x1;
+				ch |= (*++pc_raw << 1) & 0x7E;
+				break;
+			case 2:
+				ch = (*pc_raw >> 6) & 0x3;
+				ch |= (*++pc_raw << 2) & 0x7C;
+				break;
+			case 3:
+				ch = (*pc_raw >> 5) & 0x7;
+				ch |= (*++pc_raw << 3) & 0x78;
+				break;
+			case 4:
+				ch = (*pc_raw >> 4) & 0xF;
+				ch |= (*++pc_raw << 4) & 0x70;
+				break;
+			case 5:
+				ch = (*pc_raw >> 3) & 0x1F;
+				ch |= (*++pc_raw << 5) & 0x60;
+				break;
+			case 6:
+				ch = (*pc_raw >> 2) & 0x3F;
+				ch |= (*++pc_raw << 6) & 0x40;
+				break;
+			case 7:
+				ch = (*pc_raw >> 1) & 0x7F;
+				++pc_raw;
+				break;
+			}
+			decoded.message.text.push_back(ch);
+		}
+		return true;
+
+	case dcs::bit_8:
+		// !!! NOT-TESTED !!!
+		decoded.message.text.reserve(ud_size);
+		for (; ud_size--; ++pc_raw)
+			decoded.message.text.push_back(static_cast<char_t>(*pc_raw));
+		return true;
+
+	case dcs::ucs2:
+		decoded.message.text.reserve(ud_size >>= 1);
+		assert((0 == ud_size % 2) && (ud_size == std::distance(pdu::encoded::const_iterator(const_cast<byte_t*>(pc_raw), encoded.cbegin()._Getcont()), encoded.cend())));
+		for (auto &str = reinterpret_cast<cstr_t&>(pc_raw); ud_size--; ++str)
+			decoded.message.text.push_back(pc_raw[1] | (pc_raw[0] << 8));
+		return true;
+
+	default:
+		assert(true);
 		return false;
 	}
-	pc_raw += process::scts(++pc_raw, decoded.message.time);			// Service-Centre-Time-Stamp
-	const auto &pair = std::make_pair(decoded.message.time.value(), decoded.message.time.to_string());
-
-	auto ud_size = *pc_raw++;
-	assert( (0 == ud_size % 2) && (ud_size == std::distance(pdu::encoded::const_iterator(const_cast<byte_t*>(pc_raw), encoded.cbegin()._Getcont()), encoded.cend())) );
-
-	decoded.message.text.reserve(ud_size >>= 1);
-	for (auto &str = reinterpret_cast<cstr_t&>(pc_raw); ud_size--; ++str)
-		decoded.message.text.push_back(pc_raw[1] | (pc_raw[0] << 8));
-
-	return true;
+	
+	assert(true);
+	return false;
 }
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------

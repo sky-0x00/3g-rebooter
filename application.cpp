@@ -80,8 +80,8 @@ application::config::config(
 ) noexcept {
 	// temporary, need parser's implementation
 	config = { 
-		/*is__start_as_service*/	false, 
-		/*poling*/					{0, 1}, 
+		/*is__start_as_service*/	false,
+		/*poling*/					{0, 4},
 		/*sms*/						{false}
 	};
 	return true;

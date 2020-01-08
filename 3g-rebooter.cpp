@@ -54,7 +54,7 @@ int wmain(
 
 	// ...........
 	if (device::sms::info::format::pdu != device::sms::info(application.device).get_format()) {
-		trace(L"sms_info::format not pdu-type");
+		trace(L"sms-info::format not pdu-type");
 		return -1;
 	}
 	// ...........
@@ -130,7 +130,7 @@ int wmain(
 					std::cout << " ok, not cmd-sms";
 				}
 			} else {
-				std::cout << " error, decoding failed (not-pdu?)";
+				std::cout << " error, decoding failed (not supported dcs?)";
 			}
 		}
 
