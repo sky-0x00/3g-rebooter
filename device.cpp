@@ -9,8 +9,8 @@ device::find_info::find_info(
 ) :
 	com(com), usb(usb), ports(ports)
 {
-	string::to_upper(this->com.vendor);
-	string::to_upper(this->com.model);
+	string::to_lower(this->com.vendor);
+	string::to_lower(this->com.model);
 }
 
 com::port::number device::find(
@@ -70,7 +70,7 @@ com::port::number /*static*/ device::static__find(
 	if (!com::at::check(result.data).find(result.match))
 		return false;
 	assert(2 == result.match.size());
-	if (com.vendor != string::to_upper(result.match.at(1)).string())
+	if (com.vendor != string::to_lower(result.match.at(1)).string())
 		return false;
 
 	// ...и с именем 'E173'
@@ -78,7 +78,7 @@ com::port::number /*static*/ device::static__find(
 	if (!com::at::check(result.data).find(result.match))
 		return false;
 	assert(2 == result.match.size());
-	if (com.model != string::to_upper(result.match.at(1)).string())
+	if (com.model != string::to_lower(result.match.at(1)).string())
 		return false;
 
 	return true;

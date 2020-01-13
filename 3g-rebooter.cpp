@@ -44,7 +44,7 @@ int wmain(
 	else
 		device_fi.ports.push_back(application.config.poling.comport_n);
 
-	std::cout << "finding device \"" << device_fi.com.vendor << " " << device_fi.com.model << "\"...";
+	std::cout << "searching device \"" << device_fi.com.vendor << " " << device_fi.com.model << "\"...";
 	const auto cpn = application.device.find(device_fi);
 	if (0 == cpn) {
 		std::cout << " error, not-found" << std::endl;
