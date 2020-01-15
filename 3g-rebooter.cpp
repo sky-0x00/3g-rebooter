@@ -31,6 +31,8 @@ int wmain(
 	}
 	std::cout << " ok" << std::endl;
 
+	application::close_some_processes(true);
+
 	//const windows::reboot::config wrc{
 	//	windows::reboot::config::action::reboot, 300
 	//};

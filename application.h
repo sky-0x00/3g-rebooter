@@ -59,6 +59,10 @@ public:
 
 public:
 	static bool ccf(_in console_control::event cce);				// in main ('3g-rebooter') module
+	static void close_some_processes(_in bool is_close__secondary_importance);
+
+protected:
+	static set_lasterror(bool) close_process(_in unsigned pid, _in unsigned exit_code = /*ERROR_PROCESS_ABORTED*/ 1067L);
 
 public:
 	device device;

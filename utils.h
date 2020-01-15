@@ -12,11 +12,11 @@ namespace stdex {
 		return range.end() != std::find(range.begin(), range.end(), value);
 	}
 
-	template <typename type> bool is__in_range(_in type value, _in const std::pair<type, type> range) {
+	template <typename type> bool is__in_range(_in type value, _in const std::pair<type, type> &range) {
 		assert(range.second >= range.first);
 		return (value >= range.first) && (value < range.second);
 	}
-	template <typename type> bool is__in_range__inclusive(_in type value, _in const std::pair<type, type> range) {
+	template <typename type> bool is__in_range__inclusive(_in type value, _in const std::pair<type, type> &range) {
 		assert(range.second >= range.first);
 		return (value >= range.first) && (value <= range.second);
 	}
