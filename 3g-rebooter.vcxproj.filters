@@ -39,6 +39,9 @@
     <ClCompile Include="device.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="bitness.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="application.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="device.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bitness.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

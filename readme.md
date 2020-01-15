@@ -23,7 +23,7 @@ sys-r|s [timeout] [...]
 
 При старте необходимо принудительно завершать процессы:
 1) "C:\ProgramData\Mobile Partner\OnlineUpdate\ouc.exe", так называемый "Online Update Client", x32, просто не нужен.
-Подписан:
+Может быть подписан, а может быть и нет. Если подписан, содержит:
 	CN = Huawei Technologies Co., Ltd.
 	OU = Digital ID Class 3 - Microsoft Software Validation v2
 	O = Huawei Technologies Co., Ltd.

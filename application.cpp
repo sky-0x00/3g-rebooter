@@ -144,7 +144,7 @@ struct pid {
 	static std::once_flag of;
 	std::call_once(of, static__importance_ex);
 
-	const auto hSnapshot = Winapi::CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+	const auto hSnapshot = Winapi::CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS|TH32CS_SNAPMODULE, 0);
 	if (INVALID_HANDLE_VALUE == hSnapshot) {
 		trace(L"CreateToolhelp32Snapshot(): E(0x%X)", Winapi::GetLastError());
 		return;
