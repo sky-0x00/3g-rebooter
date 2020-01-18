@@ -136,6 +136,9 @@ DocProject/Help/*.hhp
 DocProject/Help/Html2
 DocProject/Help/html
 
+# Docs (Links)
+docs-at
+
 # Click-Once directory
 publish/
 
