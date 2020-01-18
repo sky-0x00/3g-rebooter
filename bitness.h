@@ -9,23 +9,29 @@ namespace bitness {
 
 	class interface abstract {
 	public:
-		static constexpr value static__get() /*= 0*/;
-		virtual value get() final;
+		value get();
 		virtual ~interface() = default;
 	protected:
+		virtual value __get() const = 0;				// static value static__get();
+	private:
 		std::unique_ptr<value> _value;
 	};
 
-	class process: public interface {
+	class process final: public interface {
 	public:
-		static constexpr value static__get() noexcept;
 		static bool static__is_wow64();
 		bool is_wow64();
+		static constexpr value static__get() noexcept;
 	protected:
-		std::unique_ptr<bool> _is_wow64;
+		virtual value __get() const override;
+	private:
+		std::unique_ptr<bool> _wow64;
 	};
-	class system: public interface {
+
+	class system final: public interface {
 	public:
 		static value static__get();
+	protected:
+		virtual value __get() const override;
 	};
 }

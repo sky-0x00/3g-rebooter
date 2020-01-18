@@ -11,7 +11,7 @@
 /*virtual*/ bitness::value bitness::interface::get(
 ) /*final*/ {
 	if (!_value.get())
-		_value.reset(new value(static__get()));
+		_value.reset(new value(__get()));
 	return *_value;
 }
 
@@ -23,6 +23,10 @@
 #else 
 	return x32;
 #endif
+}
+/*virtual*/ bitness::value bitness::process::__get(
+) const {
+	return static__get();
 }
 
 /*static*/ bool bitness::process::static__is_wow64(
@@ -38,11 +42,12 @@
 }
 bool bitness::process::is_wow64(
 ) {
-	if (!_is_wow64.get())
-		_is_wow64.reset(new bool(static__is_wow64()));
-	return *_is_wow64;
+	if (!_wow64.get())
+		_wow64.reset(new bool(static__is_wow64()));
+	return *_wow64;
 }
 
+//--------------------------------------------------------------------------------------------------------------------------
 /*static*/ bitness::value bitness::system::static__get(
 ) {
 	// x64-процесс может выполн€тьс€ только в среде x64-системы
@@ -50,6 +55,11 @@ bool bitness::process::is_wow64(
 		return x64;
 
 	return process::static__is_wow64() ? x64 : x32;
+}
+
+/*virtual*/ bitness::value bitness::system::__get(
+) const {
+	return static__get();
 }
 
 //--------------------------------------------------------------------------------------------------------------------------
