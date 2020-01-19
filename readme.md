@@ -22,7 +22,8 @@ sys-r|s [timeout] [...]
 2020-01-08: версия 1.0
 
 При старте необходимо принудительно завершать процессы:
-1) "C:\ProgramData\Mobile Partner\OnlineUpdate\ouc.exe", так называемый "Online Update Client", x32, просто не нужен.
+1) "C:\ProgramData\Mobile Partner\OnlineUpdate\ouc.exe", 
+	так называемый "Online Update Client", x32, просто не нужен
 Может быть подписан, а может быть и нет. Если подписан, содержит:
 	CN = Huawei Technologies Co., Ltd.
 	OU = Digital ID Class 3 - Microsoft Software Validation v2
@@ -30,6 +31,7 @@ sys-r|s [timeout] [...]
 	L = Shenzhen
 	S = Guangdong
 	C = CN
-2) "C:\Program Files (x86)\Mobile Partner\Mobile Partner.exe", x32, занимает нужный com-порт в эксклюзиве.
-Не подписан. Открытие com-порта фейлится с win32-ошибкой:
+2) "C:\Program Files (x86)\Mobile Partner\Mobile Partner.exe","C:\Program Files (x86)\MegaFon Internet\MegaFon Internet.exe", 
+	x32, занимают нужный com-порт в эксклюзиве
+Не подписаны. При этом открытие com-порта фейлится с win32-ошибкой:
 	$err,hr		ERROR_BUSY: "Требуемый ресурс занят."

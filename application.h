@@ -28,6 +28,12 @@ public:
 	public:
 		bool is__start_as_service;
 
+		struct close_some_precosses {
+			bool is_close;								// true, if need close process (firstly or firstly + secondary)
+			bool secondary_importance;					// true, if need close secondary (additional) processes together with firstly
+		};
+		struct close_some_precosses close_some_precosses;
+
 		struct poling {
 			com::port::number comport_n;				// если 0, то будем енумерить, иначе будем пытаться жестко сесть на указанный порт
 			unsigned timeout_s /*sec*/;					// мин - 1 сек
@@ -39,7 +45,12 @@ public:
 		};
 		struct sms sms;
 
-		config(_in bool is__start_as_service, _in const struct poling &poling, _in const struct sms &sms);
+		config(
+			_in bool is__start_as_service, 
+			_in const struct close_some_precosses &close_some_precosses, 
+			_in const struct poling &poling, 
+			_in const struct sms &sms
+		);
 		config(_in const config &config);
 		explicit config(_in argc_t argc, _in const argv_t &argv);
 
@@ -60,6 +71,7 @@ public:
 public:
 	static bool ccf(_in console_control::event cce);				// in main ('3g-rebooter') module
 	static void close_some_processes(_in bool is_close__secondary_importance);
+	void close_some_processes() const;
 
 protected:
 	static set_lasterror(bool) close_process(_in unsigned pid, _in unsigned exit_code = /*ERROR_PROCESS_ABORTED*/ 1067L);

@@ -29,15 +29,10 @@ int wmain(
 		std::cout << " win32-error: " << ExitCode << ", exiting..." << std::endl;
 		return ExitCode;
 	}
+	if (application.config.close_some_precosses.is_close)
+		application.close_some_processes(application.config.close_some_precosses.secondary_importance);
 	std::cout << " ok" << std::endl;
 
-	application::close_some_processes(true);
-
-	//const windows::reboot::config wrc{
-	//	windows::reboot::config::action::reboot, 300
-	//};
-	//windows::reboot::static__do(wrc);
-	
 	device::find_info device_fi {
 		{"HUAWEI", "E173"}, {L"HUAWEI Mobile Connect - 3G PC UI Interface"}
 	};

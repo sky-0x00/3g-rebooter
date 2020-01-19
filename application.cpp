@@ -80,20 +80,20 @@ struct defs {
 		image_ex::list<size_firstly> firstly;
 		image_ex::list<size_secondary> secondary;
 	};
-	static importance_ex</*importance::firstly.size()*/1, /*importance::secondary.size()*/2> static__importance_ex;
+	static importance_ex</*importance::firstly.size()*/2, /*importance::secondary.size()*/2> static__importance_ex;						// size as size of 'static__importance'
 };
 
 /*static*/ const defs::importance defs::static__importance {
 	{
-		{LR"(%ProgramFiles(x86)%\MegaFon Internet\MegaFon Internet.exe)"}
-		// {Mobile Partner}
+		{LR"(%ProgramFiles(x86)%\MegaFon Internet\MegaFon Internet.exe)"},
+		{LR"(%ProgramFiles(x86)%\Mobile Partner\Mobile Partner.exe)"}
 	},
 	{
 		{LR"(%ProgramData%\DatacardService\Temp\Mobile Partner\Setup.exe)"},
 		{LR"(%ProgramFiles(x86)%\MegaFon Internet\UpdateDog\ouc.exe)"}
 	}
 };
-/*static*/ defs::importance_ex</*importance::firstly.size()*/1, /*importance::secondary.size()*/2> defs::static__importance_ex;
+/*static*/ defs::importance_ex</*importance::firstly.size()*/2, /*importance::secondary.size()*/2> defs::static__importance_ex;			// size as size of 'static__importance'
 
 struct pid {
 	typedef unsigned value_type;
@@ -144,9 +144,9 @@ struct pid {
 	static std::once_flag of;
 	std::call_once(of, static__importance_ex);
 
-	const auto hSnapshot = Winapi::CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS|TH32CS_SNAPMODULE, 0);
+	const auto hSnapshot = Winapi::CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
 	if (INVALID_HANDLE_VALUE == hSnapshot) {
-		trace(L"CreateToolhelp32Snapshot(): E(0x%X)", Winapi::GetLastError());
+		trace(L"CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS): E(0x%X)", Winapi::GetLastError());
 		return;
 	}
 	std::unique_ptr<std::remove_pointer<decltype(hSnapshot)>::type, decltype(&Winapi::CloseHandle)> hs(hSnapshot, &Winapi::CloseHandle);
@@ -157,6 +157,32 @@ struct pid {
 	};
 	struct importance importance {};
 
+	struct check {
+		static bool name(_in cstr_t lhs, _in cstr_t rhs) {
+			return 0 == _wcsicmp(lhs, rhs);
+		}
+		static bool path(_in unsigned pid, _in cstr_t path) {
+
+			const auto hSnapshot = Winapi::CreateToolhelp32Snapshot(TH32CS_SNAPMODULE, pid);
+			if (INVALID_HANDLE_VALUE == hSnapshot) {
+				const auto LastError = Winapi::GetLastError();
+				trace(L"Winapi::CreateToolhelp32Snapshot(TH32CS_SNAPMODULE, %u): E(0x%X)", pid, LastError);
+				throw LastError;
+			}
+			std::unique_ptr<std::remove_pointer<decltype(hSnapshot)>::type, decltype(&Winapi::CloseHandle)> hs(hSnapshot, &Winapi::CloseHandle);
+
+			MODULEENTRY32W me {sizeof(me)};
+			if (FALSE == Winapi::Module32FirstW(hSnapshot, &me)) {
+				const auto LastError = Winapi::GetLastError();
+				trace(L"Winapi::Module32FirstW(%s): E(0x%X)", hSnapshot, LastError);
+				throw LastError;
+			}
+
+			// first module is image (.exe) module
+			return name(path, me.szExePath);
+		}
+	};
+	
 	{
 		PROCESSENTRY32W pe {sizeof(pe)};
 		for (auto IsContinue = FALSE != Winapi::Process32FirstW(hSnapshot, &pe); IsContinue; IsContinue = Winapi::Process32NextW(hSnapshot, &pe)) {
@@ -170,9 +196,14 @@ struct pid {
 					it.first, it.second, [&pe](
 						_in const defs::image_ex &image_ex
 					) {
-					return 0 == _wcsicmp(image_ex.name, pe.szExeFile);
-				});
+						return check::name(image_ex.name, pe.szExeFile);
+					}
+				);
 				if (it_found != it.second) {
+
+					if (!check::path(pe.th32ProcessID, it_found->path.c_str()))
+						continue;
+
 					const auto i = std::distance(it.first, it_found);
 					importance.firstly[i].value = pe.th32ProcessID;
 					continue;
@@ -188,9 +219,14 @@ struct pid {
 					it.first, it.second, [&pe](
 						_in const defs::image_ex &image_ex
 					) {
-					return 0 == _wcsicmp(image_ex.name, pe.szExeFile);
-				});
+						return 0 == _wcsicmp(image_ex.name, pe.szExeFile);
+					}
+				);
 				if (it_found != it.second) {
+					
+					if (!check::path(pe.th32ProcessID, it_found->path.c_str()))
+						continue;
+
 					const auto i = std::distance(it.first, it_found);
 					importance.secondary[i].value = pe.th32ProcessID;
 					continue;
@@ -213,6 +249,11 @@ struct pid {
 			close_process(pid.value);
 }
 
+void application::close_some_processes(
+) const {
+	close_some_processes(config.close_some_precosses.secondary_importance);
+}
+
 /*static*/ set_lasterror(bool) application::close_process(
 	_in unsigned pid, _in unsigned exit_code /*= ERROR_PROCESS_ABORTED(1067L)*/
 ) {
@@ -226,14 +267,25 @@ struct pid {
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 application::config::config(
-	_in bool is__start_as_service, _in const struct poling &poling, _in const struct sms &sms
+	_in bool is__start_as_service, 
+	_in const struct close_some_precosses &close_some_precosses,
+	_in const struct poling &poling, 
+	_in const struct sms &sms
 ) :
-	is__start_as_service(is__start_as_service), poling(poling), sms(sms)
+	is__start_as_service(is__start_as_service), 
+	close_some_precosses(close_some_precosses), 
+	poling(poling), 
+	sms(sms)
 {}
 application::config::config(
 	_in const config &config
 ) :
-	config(config.is__start_as_service, config.poling, config.sms)
+	config(
+		config.is__start_as_service, 
+		config.close_some_precosses,
+		config.poling, 
+		config.sms
+	)
 {}
 
 /*explicit*/ application::config::config(
@@ -248,6 +300,7 @@ application::config::config(
 	// temporary, need parser's implementation
 	config = { 
 		/*is__start_as_service*/	false,
+		/*close_some_precosses*/	{true, true},
 		/*poling*/					{0, 4},
 		/*sms*/						{false}
 	};

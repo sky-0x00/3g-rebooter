@@ -3,6 +3,7 @@
 #include <regex>
 #include <cassert>
 #include <windows.h>
+#include "application.h"
 
 device::find_info::find_info(
 	_in const com_t &com, _in const usb_t &usb, _in const ports_t &ports /*= {}*/
@@ -35,8 +36,13 @@ com::port::number /*static*/ device::static__find(
 	for (const auto port : find_info.ports) {
 
 		com::port _cp;
-		if (!_cp.open(port, config))
-			continue;
+		if (!_cp.open(port, config)) {
+			if (Winapi::GetLastError() != ERROR_BUSY)
+				continue;
+			application::close_some_processes(false);
+			if (!_cp.open(port, config))
+				continue;
+		}
 
 		// считаем весь имеющийся буфер (могут скопиться старые данные)
 		static__buffer_clear(_cp);
