@@ -730,8 +730,8 @@ bool pdu::decode(
 		return true;
 
 	case dcs::ucs2:
-		decoded.message.text.reserve(ud_size >>= 1);
 		assert((0 == ud_size % 2) && (ud_size == std::distance(pdu::encoded::const_iterator(const_cast<byte_t*>(pc_raw), encoded.cbegin()._Getcont()), encoded.cend())));
+		decoded.message.text.reserve(ud_size >>= 1);
 		for (auto &str = reinterpret_cast<cstr_t&>(pc_raw); ud_size--; ++str)
 			decoded.message.text.push_back(pc_raw[1] | (pc_raw[0] << 8));
 		return true;
