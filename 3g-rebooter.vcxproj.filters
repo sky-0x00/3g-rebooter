@@ -19,6 +19,9 @@
     <Filter Include="Documentation">
       <UniqueIdentifier>{cd8da3cc-d74a-4e28-860d-f5fd8d733536}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scripts">
+      <UniqueIdentifier>{d0866355-3745-480a-9a36-2d6a14a5b4b7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="3g-rebooter.cpp">
@@ -66,6 +69,9 @@
   <ItemGroup>
     <None Include="readme.md">
       <Filter>Documentation</Filter>
+    </None>
+    <None Include="build-results (public-binaries)\copy--buld-results.cmd">
+      <Filter>Scripts</Filter>
     </None>
   </ItemGroup>
 </Project>
