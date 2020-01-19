@@ -20,6 +20,8 @@ sys-r|s [timeout] [...]
 
 История версий:
 2020-01-08: версия 1.0
+2020-01-19: версия 1.1
+	application::close_some_processes()
 
 При старте необходимо принудительно завершать процессы:
 1) "C:\ProgramData\Mobile Partner\OnlineUpdate\ouc.exe", 
