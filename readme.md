@@ -24,6 +24,8 @@ sys-r|s [timeout] [...]
 	application::close_some_processes()
 2020-01-19: версия 1.1.1
 	fix pdu-ucs2 decoding
+2020-01-23: версия 1.1.2
+	device::find(), smart-wait if com-port can't open with ERROR_BUSY win32-error code
 
 При старте необходимо принудительно завершать процессы:
 1) "C:\ProgramData\Mobile Partner\OnlineUpdate\ouc.exe", 

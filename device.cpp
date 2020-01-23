@@ -36,11 +36,19 @@ com::port::number /*static*/ device::static__find(
 	for (const auto port : find_info.ports) {
 
 		com::port _cp;
-		if (!_cp.open(port, config)) {
-			if (Winapi::GetLastError() != ERROR_BUSY)
+		auto is_open = _cp.open(port, config);
+
+		if (!is_open) {
+			if (ERROR_BUSY != Winapi::GetLastError())
 				continue;
 			application::close_some_processes(false);
-			if (!_cp.open(port, config))
+			for (unsigned i = 0; i < 16; ++i) {
+				Winapi::Sleep(100);
+				is_open = _cp.open(port, config);
+				if (is_open || (ERROR_BUSY != Winapi::GetLastError()))
+					break;
+			}
+			if (!is_open)
 				continue;
 		}
 
