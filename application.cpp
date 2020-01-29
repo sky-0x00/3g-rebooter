@@ -102,7 +102,79 @@ struct defs {
 struct pid {
 	typedef unsigned value_type;
 	value_type value;
+
 	template <unsigned size> using list = std::array<pid, size>;
+	constexpr static value_type null = 0;
+
+	constexpr static bool is_null(_in pid::value_type value) noexcept {
+		return null == value;
+	}
+	constexpr static bool is_null(_in const pid &pid) noexcept {
+		return is_null(pid.value);
+	}
+	constexpr bool is_null() const noexcept {
+		return is_null(value);
+	}
+};
+
+class check {
+private:
+	static bool names__is_equal(_in cstr_t lhs, _in cstr_t rhs) {
+		return 0 == _wcsicmp(lhs, rhs);
+	}
+	
+	static string_t get__module_path(_in pid::value_type pid) {
+		const auto hSnapshot = Winapi::CreateToolhelp32Snapshot(TH32CS_SNAPMODULE, pid);
+		if (INVALID_HANDLE_VALUE == hSnapshot) {
+			const auto LastError = Winapi::GetLastError();
+			trace(L"Winapi::CreateToolhelp32Snapshot(TH32CS_SNAPMODULE, %u): E(0x%X)", pid, LastError);
+			throw LastError;
+		}
+		std::unique_ptr<std::remove_pointer<decltype(hSnapshot)>::type, decltype(&Winapi::CloseHandle)> hs(hSnapshot, &Winapi::CloseHandle);
+
+		MODULEENTRY32W ModuleEntry {sizeof(ModuleEntry)};
+		if (FALSE == Winapi::Module32FirstW(hSnapshot, &ModuleEntry)) {
+			const auto LastError = Winapi::GetLastError();
+			trace(L"Winapi::Module32FirstW(%s): E(0x%X)", hSnapshot, LastError);
+			throw LastError;
+		}
+		return ModuleEntry.szExePath;
+	};
+
+protected:
+	template <unsigned size> static auto process_entry(
+		_in cstr_t name, _in const defs::image_ex::list<size> &images
+	) {
+		return std::find_if(
+			images.cbegin(), images.cend(), [&name](
+				_in const defs::image_ex &image
+			) {
+				return names__is_equal(name, image.name);
+			}
+		);
+	};
+
+public:
+	template <unsigned size> static int process(
+		_in const PROCESSENTRY32W &pe, _in const defs::image_ex::list<size> &images, _in _out string_t &module_path
+	) {
+		const auto &it = std::make_pair(images.cbegin(), images.cend());
+
+		// сначала пытаемся найти по короткому имени файла образа процесса
+		auto it_found = process_entry(pe.szExeFile, images);
+		if (it.second == it_found)
+			return -1;
+		
+		// если короткое имя совпало, проверяем полное имя на совпадение
+		if (module_path.empty())
+			module_path = get__module_path(pe.th32ProcessID);
+
+		it_found = process_entry(module_path.c_str(), images);
+		if (it.second == it_found)
+			return -1;
+
+		return static_cast<int>(std::distance(it.first, it_found));
+	};
 };
 
 /*static*/ void application::close_some_processes(
@@ -161,95 +233,42 @@ struct pid {
 	};
 	struct importance importance {};
 
-	struct check {
-		static bool name(_in cstr_t lhs, _in cstr_t rhs) {
-			return 0 == _wcsicmp(lhs, rhs);
-		}
-		static bool path(_in unsigned pid, _in cstr_t path) {
 
-			const auto hSnapshot = Winapi::CreateToolhelp32Snapshot(TH32CS_SNAPMODULE, pid);
-			if (INVALID_HANDLE_VALUE == hSnapshot) {
-				const auto LastError = Winapi::GetLastError();
-				trace(L"Winapi::CreateToolhelp32Snapshot(TH32CS_SNAPMODULE, %u): E(0x%X)", pid, LastError);
-				throw LastError;
-			}
-			std::unique_ptr<std::remove_pointer<decltype(hSnapshot)>::type, decltype(&Winapi::CloseHandle)> hs(hSnapshot, &Winapi::CloseHandle);
-
-			MODULEENTRY32W me {sizeof(me)};
-			if (FALSE == Winapi::Module32FirstW(hSnapshot, &me)) {
-				const auto LastError = Winapi::GetLastError();
-				trace(L"Winapi::Module32FirstW(%s): E(0x%X)", hSnapshot, LastError);
-				throw LastError;
-			}
-
-			// first module is image (.exe) module
-			return name(path, me.szExePath);
-		}
-	};
-	
 	{
 		PROCESSENTRY32W pe {sizeof(pe)};
 		for (auto IsContinue = FALSE != Winapi::Process32FirstW(hSnapshot, &pe); IsContinue; IsContinue = Winapi::Process32NextW(hSnapshot, &pe)) {
 
-			if (0 == pe.th32ProcessID)
+			if (pid::is_null(pe.th32ProcessID))
 				continue;
 
-			{
-				const auto it = std::make_pair(defs::static__importance_ex.firstly.begin(), defs::static__importance_ex.firstly.end());
-				const auto it_found = std::find_if(
-					it.first, it.second, [&pe](
-						_in const defs::image_ex &image_ex
-					) {
-						return check::name(image_ex.name, pe.szExeFile);
-					}
-				);
-				if (it_found != it.second) {
+			string_t mp;
 
-					if (!check::path(pe.th32ProcessID, it_found->path.c_str()))
-						continue;
-
-					const auto i = std::distance(it.first, it_found);
-					importance.firstly[i].value = pe.th32ProcessID;
-					continue;
-				}
-			}
+			// сначала проверяем firstly-importance процессы (обязательные)
+			auto i = check::process(pe, defs::static__importance_ex.firstly, mp);
+			if (0 <= i)
+				importance.firstly[i].value = pe.th32ProcessID;
 
 			if (!is_close__secondary_importance)
 				continue;
 
-			{
-				const auto it = std::make_pair(defs::static__importance_ex.secondary.begin(), defs::static__importance_ex.secondary.end());
-				const auto it_found = std::find_if(
-					it.first, it.second, [&pe](
-						_in const defs::image_ex &image_ex
-					) {
-						return 0 == _wcsicmp(image_ex.name, pe.szExeFile);
-					}
-				);
-				if (it_found != it.second) {
-					
-					if (!check::path(pe.th32ProcessID, it_found->path.c_str()))
-						continue;
-
-					const auto i = std::distance(it.first, it_found);
-					importance.secondary[i].value = pe.th32ProcessID;
-					continue;
-				}
-			}
+			// затем, если трубуется, проверяем secondary-importance процессы (второстепенные)
+			i = check::process(pe, defs::static__importance_ex.secondary, mp);
+			if (0 <= i)
+				importance.secondary[i].value = pe.th32ProcessID;
 
 		}
 		assert(ERROR_NO_MORE_FILES == Winapi::GetLastError());
 	}
 
 	for (const auto &pid : importance.firstly)
-		if (0 != pid.value)
+		if (!pid.is_null())
 			close_process(pid.value);
 
 	if (!is_close__secondary_importance)
 		return;
 
 	for (const auto &pid : importance.secondary)
-		if (0 != pid.value)
+		if (!pid.is_null())
 			close_process(pid.value);
 }
 
