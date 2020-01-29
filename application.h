@@ -28,11 +28,11 @@ public:
 	public:
 		bool is__start_as_service;
 
-		struct close_some_precosses {
+		struct close_some_processes {
 			bool is_close;								// true, if need close process (firstly or firstly + secondary)
 			bool secondary_importance;					// true, if need close secondary (additional) processes together with firstly
 		};
-		struct close_some_precosses close_some_precosses;
+		struct close_some_processes close_some_processes;
 
 		struct poling {
 			com::port::number comport_n;				// если 0, то будем енумерить, иначе будем пытаться жестко сесть на указанный порт
@@ -47,7 +47,7 @@ public:
 
 		config(
 			_in bool is__start_as_service, 
-			_in const struct close_some_precosses &close_some_precosses, 
+			_in const struct close_some_processes &close_some_processes, 
 			_in const struct poling &poling, 
 			_in const struct sms &sms
 		);

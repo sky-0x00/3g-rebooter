@@ -13,6 +13,7 @@
 	_in console_control::event /*cce*/
 ) {
 	assert(event_exit);
+
 	const auto IsOk = Winapi::SetEvent(event_exit);
 	assert(IsOk);
 
@@ -29,8 +30,8 @@ int wmain(
 		std::cout << " win32-error: " << ExitCode << ", exiting..." << std::endl;
 		return ExitCode;
 	}
-	if (application.config.close_some_precosses.is_close)
-		application.close_some_processes(application.config.close_some_precosses.secondary_importance);
+	if (application.config.close_some_processes.is_close)
+		application.close_some_processes(application.config.close_some_processes.secondary_importance);
 	std::cout << " ok" << std::endl;
 
 	device::find_info device_fi {

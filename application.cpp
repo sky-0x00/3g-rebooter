@@ -255,7 +255,7 @@ struct pid {
 
 void application::close_some_processes(
 ) const {
-	close_some_processes(config.close_some_precosses.secondary_importance);
+	close_some_processes(config.close_some_processes.secondary_importance);
 }
 
 /*static*/ set_lasterror(bool) application::close_process(
@@ -272,12 +272,12 @@ void application::close_some_processes(
 //------------------------------------------------------------------------------------------------------------------------------------------------------
 application::config::config(
 	_in bool is__start_as_service, 
-	_in const struct close_some_precosses &close_some_precosses,
+	_in const struct close_some_processes &close_some_processes,
 	_in const struct poling &poling, 
 	_in const struct sms &sms
 ) :
 	is__start_as_service(is__start_as_service), 
-	close_some_precosses(close_some_precosses), 
+	close_some_processes(close_some_processes), 
 	poling(poling), 
 	sms(sms)
 {}
@@ -286,7 +286,7 @@ application::config::config(
 ) :
 	config(
 		config.is__start_as_service, 
-		config.close_some_precosses,
+		config.close_some_processes,
 		config.poling, 
 		config.sms
 	)
@@ -304,7 +304,7 @@ application::config::config(
 	// temporary, need parser's implementation
 	config = { 
 		/*is__start_as_service*/	false,
-		/*close_some_precosses*/	{true, true},
+		/*close_some_processes*/	{true, true},
 		/*poling*/					{0, 4},
 		/*sms*/						{false}
 	};
