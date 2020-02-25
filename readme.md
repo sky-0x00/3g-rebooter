@@ -28,6 +28,8 @@ sys-r|s [timeout] [...]
 	device::find(), smart-wait if com-port can't open with ERROR_BUSY win32-error code
 2020-01-29: версия 1.1.3
 	close_some_processes(), fix 'importance_ex' lists traverse (not-tested)
+2020-02-25: версия 1.2
+	close_some_processes(), split process_entry() to process_name/process_path()
 
 При старте необходимо принудительно завершать процессы:
 1) "C:\ProgramData\Mobile Partner\OnlineUpdate\ouc.exe", 

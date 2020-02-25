@@ -142,8 +142,8 @@ private:
 	};
 
 protected:
-	template <unsigned size> static auto process_entry(
-		_in cstr_t name, _in const defs::image_ex::list<size> &images
+	template <unsigned size> static auto process_name(
+		_in const defs::image_ex::list<size> &images, _in cstr_t name
 	) {
 		return std::find_if(
 			images.cbegin(), images.cend(), [&name](
@@ -153,15 +153,26 @@ protected:
 			}
 		);
 	};
+	template <unsigned size> static auto process_path(
+		_in const defs::image_ex::list<size> &images, _in cstr_t path
+	) {
+		return std::find_if(
+			images.cbegin(), images.cend(), [&path](
+				_in const defs::image_ex &image
+			) {
+				return names__is_equal(path, image.path.c_str());
+			}
+		);
+	};
 
 public:
 	template <unsigned size> static int process(
-		_in const PROCESSENTRY32W &pe, _in const defs::image_ex::list<size> &images, _in _out string_t &module_path
+		_in const defs::image_ex::list<size> &images, _in const PROCESSENTRY32W &pe, _in _out string_t &module_path
 	) {
 		const auto &it = std::make_pair(images.cbegin(), images.cend());
 
 		// сначала пытаемся найти по короткому имени файла образа процесса
-		auto it_found = process_entry(pe.szExeFile, images);
+		auto it_found = process_name(images, pe.szExeFile);
 		if (it.second == it_found)
 			return -1;
 		
@@ -169,7 +180,7 @@ public:
 		if (module_path.empty())
 			module_path = get__module_path(pe.th32ProcessID);
 
-		it_found = process_entry(module_path.c_str(), images);
+		it_found = process_path(images, module_path.c_str());
 		if (it.second == it_found)
 			return -1;
 
@@ -244,7 +255,7 @@ public:
 			string_t mp;
 
 			// сначала проверяем firstly-importance процессы (обязательные)
-			auto i = check::process(pe, defs::static__importance_ex.firstly, mp);
+			auto i = check::process(defs::static__importance_ex.firstly, pe, mp);
 			if (0 <= i)
 				importance.firstly[i].value = pe.th32ProcessID;
 
@@ -252,7 +263,7 @@ public:
 				continue;
 
 			// затем, если трубуется, проверяем secondary-importance процессы (второстепенные)
-			i = check::process(pe, defs::static__importance_ex.secondary, mp);
+			i = check::process(defs::static__importance_ex.secondary, pe, mp);
 			if (0 <= i)
 				importance.secondary[i].value = pe.th32ProcessID;
 
