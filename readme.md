@@ -30,6 +30,7 @@ sys-r|s [timeout] [...]
 	close_some_processes(), fix 'importance_ex' lists traverse (not-tested)
 2020-02-25: версия 1.2
 	close_some_processes(), split process_entry() to process_name/process_path()
+	close_some_processes(), extended process-list (XStartScreen.exe)
 
 При старте необходимо принудительно завершать процессы:
 1) "C:\ProgramData\Mobile Partner\OnlineUpdate\ouc.exe", 

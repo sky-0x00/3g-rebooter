@@ -80,13 +80,14 @@ struct defs {
 		image_ex::list<size_firstly> firstly;
 		image_ex::list<size_secondary> secondary;
 	};
-	static importance_ex</*importance::firstly.size()*/2, /*importance::secondary.size()*/5> static__importance_ex;						// size as size of 'static__importance'
+	static importance_ex</*importance::firstly.size()*/3, /*importance::secondary.size()*/5> static__importance_ex;						// size as size of 'static__importance'
 };
 
 /*static*/ const defs::importance defs::static__importance {
 	{
 		{LR"(%ProgramFiles(x86)%\MegaFon Internet\MegaFon Internet.exe)"},
-		{LR"(%ProgramFiles(x86)%\Mobile Partner\Mobile Partner.exe)"}
+		{LR"(%ProgramFiles(x86)%\Mobile Partner\Mobile Partner.exe)"},
+		{LR"(%ProgramFiles(x86)%\Mobile Partner\XStartScreen.exe)"}
 	},
 	{
 		{LR"(%ProgramData%\DatacardService\Temp\Mobile Partner\Setup.exe)"},
@@ -97,7 +98,7 @@ struct defs {
 		{LR"(%ProgramData%\MegaFon Internet\OnlineUpdate\ouc.exe)"}
 	}
 };
-/*static*/ defs::importance_ex</*importance::firstly.size()*/2, /*importance::secondary.size()*/5> defs::static__importance_ex;			// size as size of 'static__importance'
+/*static*/ defs::importance_ex</*importance::firstly.size()*/3, /*importance::secondary.size()*/5> defs::static__importance_ex;			// size as size of 'static__importance'
 
 struct pid {
 	typedef unsigned value_type;
